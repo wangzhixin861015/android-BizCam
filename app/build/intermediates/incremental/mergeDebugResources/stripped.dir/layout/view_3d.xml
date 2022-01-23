@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bcnetech.hyphoto.ui.view.ZoomableViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/zoomableViewGroup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/panelContent"
+    android:layout_below="@+id/rl_parms_title"
+    android:background="@color/backgroud_new">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside" />
+</com.bcnetech.hyphoto.ui.view.ZoomableViewGroup>

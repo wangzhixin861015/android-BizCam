@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/watermark_bottom_content"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/iv_watermark_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/blue_background"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/iv_watermark_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_18"
+            android:src="@drawable/wm_bizcam" />
+
+       <!-- <TextView
+            android:id="@+id/tv_watermark_add"
+            style="@style/FontWhite12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/dp_14"
+            android:visibility="gone"
+            android:text="@string/add" />-->
+    <ImageView
+        android:id="@+id/tv_watermark_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:visibility="gone"
+        android:src="@drawable/wm_plus" />
+    </RelativeLayout>

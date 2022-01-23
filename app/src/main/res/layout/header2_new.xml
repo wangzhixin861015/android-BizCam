@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_upload"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dp_52"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/grid_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="@dimen/dp_32" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_44"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_upload"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_24"
+        android:text=""
+        android:textColor="@color/floder_title"
+        android:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_time"
+        android:layout_below="@+id/ll_upload"
+        android:layout_marginTop="@dimen/dp_24"
+        android:visibility="gone"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_centerVertical="true"
+        android:textSize="14sp"
+        android:textColor="@color/black" />
+
+</RelativeLayout>

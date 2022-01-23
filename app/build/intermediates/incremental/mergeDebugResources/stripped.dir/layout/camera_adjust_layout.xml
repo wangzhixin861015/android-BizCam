@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translucent">
+
+    <RelativeLayout
+        android:id="@+id/rl_Scale"
+        android:layout_width="312dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/horizontal_bg">
+
+        <com.bcnetech.hyphoto.ui.view.scaleview.HorizontalScaleScrollview
+            android:id="@+id/horizontalscalescrollview"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:lf_scale_view_height="8dp"
+            app:lf_scale_view_margin="50dp"
+            app:lf_scale_view_max="100"
+            app:lf_scale_view_min="-100" />
+
+        <com.bcnetech.hyphoto.ui.view.CameraPointView
+            android:id="@+id/camera_point_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_reduce"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginLeft="@dimen/dp_32"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:text="+"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_marginLeft="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_28"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+
+    <com.bcnetech.hyphoto.ui.view.PresetBottomView
+        android:id="@+id/preset_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <com.bcnetech.hyphoto.ui.view.PresetScanBottomView
+        android:id="@+id/preset_scan_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:id="@+id/ll_pro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_cameraParam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/view_line"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_gravity="center"
+                android:background="@color/white" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_lightParam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+</RelativeLayout>

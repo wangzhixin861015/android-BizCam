@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bcnetech.hyphoto.ui.view.ZoomableViewGroup
+        android:id="@+id/zoom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      >
+
+        <ImageView
+            android:id="@+id/pic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:scaleType="centerInside" />
+
+        <com.bcnetech.hyphoto.ui.view.ViewPagerVideoView
+            android:id="@+id/video_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </com.bcnetech.hyphoto.ui.view.ZoomableViewGroup>
+</RelativeLayout>

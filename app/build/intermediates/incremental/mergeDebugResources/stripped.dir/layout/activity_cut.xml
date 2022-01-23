@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/newbg"
+        android:orientation="vertical" android:tag="layout/activity_cut_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/progress">
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:layout_width="@dimen/dp_104"
+            android:layout_height="@dimen/dp_104"
+           />
+        </RelativeLayout>
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/cut_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/title_bg"
+            android:elevation="2dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cut_title">
+
+            <com.bcnetech.hyphoto.ui.view.WrhImageView
+                android:id="@+id/myCutView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+         

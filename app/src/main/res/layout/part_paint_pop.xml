@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_112"
+        android:layout_alignParentBottom="true"
+        android:background="@color/backgroud">
+
+        <ImageView
+            android:id="@+id/paint_cencel_pop"
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_40"
+            android:paddingBottom="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_44"
+            android:paddingRight="@dimen/dp_36"
+            android:src="@mipmap/cencel_icon"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/paint_ok_pop"
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_40"
+            android:paddingBottom="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_44"
+            android:paddingLeft="@dimen/dp_36"
+            android:src="@mipmap/ok_icon"
+            android:visibility="gone"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/paint_ok_pop"
+            android:layout_toRightOf="@id/paint_cencel_pop" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

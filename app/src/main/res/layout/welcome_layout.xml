@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_centerHorizontal="true"
+      android:src="@drawable/welcome"
+
+      android:scaleType="fitXY"/>
+
+  <ImageView
+      android:id="@+id/log_img"
+      android:layout_width="@dimen/dp_200"
+      android:layout_height="@dimen/dp_260"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="@dimen/dp_200" />
+  
+  
+  <!--<TextView
+      android:id="@+id/tv_bottom"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/pic_best"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="@dimen/dp_40"
+      android:gravity="center"
+      android:textColor="@color/sing_in_color"
+      android:textSize="18sp"/>-->
+</RelativeLayout>

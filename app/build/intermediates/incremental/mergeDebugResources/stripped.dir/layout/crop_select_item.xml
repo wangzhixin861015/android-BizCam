@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_crop"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_120"
+        android:layout_weight="1"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/tv_crop"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_120"
+        android:padding="@dimen/dp_12"
+        android:layout_weight="2"
+        android:gravity="left|center"
+       android:textSize="@dimen/dp_20"
+        android:textColor="@color/text_color"
+       android:text="1:1"
+        />
+    <ImageView
+        android:id="@+id/iv_reverse"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_120"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:src="@drawable/reverse_y"
+        />
+</LinearLayout>

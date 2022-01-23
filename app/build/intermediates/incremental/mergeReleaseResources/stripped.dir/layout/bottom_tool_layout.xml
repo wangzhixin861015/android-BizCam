@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bcnetech.hyphoto.ui.view.ChoiceView
+        android:visibility="gone"
+        android:id="@+id/cloud_choice_ablum"
+        android:background="@color/backgroud"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+    <RelativeLayout
+        android:id="@+id/bottom_tool_in_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_112"
+            android:orientation="horizontal"
+          >
+
+            <com.bcnetech.hyphoto.ui.view.BottomToolItemView
+                android:id="@+id/item1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+               />
+            <LinearLayout
+                android:id="@+id/ll_ablum"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_112"
+                android:orientation="horizontal"
+               >
+                <com.bcnetech.hyphoto.ui.view.BottomToolItemView
+                    android:id="@+id/item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+
+                <com.bcnetech.hyphoto.ui.view.BottomToolItemView
+                    android:id="@+id/item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+
+                <com.bcnetech.hyphoto.ui.view.BottomToolItemView
+                    android:id="@+id/item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                   />
+                </LinearLayout>
+           <!-- <com.example.bizcan.ui.view.BottomToolItemView
+                android:id="@+id/item5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="gone" />-->
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_120"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/withed_bg">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            style="@style/FontGreg14"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginTop="25dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:text="存储为我的光比设定"/>
+
+        <com.bcnetech.bcnetechlibrary.view.LimitEditText
+            android:id="@+id/limit_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@drawable/edit_bg"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="14sp"
+            android:padding="13dp"
+            android:maxLength="7"
+            android:textColorHint="@color/gray"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+           />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/limit_edit_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/dialog_button_bg"
+            android:layout_alignStart="@+id/limit_edit_text">
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:text="取消"
+                android:clickable="true"
+                android:gravity="center"
+                style="@style/FontWhite14"
+                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="26dp"
+                android:background="@color/white"
+                android:layout_gravity="center_vertical"
+                />
+            <TextView
+                android:id="@+id/ok"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:text="确定"
+                android:gravity="center"
+                android:clickable="true"
+                style="@style/FontWhite14"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

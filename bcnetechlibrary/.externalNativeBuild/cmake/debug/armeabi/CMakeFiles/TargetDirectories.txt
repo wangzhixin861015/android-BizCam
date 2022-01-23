@@ -1,0 +1,3 @@
+/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/edit_cache.dir
+/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/rebuild_cache.dir
+/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/jx_ffmpeg_jni.dir

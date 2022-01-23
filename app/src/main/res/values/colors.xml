@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_tootch_footer_bg">#A20014</color>
+    <color name="translucent">#00000000</color><!-- 透明 -->
+    <color name="dg_color_translucent">#CC000000</color><!-- 半透明 -->
+    <color name="translucent_white">#14000000</color>
+    <color name="translucent54">#8A000000</color>
+    <color name="translucent12">#1F000000</color>
+    <color name="white_translucent12">#1Fffffff</color>
+  <!--  <color name="backgroud">#1D1E20</color>-->
+    <color name="backgroud_new">#F2F4F7</color>
+    <color name="backgroud">#1D1E1F</color>
+    <color name="trans_backgroud">#b41d1e1f</color>
+    <color name="maintitlebg">#E61D1E1F</color>
+    <color name="popbg">#e634363b</color>
+    <color name="backgroud_translucent">#60F2F4F7</color>
+    <color name="text_color_black">#4A4A4A</color>
+    <color name="text_color">#9b9b9b</color>
+    <color name="color_white">#aaffffff</color>
+    <color name="color_white2">#ffffffff</color>
+    <color name="color_white40">#66ffffff</color>
+    <color name="line3">#eff1f5</color>
+    <color name="shape_grey_color">#303338</color>
+    <color name="newbg">#000000</color>
+    <color name="share_bg">#FAFAFA</color>
+    <color name="headcolor">#000000</color>
+
+    <color name="line4">#979797</color>
+    <color name="color_blue">#0e54aa</color>
+    <color name="color_blue_bottom">#71c4f3</color>
+    <color name="bg_translucent">#cc555d69</color>
+    <color name="little_blue">#0068b7</color>
+    <color name="grey_item">#ccd0da</color>
+    <color name="blue_flag_bg">#ff1D67BF</color>
+    <color name="red_flag_bg">#FFA20014</color>
+
+    <color name="translucent_color_blue">#990e54aa</color>
+    <drawable name="white">#FFFFFF</drawable>
+    <color name="black">#000000</color>
+    <color name="black_aphle40">#701D1E1F</color>
+
+    <color name="black_lv2">#ff303338</color>
+    <color name="black_lv2_alphe60">#90303338</color>
+    <color name="color_line">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_aphle40">#70FFFFFF</color>
+    <color name="white_aphle10">#19ffffff</color>
+    <color name="text_item_child">#ADB5C2</color>
+    <color name="text_item_child60">#90ADB5C2</color>
+    <color name="text_item_child52">#85ADB5C2</color>
+    <color name="text_item_child26">#42ADB5C2</color>
+    <color name="dot_press">#A7B0BE</color>
+    <color name="dot_normal">#E0E4EB</color>
+
+    <color name="filter_color0">#000000</color>
+
+    <color name="dialog_button_bg">#262c35</color>
+
+    <color name="letter_a1">#9f7b4f</color>
+    <color name="letter_b2">#a698bc</color>
+    <color name="letter_c3">#66936f</color>
+    <color name="letter_d4">#7083bd</color>
+    <color name="letter_e5">#87ab97</color>
+    <color name="letter_f6">#8b3b43</color>
+    <color name="letter_g7">#99c1d1</color>
+    <color name="letter_h8">#5389da</color>
+    <color name="letter_i9">#d8ac46</color>
+    <color name="letter_j0">#d96b1c</color>
+    <color name="letter_k">#414348</color>
+    <color name="letter_l">#365b7c</color>
+    <color name="letter_m">#6c7070</color>
+    <color name="letter_n">#d6cb7c</color>
+    <color name="letter_o">#682225</color>
+    <color name="letter_p">#8dbdcb</color>
+    <color name="letter_q">#d8d8d8</color>
+    <color name="letter_r">#d886b8</color>
+    <color name="letter_s">#a376c1</color>
+    <color name="letter_t">#e9cd72</color>
+    <color name="letter_u">#475c39</color>
+    <color name="letter_v">#5aa5ac</color>
+    <color name="letter_w">#6eaf62</color>
+    <color name="letter_x">#6b566c</color>
+    <color name="letter_y">#33467d</color>
+    <color name="letter_z">#315538</color>
+
+    <color name="red_border">#D0021B</color>
+    <color name="red_us_border">#FF1800</color>
+    <color name="red_message">#FF1000</color>
+
+    <drawable name="loading_color">#ffffff</drawable>
+
+    <color name="part_color">#0068B7</color>
+    <color name="sing_in_color">#0057FF</color>
+    <color name="border">#EEF1F5</color>
+    <color name="light_color_name">#999999</color>
+    <color name="light_color_number">#cecece</color>
+
+    <color name="floder_title">#ADB4C1</color>
+    <color name="horizontal_bg">#454545</color>
+    <color name="text_color1">#888888</color>
+    <color name="matting_bg">#F7F9FC</color>
+    <color name="matting_border">#D3D9E5</color>
+    <color name="origin_bg">#707070</color>
+    <color name="black_alpha20">#33000000</color>
+    <color name="bizxam_u_to">#666666</color>
+    <color name="focusfade_color">#b4cdcdcd</color>
+    <color name="focusanim_color">#64f7f9fc</color>
+</resources>
+
+

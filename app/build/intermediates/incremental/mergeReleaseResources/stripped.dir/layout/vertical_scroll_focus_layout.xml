@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.bcnetech.hyphoto.ui.view.scaleview.VerticalScaleScrollFocusView
+        android:id="@+id/verticalScale"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        app:lf_scale_view_height="6dip"
+        app:lf_scale_view_margin="20dip" />
+
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="60dp"
+        android:layout_height="22dp"
+        android:background="@drawable/scale_rect"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/sing_in_color" />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tv_num"
+        android:src="@drawable/scale_line" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/shape_left_select" />
+
+
+</RelativeLayout>

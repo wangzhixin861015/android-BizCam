@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--圆形头像属性-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="img_type">
+            <enum name="circle" value="0" />
+            <enum name="round" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <style name="Widget.ProgressHintBase" parent="android:Widget.Holo.SeekBar"/>
+
+    <style name="Widget.ProgressHint" parent="Widget.ProgressHintBase">
+        <item name="popupLayout">@layout/progress_hint_popup</item>
+        <item name="popupStyle">follow</item>
+        <item name="popupAnimationStyle">@style/ProgressHintPopupAnimation</item>
+        <item name="popupOffset">0dp</item>
+        <item name="popupAlwaysShown">false</item>
+        <item name="popupDraggable">true</item>
+    </style>
+    <style name="ProgressHintPopupAnimation">
+        <item name="@android:windowEnterAnimation">@anim/progress_hint_popup_show</item>
+        <item name="@android:windowExitAnimation">@anim/progress_hint_popup_hide</item>
+    </style>
+
+    <style name="Theme.Light.NoTitle.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+       <!-- <item name="android:windowIsFloating">true</item>-->
+    </style>
+
+    <style name="Theme.Light.NoTitle.NoShadow.Dialog" parent="Theme.Light.NoTitle.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Animation.Bottom.Rising" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+    <style name="FontGreg14">
+        <item name="android:textColor">#ff9b9b9b</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="FontBlack14">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="FontBlack18">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="FontBlack22">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="FontWhite14">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Widget.SeekBar.Normal" parent="@android:style/Widget.SeekBar">
+        <item name="android:maxHeight">5.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/seekbar_horizontal</item>
+        <item name="android:minHeight">5.0dip</item>
+        <item name="android:thumb">@drawable/ats</item>
+        <item name="android:thumbOffset">7.0dip</item>
+    </style>
+    <style name="edit_text">
+        <item name="colorAccent">@color/blue</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">#616161</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">#616161</item>
+    </style>
+
+    <declare-styleable name="BlurLayout">
+        <attr name="blk_downscaleFactor" format="float" />
+        <attr name="blk_blurRadius" format="integer" />
+        <attr name="blk_fps" format="integer" />
+        <attr name="blk_cornerRadius" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">bcnetchhttp</string>
+    <string name="waiting_please">正在加载</string>
+</resources>

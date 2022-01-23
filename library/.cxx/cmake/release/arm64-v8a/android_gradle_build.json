@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/Users/mac/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a --target clean"
+	],
+	"libraries" : 
+	{
+		"SHARED-Release-arm64-v8a" : 
+		{
+			"abi" : "arm64-v8a",
+			"artifactName" : "SHARED",
+			"buildCommand" : "/Users/mac/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a --target SHARED",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=aarch64-none-linux-android21 --gcc-toolchain=/Users/mac/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/mac/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/jni/yuv-decoder.c",
+					"workingDirectory" : "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a"
+				}
+			],
+			"output" : "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/libSHARED.a",
+			"toolchain" : "5800180965176960905"
+		}
+	},
+	"toolchains" : 
+	{
+		"5800180965176960905" : 
+		{
+			"cCompilerExecutable" : "/Users/mac/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/mac/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/foot_text_item"
+        style="@style/FontWhite16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:gravity="center"
+        android:paddingEnd="@dimen/dp_40"
+        android:paddingStart="@dimen/dp_40" />
+
+</RelativeLayout>

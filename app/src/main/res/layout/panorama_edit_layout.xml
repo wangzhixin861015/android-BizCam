@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000">
+
+        <RelativeLayout
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:layout_alignParentTop="true"
+            android:background="#000">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:padding="10dp"
+                android:src="@drawable/white_back" />
+        </RelativeLayout>
+
+        <jp.co.cyberagent.android.gpuimage.gputexture.GPUImageViewTexture
+            android:id="@+id/gpuimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/sb_adjust"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerInParent="true" />
+
+        <com.bcnetech.hyphoto.ui.view.ShowFake3DView
+            android:id="@+id/show3dview"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/tv_title"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+        <com.bcnetech.hyphoto.ui.view.FilterProcessView
+            android:id="@+id/sb_adjust"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_above="@+id/rl_button"
+            android:layout_marginBottom="35dp" />
+
+        <com.bcnetech.hyphoto.ui.view.FilterCoverView
+            android:id="@+id/filter_cover"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_above="@+id/rl_button"
+            android:layout_marginBottom="30dp" />
+
+        <LinearLayout
+            android:id="@+id/filter_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rl_button"
+            android:layout_below="@id/show3dview"
+            android:orientation="vertical"
+            android:visibility="gone"
+           >
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="26dp"
+                android:text="@string/title"/>
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:textSize="12sp"
+                android:textColor="@color/text_color"
+                android:background="@drawable/filter_360_edit_line"
+                android:textCursorDrawable="@drawable/filter_360_edit_cursor"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_below="@+id/title"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_button"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/sing_in_color">
+
+            <TextView
+                android:id="@+id/tv_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/built_360"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <com.bcnetech.hyphoto.ui.view.FilterWaitView
+            android:id="@+id/filterwait"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</layout>

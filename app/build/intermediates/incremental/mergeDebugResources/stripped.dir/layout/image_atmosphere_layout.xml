@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_bg"
+    android:background="@color/black">
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/title_layout_base"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_140">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/dp_140"
+            android:layout_height="@dimen/dp_140"
+            android:padding="@dimen/dp_40"
+            android:src="@drawable/back" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_140"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image_util"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_140"
+                android:background="@drawable/black_click"
+                android:padding="@dimen/dp_40"
+                android:src="@drawable/btnsee" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_fix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_50"
+            android:gravity="center"
+            android:text="立即修图"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/dp_32" />
+
+
+    </RelativeLayout>-->
+    <com.bcnetech.hyphoto.ui.view.TitleView
+        android:id="@+id/atmosphere_title"
+        android:layout_width="match_parent"
+        android:background="@color/backgroud"
+        android:layout_height="@dimen/dp_126"/>
+    <RelativeLayout
+        android:id="@+id/light_effect_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_112"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/backgroud">
+     <!--   <ImageView
+            android:id="@+id/paint_cencel"
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_40"
+            android:paddingBottom="@dimen/dp_40"
+            android:paddingLeft="@dimen/dp_44"
+            android:paddingRight="@dimen/dp_36"
+            android:src="@mipmap/cencel_icon" />
+        <ImageView
+            android:id="@+id/paint_ok"
+            android:layout_width="@dimen/dp_112"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/dp_40"
+            android:paddingBottom="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_44"
+            android:paddingLeft="@dimen/dp_36"
+            android:src="@mipmap/ok_icon" />-->
+        <com.bcnetech.bcnetechlibrary.view.PickerViewV
+            android:id="@+id/pickerv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_80"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:layout_marginRight="@dimen/dp_30"
+            android:background="@color/translucent"
+            android:paddingBottom="@dimen/dp_25"
+            android:paddingTop="@dimen/dp_25"
+            android:visibility="visible" />
+    </RelativeLayout>
+    <!-- <com.example.bizcan.ui.view.imageeidt.FixPicFootGally
+         android:id="@+id/light_effect_gallery"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/dp_112"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:orientation="horizontal" />-->
+    <RelativeLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/light_effect_gallery"
+        android:layout_below="@id/atmosphere_title">
+
+        <jp.co.cyberagent.android.gpuimage.GPUImageView
+            android:id="@+id/gpuimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/final_bit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+        <com.bcnetech.hyphoto.ui.view.CircleView
+            android:id="@+id/custom_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/relsee"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dp_140"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_140"
+            android:background="@drawable/bigline">
+
+          <!--  <com.example.bizcan.ui.view.VerticalSeekBar
+                android:id="@+id/left_land_seebar"
+                style="@style/Widget.SeekBar.Normal"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:max="200"
+                android:visibility="visible" />-->
+            <com.bcnetech.hyphoto.ui.view.verticalscrollview.VerticalSeekBar
+                android:id="@+id/left_land_seebar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="200"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_alignParentRight="true"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+    <com.bcnetech.hyphoto.ui.view.WaitProgressBarView
+        android:id="@+id/wait_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

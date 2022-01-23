@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_more_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translucent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translucent54" />
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_above="@+id/rec_select"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white" />
+        </RelativeLayout>
+
+        <com.bcnetech.hyphoto.ui.view.RecordSelectLayout
+            android:id="@+id/rec_select"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:visibility="invisible" />
+    </LinearLayout>
+</RelativeLayout>

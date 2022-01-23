@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:tag="layout/ablum_new_layout_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:background="@drawable/title_bg"
+            android:elevation="2dp">
+
+            <com.bcnetech.hyphoto.ui.view.TitleView
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true" />
+
+            <com.bcnetech.hyphoto.ui.view.AlbumNewTopSelectView
+                android:id="@+id/albumNewTopSelectView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_layout">
+
+            <com.bcnetech.bcnetechlibrary.view.stickygridheaders.StickyGridHeadersGridView
+                android:id="@+id/grid_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="@dimen/dp_8"
+                android:listSelector="@drawable/transpart"
+                android:background="@color/backgroud_new"
+                android:numColumns="3"
+
+                android:verticalSpacing="@dimen/dp_8" />
+
+
+            <RelativeLayout
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_88"
+                android:layout_alignParentBottom="true">
+
+                <com.bcnetech.hyphoto.ui.view.BottomToolView
+                    android:id="@+id/bottom_tool_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_112"
+
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+         

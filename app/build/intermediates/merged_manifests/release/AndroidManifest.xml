@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bcnetech.hyphoto"
+    android:versionCode="122"
+    android:versionName="1.2.2" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="28" />
+
+    <!-- 添加WiFi以及访问网络的权限： -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+
+
+    <!-- 操作外部存储设备文件： -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+    <!-- 这个声明会导致不支持该版本的设备无法安装。 -->
+    <!-- Tell the system this app requires OpenGL ES 2.0. -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name="com.bcnetech.hyphoto.App"
+        android:allowBackup="true"
+        android:anyDensity="true"
+        android:extractNativeLibs="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:maxAspectRatio="2.1"
+        android:supportsRtl="true"
+        android:theme="@style/Transparent_Theme"
+        android:usesCleartextTraffic="true" >
+
+        <!-- 友盟配置 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5987d1cd1061d2181e0001cc" />
+        <!-- 适配全面屏(ratio_float = 屏幕高 / 屏幕宽) -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="ratio_float" />
+        <!-- 适配刘海屏(华为手机) -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.WelcomeActivity"
+            android:theme="@style/welcome_Theme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+         <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+             <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+        -->
+
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.AlbumNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateUnchanged|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.LightRatioActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.cloud.CloudInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.cloud.CloundActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.cloud.CloundNewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.SettingDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.AgreeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.PartParmsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.BgRepairActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.AutoRecoveryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.AtmosphereActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.CutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.market.TemplateActivcity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.SurfViewCameraActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateUnspecified" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.RecoderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.PresetLoadManageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.UploadManagerActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.bcnetech.hyphoto.service.UpdataService" />
+
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.market.MarketFragmentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.CropRotateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.ImageSelectorActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.ImageParmsNewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.BizMattingNewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.SurfViewCameraNewActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateUnspecified" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/welcome_Theme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.MainUsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/welcome_Theme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.CameraSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.WaterMarkSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.UserCenterActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.GoodsMarketActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.AICameraActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.BizCamUToActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.AiPreviewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.camera.AI360CameraActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.BizCamHelpActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.BizCamHelpDetailActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.bcnetech.hyphoto.service.UpdataService" />
+        <!--
+          <receiver android:name=".receiver.HttpChangReceiver">
+              <intent-filter>
+                  <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+              </intent-filter>
+          </receiver>
+        -->
+
+
+        <!-- 注意这个地方的位置，是在application标签里面；android:authorities对应Provider.AUTHORITY -->
+        <!-- <provider -->
+        <!-- android:name="com.bcnetech.bizcam.sql.contentprovider.PersonProvider" -->
+        <!-- android:authorities="com.bcnetech.provider.person" /> -->
+
+        <provider
+            android:name="com.bcnetech.hyphoto.sql.contentprovider.PresetParmsContentProvider"
+            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.presetparm" />
+        <provider
+            android:name="com.bcnetech.hyphoto.sql.contentprovider.LightRatioContentProvider"
+            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.lightratio" />
+        <provider
+            android:name="com.bcnetech.hyphoto.sql.contentprovider.ImageUtilContentProvider"
+            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.imageutil" />
+        <provider
+            android:name="com.bcnetech.hyphoto.sql.contentprovider.DownLoadInfoContentProvider"
+            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.downloadmanage" />
+        <provider
+            android:name="com.bcnetech.hyphoto.sql.contentprovider.UpLoadPicContentProvider"
+            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.uploadmanage" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.bcnetech.hyphoto.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+
+            <!-- 元数据 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <activity
+            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.bcnetech.hyphoto.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1106394618" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.bcnetech.hyphoto.com.squareup.picasso"
+            android:exported="false" />
+        <provider
+            android:name="com.liulishuo.okdownload.OkDownloadProvider"
+            android:authorities="com.bcnetech.hyphoto.com.liulishuo.okdownload"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

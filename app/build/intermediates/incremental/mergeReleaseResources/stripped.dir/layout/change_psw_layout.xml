@@ -1,0 +1,156 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/dp_12">
+
+    <RelativeLayout
+        android:id="@+id/layout_changepsw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_52">
+
+        <TextView
+            android:id="@+id/tv_old"
+            style="@style/FontBlack14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:text="@string/old_psw" />
+
+        <RelativeLayout
+            android:id="@+id/input_old_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_108"
+            android:layout_below="@id/tv_old"
+            android:background="@color/backgroud_new">
+
+            <EditText
+                android:id="@+id/input_old"
+                style="@style/FontBlack14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/old_psw_input"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dp_40"
+                android:singleLine="true"
+                android:textColorHint="@color/gray" />
+
+            <com.bcnetech.hyphoto.ui.view.SpaceEditText
+                android:id="@+id/input_captcha"
+                style="@style/FontBlack28"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:inputType="number"
+                android:paddingLeft="@dimen/dp_40"
+                android:textColorHint="@color/gray" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_new"
+            style="@style/FontBlack14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_old_ll"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_60"
+            android:text="@string/new_psw" />
+
+        <TextView
+            android:id="@+id/tv_psw_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_old_ll"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_62"
+            android:layout_toRightOf="@+id/tv_new"
+            android:text="@string/security_weak"
+            android:textColor="@color/red_border"
+            android:textSize="12sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/input_new_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_108"
+            android:layout_below="@id/tv_new"
+            android:background="@color/backgroud_new">
+
+            <EditText
+                android:id="@+id/input_new"
+                style="@style/FontBlack14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dp_40"
+                android:singleLine="true"
+                android:textColorHint="@color/gray" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            style="@style/FontBlack14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_new_ll"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_60"
+            android:text="@string/confirm_psw" />
+
+        <TextView
+            android:id="@+id/tv_confirm_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/input_new_ll"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_62"
+            android:layout_toRightOf="@+id/tv_confirm"
+            android:text="@string/confirm_error"
+            android:textColor="@color/red_border"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:id="@+id/input_confirm_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_108"
+            android:layout_below="@id/tv_confirm"
+            android:background="@color/backgroud_new">
+
+            <EditText
+                android:id="@+id/input_confirm"
+                style="@style/FontBlack14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@null"
+                android:hint="@string/confirm_psw_input"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dp_40"
+                android:singleLine="true"
+                android:textColorHint="@color/gray" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/confirm"
+            style="@style/FontWhite14"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_92"
+            android:layout_below="@+id/input_confirm_ll"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_52"
+            android:layout_marginLeft="@dimen/dp_28"
+            android:layout_marginRight="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_90"
+            android:background="@drawable/blue_item_bg"
+            android:text="@string/confirm" />
+    </RelativeLayout>
+</ScrollView>

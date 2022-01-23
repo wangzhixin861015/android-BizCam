@@ -1,0 +1,765 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+MERGED from [com.github.lzyzsd:jsbridge:1.0.4] /Users/mac/.gradle/caches/transforms-2/files-2.1/01352f1637c56f5c5e05cfe1d8e05389/jsbridge-1.0.4/AndroidManifest.xml:2:1-16:12
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-22:12
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:multidex:1.0.3] /Users/mac/.gradle/caches/transforms-2/files-2.1/6c5590881e17ff29cd45a0e0e1216133/multidex-1.0.3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/2be35a88b968a4d68e636baf77b8ee0b/constraint-layout-1.1.2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.huburt-Hu:NewbieGuide:v2.4.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/759b517402921b83a0986da7aae70ca1/NewbieGuide-v2.4.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.databinding:adapters:3.5.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/21fd0a84ea14bb5ed44a8f16d4c51e58/adapters-3.5.2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.databinding:library:3.5.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/f3618b70b79d0c7472c31a83a11c4606/library-3.5.2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:2:1-15:12
+MERGED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-29:12
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-17:12
+MERGED from [:imageproc] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/imageproc/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-18:12
+MERGED from [:library] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:exifinterface:27.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b1c1a2b5620d26b3c31276a3ce5b6b3c/exifinterface-27.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [:bcnetechlibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetechlibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/bfdcb54e88ef9ac2e70b48ae85ec902e/design-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/809c407ad7a8c91a490f3ec41813fd83/appcompat-v7-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/92313a641b1afd3618f10f553216dc2a/recyclerview-v7-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-vision:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/daf2c541da22d837d5814997d0910e1e/play-services-vision-10.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/fd6df6ccd0a21432fe4d96ac1018025e/play-services-tasks-10.2.0/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/036014ce17ad904d1a31a093caf811ad/support-v4-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/db933a47e5e89052fc53c41339a5e0b2/support-fragment-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/c4fed57e27f7b5be020f4029928c7549/animated-vector-drawable-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/e1d157229bab4e8d80487ba76ea3b874/support-core-ui-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/b1e274e3ad7cd81018aba2c00e117ffd/support-core-utils-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/840f6ec8d33957c8c5b37f560134fd7d/support-vector-drawable-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/a0e5ac067caf7f0fac2e0aa61654e779/cardview-v7-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/efdcde21c018466a7fae49a09ecc8438/transition-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/aad98150d9bc5cb8523afa4ffaf8b6d7/support-media-compat-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/add73b72b90ed1be856495f370efea9f/support-compat-27.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/383429b729d0e1ef868dd0e0a75b3e9d/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/9b6ac1dd76c42932848a6006d537c90c/livedata-core-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/d9dd2b4b833566acd35a8a9df81fe45c/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/800a8155cb7dd2e8b7796995327dd17d/rxandroid-2.1.0/AndroidManifest.xml:15:1-20:12
+MERGED from [com.github.mjdev:libaums:0.6.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/df4751787da3193894ecafc44a86e35b/libaums-0.6.0/AndroidManifest.xml:19:1-28:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/86c42992ea34ed8415857f04028f7325/viewmodel-1.1.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+	package
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:1-339:12
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:6:5-95
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-79
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:7:5-92
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-76
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:7:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:8:5-95
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-79
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:8:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:9:5-92
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:14:5-76
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:14:5-76
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:9:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:10:5-83
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-67
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-67
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:10:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:11:5-84
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:11:22-65
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:12:5-95
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:12:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:13:22-78
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:17:5-66
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:17:22-63
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:18:5-81
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-81
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:18:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:19:5-80
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-80
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:19:22-77
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:20:22-75
+uses-permission#android.permission.WRITE_CONTACTS
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:22:5-73
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:22:22-70
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:24:5-82
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:24:22-80
+uses-permission#android.hardware.usb.host
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:26:5-28:36
+	android:required
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:28:9-33
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:27:9-49
+uses-feature#android.hardware.usb.host
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:30:5-32:35
+	android:required
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:32:9-32
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:31:9-49
+uses-feature#0x00020000
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:35:5-37:35
+	android:glEsVersion
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:36:9-41
+	android:required
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:37:9-32
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:38:5-71
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:38:22-68
+application
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:39:5-336:19
+MERGED from [com.github.lzyzsd:jsbridge:1.0.4] /Users/mac/.gradle/caches/transforms-2/files-2.1/01352f1637c56f5c5e05cfe1d8e05389/jsbridge-1.0.4/AndroidManifest.xml:11:5-14:19
+MERGED from [com.github.lzyzsd:jsbridge:1.0.4] /Users/mac/.gradle/caches/transforms-2/files-2.1/01352f1637c56f5c5e05cfe1d8e05389/jsbridge-1.0.4/AndroidManifest.xml:11:5-14:19
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-20:19
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:15:5-20:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/2be35a88b968a4d68e636baf77b8ee0b/constraint-layout-1.1.2/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/2be35a88b968a4d68e636baf77b8ee0b/constraint-layout-1.1.2/AndroidManifest.xml:9:5-20
+MERGED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:8:5-13:19
+MERGED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:8:5-13:19
+MERGED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:22:5-27:19
+MERGED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:22:5-27:19
+MERGED from [:imageproc] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/imageproc/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-16:19
+MERGED from [:imageproc] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/imageproc/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-16:19
+MERGED from [com.google.android.gms:play-services-vision:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/daf2c541da22d837d5814997d0910e1e/play-services-vision-10.2.0/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-vision:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/daf2c541da22d837d5814997d0910e1e/play-services-vision-10.2.0/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/fd6df6ccd0a21432fe4d96ac1018025e/play-services-tasks-10.2.0/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/fd6df6ccd0a21432fe4d96ac1018025e/play-services-tasks-10.2.0/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:19:5-21:19
+	android:maxAspectRatio
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:50:9-37
+	android:extractNativeLibs
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:41:9-41
+	android:supportsRtl
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:49:9-35
+	android:label
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:47:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:45:9-43
+	android:largeHeap
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:48:9-33
+	android:icon
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:46:9-49
+	android:anyDensity
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:44:9-34
+	android:allowBackup
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:43:9-35
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:51:9-49
+	android:usesCleartextTraffic
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:40:9-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:42:9-28
+meta-data#UMENG_APPKEY
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:54:9-56:56
+	android:value
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:56:13-53
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:55:13-40
+meta-data#android.max_aspect
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:58:9-60:43
+	android:value
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:60:13-40
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:59:17-50
+meta-data#android.notch_support
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:62:9-64:36
+	android:value
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:64:13-33
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:63:13-49
+activity#com.bcnetech.hyphoto.ui.activity.WelcomeActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:66:9-75:20
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:68:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:67:13-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:70:13-74:29
+action#android.intent.action.MAIN
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:71:17-69
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:71:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:73:17-77
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:73:27-74
+activity#com.bcnetech.hyphoto.ui.activity.AlbumNewActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:84:9-90:20
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:87:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:86:13-43
+	android:windowSoftInputMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:88:13-79
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:85:13-57
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.LightRatioActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:92:9-94:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:94:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:93:13-72
+activity#com.bcnetech.hyphoto.ui.activity.cloud.CloudInfoActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:95:9-97:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:97:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:96:13-64
+activity#com.bcnetech.hyphoto.ui.activity.cloud.CloundActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:98:9-101:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:101:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:100:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:99:13-61
+activity#com.bcnetech.hyphoto.ui.activity.cloud.CloundNewActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:102:9-105:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:105:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:104:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:103:13-64
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.SettingDetailActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:106:9-109:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:109:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:108:13-43
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:107:13-75
+activity#com.bcnetech.hyphoto.ui.activity.AgreeActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:111:9-114:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:114:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:113:13-43
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:112:13-54
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.PartParmsActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:115:9-117:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:117:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:116:13-68
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.BgRepairActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:120:9-122:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:122:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:121:13-67
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.AutoRecoveryActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:123:9-125:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:125:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:124:13-71
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.AtmosphereActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:128:9-130:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:130:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:129:13-69
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.CutActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:131:9-133:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:133:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:132:13-65
+activity#com.bcnetech.hyphoto.ui.activity.market.TemplateActivcity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:134:9-136:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:136:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:135:13-65
+activity#com.bcnetech.hyphoto.ui.activity.camera.SurfViewCameraActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:138:9-143:81
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:142:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:141:13-44
+	android:hardwareAccelerated
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:140:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:143:13-69
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:139:13-70
+activity#com.bcnetech.hyphoto.ui.activity.camera.RecoderActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:145:9-147:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:147:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:146:13-63
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.PresetLoadManageActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:148:9-150:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:150:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:149:13-78
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.UploadManagerActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:151:9-153:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:153:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:152:13-75
+service#com.bcnetech.hyphoto.service.UpdataService
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:155:9-58
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:155:18-55
+activity#com.bcnetech.hyphoto.ui.activity.market.MarketFragmentActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:157:9-160:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:160:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:159:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:158:13-70
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.CropRotateActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:161:9-163:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:163:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:162:13-69
+activity#com.bcnetech.hyphoto.ui.activity.ImageSelectorActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:164:9-167:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:167:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:166:13-43
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:165:13-62
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.ImageParmsNewActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:168:9-171:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:171:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:170:13-43
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:169:13-72
+activity#com.bcnetech.hyphoto.ui.activity.photoedit.BizMattingNewActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:172:9-174:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:174:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:173:13-72
+activity#com.bcnetech.hyphoto.ui.activity.camera.SurfViewCameraNewActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:175:9-180:81
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:179:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:178:13-44
+	android:hardwareAccelerated
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:177:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:180:13-69
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:176:13-73
+activity#com.bcnetech.hyphoto.ui.activity.MainActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:181:9-185:85
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:183:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:185:13-73
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:184:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:182:13-53
+activity#com.bcnetech.hyphoto.ui.activity.MainUsActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:186:9-190:85
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:188:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:190:13-73
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:189:13-49
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:187:13-55
+activity#com.bcnetech.hyphoto.ui.activity.camera.CameraSettingActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:191:9-194:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:194:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:193:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:192:13-69
+activity#com.bcnetech.hyphoto.ui.activity.camera.WaterMarkSettingActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:195:9-198:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:198:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:197:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:196:13-72
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.UserCenterActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:199:9-202:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:202:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:201:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:200:13-72
+activity#com.bcnetech.hyphoto.ui.activity.GoodsMarketActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:203:9-206:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:206:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:205:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:204:13-60
+activity#com.bcnetech.hyphoto.ui.activity.camera.AICameraActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:208:9-211:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:211:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:210:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:209:13-64
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.BizCamUToActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:213:9-216:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:216:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:215:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:214:13-71
+activity#com.bcnetech.hyphoto.ui.activity.camera.AiPreviewActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:217:9-220:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:220:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:219:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:218:13-65
+activity#com.bcnetech.hyphoto.ui.activity.camera.AI360CameraActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:221:9-224:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:224:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:223:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:222:13-67
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.BizCamHelpActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:225:9-228:61
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:228:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:227:13-44
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:226:13-72
+activity#com.bcnetech.hyphoto.ui.activity.personCenter.BizCamHelpDetailActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:229:9-233:59
+	android:screenOrientation
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:232:13-49
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:231:13-44
+	android:hardwareAccelerated
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:233:13-47
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:230:13-78
+provider#com.bcnetech.hyphoto.sql.contentprovider.PresetParmsContentProvider
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:247:9-249:101
+	android:authorities
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:249:13-98
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:248:13-75
+provider#com.bcnetech.hyphoto.sql.contentprovider.LightRatioContentProvider
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:251:9-253:101
+	android:authorities
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:253:13-98
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:252:13-74
+provider#com.bcnetech.hyphoto.sql.contentprovider.ImageUtilContentProvider
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:255:9-257:100
+	android:authorities
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:257:13-97
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:256:13-73
+provider#com.bcnetech.hyphoto.sql.contentprovider.DownLoadInfoContentProvider
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:259:9-261:105
+	android:authorities
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:261:13-102
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:260:13-76
+provider#com.bcnetech.hyphoto.sql.contentprovider.UpLoadPicContentProvider
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:263:9-265:103
+	android:authorities
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:265:13-100
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:264:13-73
+provider#android.support.v4.content.FileProvider
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:268:9-277:20
+	android:grantUriPermissions
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:271:13-47
+	android:authorities
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:270:13-68
+	android:exported
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:272:13-37
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:269:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:274:13-276:49
+	android:resource
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:276:13-46
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:275:13-63
+activity#com.umeng.socialize.media.WBShareCallBackActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:282:9-288:20
+	android:exported
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:286:13-37
+	android:configChanges
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:284:13-63
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:285:13-72
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:283:13-77
+activity#com.sina.weibo.sdk.web.WeiboSdkWebActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:290:9-295:20
+	android:windowSoftInputMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:293:13-55
+	android:exported
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:292:13-37
+	android:configChanges
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:291:13-63
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:290:19-76
+activity#com.sina.weibo.sdk.share.WbShareTransActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:298:9-307:20
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:300:13-44
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:299:13-83
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:301:13-73
+intent-filter#action:name:com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY+category:name:android.intent.category.DEFAULT
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:302:13-305:29
+action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:303:17-92
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:303:25-89
+category#android.intent.category.DEFAULT
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:304:17-76
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:304:27-73
+activity#com.bcnetech.hyphoto.wxapi.WXEntryActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:309:9-313:75
+	android:exported
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:312:13-36
+	android:configChanges
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:311:13-74
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:313:13-72
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:310:13-50
+activity#com.tencent.tauth.AuthActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:316:9-328:20
+	android:launchMode
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:318:13-44
+	android:noHistory
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:319:13-37
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:317:13-58
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tencent1106394618
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:320:13-327:29
+action#android.intent.action.VIEW
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:321:17-69
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:321:25-66
+category#android.intent.category.BROWSABLE
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:324:17-78
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:324:27-75
+data
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:326:17-60
+	android:scheme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:326:23-57
+activity#com.tencent.connect.common.AssistActivity
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:331:9-334:76
+	android:configChanges
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:334:13-74
+	android:theme
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:333:13-72
+	android:name
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:332:13-69
+uses-sdk
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+MERGED from [com.github.lzyzsd:jsbridge:1.0.4] /Users/mac/.gradle/caches/transforms-2/files-2.1/01352f1637c56f5c5e05cfe1d8e05389/jsbridge-1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lzyzsd:jsbridge:1.0.4] /Users/mac/.gradle/caches/transforms-2/files-2.1/01352f1637c56f5c5e05cfe1d8e05389/jsbridge-1.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:multidex:1.0.3] /Users/mac/.gradle/caches/transforms-2/files-2.1/6c5590881e17ff29cd45a0e0e1216133/multidex-1.0.3/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] /Users/mac/.gradle/caches/transforms-2/files-2.1/6c5590881e17ff29cd45a0e0e1216133/multidex-1.0.3/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/2be35a88b968a4d68e636baf77b8ee0b/constraint-layout-1.1.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/2be35a88b968a4d68e636baf77b8ee0b/constraint-layout-1.1.2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.huburt-Hu:NewbieGuide:v2.4.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/759b517402921b83a0986da7aae70ca1/NewbieGuide-v2.4.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.huburt-Hu:NewbieGuide:v2.4.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/759b517402921b83a0986da7aae70ca1/NewbieGuide-v2.4.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.databinding:adapters:3.5.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/21fd0a84ea14bb5ed44a8f16d4c51e58/adapters-3.5.2/AndroidManifest.xml:22:5-44
+MERGED from [com.android.databinding:adapters:3.5.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/21fd0a84ea14bb5ed44a8f16d4c51e58/adapters-3.5.2/AndroidManifest.xml:22:5-44
+MERGED from [com.android.databinding:library:3.5.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/f3618b70b79d0c7472c31a83a11c4606/library-3.5.2/AndroidManifest.xml:22:5-44
+MERGED from [com.android.databinding:library:3.5.2] /Users/mac/.gradle/caches/transforms-2/files-2.1/f3618b70b79d0c7472c31a83a11c4606/library-3.5.2/AndroidManifest.xml:22:5-44
+MERGED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:6:5-44
+MERGED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:6:5-44
+MERGED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:bcnetchhttp] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetchhttp/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:imageproc] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/imageproc/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:imageproc] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/imageproc/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:library] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:library] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:exifinterface:27.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b1c1a2b5620d26b3c31276a3ce5b6b3c/exifinterface-27.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:exifinterface:27.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b1c1a2b5620d26b3c31276a3ce5b6b3c/exifinterface-27.1.0/AndroidManifest.xml:20:5-44
+MERGED from [:bcnetechlibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetechlibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [:bcnetechlibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetechlibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/bfdcb54e88ef9ac2e70b48ae85ec902e/design-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/bfdcb54e88ef9ac2e70b48ae85ec902e/design-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/809c407ad7a8c91a490f3ec41813fd83/appcompat-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/809c407ad7a8c91a490f3ec41813fd83/appcompat-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/92313a641b1afd3618f10f553216dc2a/recyclerview-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/92313a641b1afd3618f10f553216dc2a/recyclerview-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-vision:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/daf2c541da22d837d5814997d0910e1e/play-services-vision-10.2.0/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-vision:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/daf2c541da22d837d5814997d0910e1e/play-services-vision-10.2.0/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/fd6df6ccd0a21432fe4d96ac1018025e/play-services-tasks-10.2.0/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/fd6df6ccd0a21432fe4d96ac1018025e/play-services-tasks-10.2.0/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/036014ce17ad904d1a31a093caf811ad/support-v4-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/036014ce17ad904d1a31a093caf811ad/support-v4-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/db933a47e5e89052fc53c41339a5e0b2/support-fragment-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/db933a47e5e89052fc53c41339a5e0b2/support-fragment-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/c4fed57e27f7b5be020f4029928c7549/animated-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/c4fed57e27f7b5be020f4029928c7549/animated-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/e1d157229bab4e8d80487ba76ea3b874/support-core-ui-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/e1d157229bab4e8d80487ba76ea3b874/support-core-ui-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/b1e274e3ad7cd81018aba2c00e117ffd/support-core-utils-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/b1e274e3ad7cd81018aba2c00e117ffd/support-core-utils-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/840f6ec8d33957c8c5b37f560134fd7d/support-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/840f6ec8d33957c8c5b37f560134fd7d/support-vector-drawable-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/a0e5ac067caf7f0fac2e0aa61654e779/cardview-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/a0e5ac067caf7f0fac2e0aa61654e779/cardview-v7-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/efdcde21c018466a7fae49a09ecc8438/transition-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/efdcde21c018466a7fae49a09ecc8438/transition-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/aad98150d9bc5cb8523afa4ffaf8b6d7/support-media-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/aad98150d9bc5cb8523afa4ffaf8b6d7/support-media-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/add73b72b90ed1be856495f370efea9f/support-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/mac/.gradle/caches/transforms-2/files-2.1/add73b72b90ed1be856495f370efea9f/support-compat-27.1.1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/383429b729d0e1ef868dd0e0a75b3e9d/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/383429b729d0e1ef868dd0e0a75b3e9d/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/9b6ac1dd76c42932848a6006d537c90c/livedata-core-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/9b6ac1dd76c42932848a6006d537c90c/livedata-core-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/d9dd2b4b833566acd35a8a9df81fe45c/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/d9dd2b4b833566acd35a8a9df81fe45c/runtime-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/800a8155cb7dd2e8b7796995327dd17d/rxandroid-2.1.0/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/800a8155cb7dd2e8b7796995327dd17d/rxandroid-2.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.github.mjdev:libaums:0.6.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/df4751787da3193894ecafc44a86e35b/libaums-0.6.0/AndroidManifest.xml:24:5-26:41
+MERGED from [com.github.mjdev:libaums:0.6.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/df4751787da3193894ecafc44a86e35b/libaums-0.6.0/AndroidManifest.xml:24:5-26:41
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/86c42992ea34ed8415857f04028f7325/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/86c42992ea34ed8415857f04028f7325/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-65
+	android:name
+		ADDED from [:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:22-62
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:9:13-64
+provider#com.liulishuo.okdownload.OkDownloadProvider
+ADDED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:9:9-12:40
+	android:authorities
+		ADDED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:11:13-76
+	android:exported
+		ADDED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:12:13-37
+	android:name
+		ADDED from [com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:10:13-71
+uses-permission#android.permission.BLUETOOTH
+ADDED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-68
+	android:name
+		ADDED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-74
+	android:name
+		ADDED from [:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-71
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:19-85
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:20:20-65

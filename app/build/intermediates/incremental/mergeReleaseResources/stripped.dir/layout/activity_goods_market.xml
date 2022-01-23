@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:tag="layout/activity_goods_market_0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+</LinearLayout>
+         

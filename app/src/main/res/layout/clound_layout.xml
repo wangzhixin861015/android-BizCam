@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newbg">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:background="@drawable/title_bg"
+        android:elevation="2dp">
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <com.bcnetech.bcnetechlibrary.view.IndexableRecycler.IndexableRecyclerView
+        android:id="@+id/indexable_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_layout"
+        android:background="@color/backgroud_new"
+        android:visibility="visible"
+        app:recyclerColumns="1"
+      />
+    <!--  <TextView
+          android:id="@+id/addgroup"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dp_80"
+          style="@style/FontWhite14"
+          android:text="添加新分组"
+          android:gravity="center"
+          android:visibility="gone"
+          android:background="@color/color_line"
+          android:layout_alignParentBottom="true"/>-->
+    <com.bcnetech.hyphoto.ui.view.ChoiceView
+        android:id="@+id/cloud_choice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:layout_alignParentTop="true"
+        android:background="@color/backgroud"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/empty_null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_layout"
+        android:background="@color/backgroud_new">
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bgnone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/FontGreg18"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/clound_null"
+            android:alpha="0.4"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="LetterBar">
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension" />"
+    </declare-styleable>
+</resources>

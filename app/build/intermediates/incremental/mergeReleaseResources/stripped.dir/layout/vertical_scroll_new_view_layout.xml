@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bcnetech.hyphoto.ui.view.verticalscrollview.VerticalSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="42dp"
+        android:layout_height="22dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:background="@drawable/scale_new_rect"
+        android:layout_toRightOf="@+id/seekBar"
+        android:gravity="center"
+        android:text=""
+        android:textSize="8sp"
+        android:textColor="@color/sing_in_color" />
+
+</RelativeLayout>

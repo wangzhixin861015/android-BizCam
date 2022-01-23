@@ -1,0 +1,1 @@
+include ':app', ':bcnetechlibrary', ':bluetoothlibarary', ':library', ':imageproc', ':bcnetchhttp', ':bizcameralibrary'

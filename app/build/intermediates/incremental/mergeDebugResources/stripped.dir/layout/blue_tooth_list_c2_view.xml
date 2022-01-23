@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/blue_tooth_list_c2_view_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/iv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="66dp"
+            android:background="@drawable/bluetooth_background_radius"
+            android:orientation="vertical">
+
+            <com.bcnetech.bizcamerlibrary.camera.CameraTextureView
+                android:id="@+id/camera_texture_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_top"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@+id/ll_choice"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/ll_choice"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/ll_choice"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_80"
+                android:layout_marginRight="@dimen/dp_80"
+                android:layout_marginTop="28dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="240dp"
+                    android:layout_height="92dp"
+                    android:src="@drawable/bluetooth_connect_logo" />
+
+                <View
+                    android:layout_width="240dp"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/backgroud_new" />
+
+                <ImageView
+                    android:layout_width="240dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:src="@drawable/bluetooth_hint" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_choice"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/ll_top"
+                android:background="@drawable/bluetooth_background_radius"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_listChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="37dp">
+
+                    <ImageView
+                        android:id="@+id/iv_listChoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_24"
+                        android:src="@drawable/bluetooth_list_select" />
+
+                    <TextView
+                        android:id="@+id/tv_listChoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/list"
+                        android:textColor="@color/sing_in_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_scanChoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="37dp">
+
+                    <ImageView
+                        android:id="@+id/iv_scanChoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_24"
+                        android:src="@drawable/bluetooth_scan_unselect" />
+
+                    <TextView
+                        android:id="@+id/tv_scanChoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/qr_code"
+                        android:textColor="@color/text_item_child" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_content"
+                android:layout_width="match_parent"
+                android:layout_height="114dp"
+                android:layout_below="@+id/ll_choice"
+                android:layout_margin="@dimen/dp_20"
+                android:background="@color/backgroud_new"
+                android:visibility="visible">
+
+                <ListView
+                    android:id="@+id/list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:divider="@null"
+                    android:dividerHeight="0dp" />
+
+                <com.bcnetech.bcnetechlibrary.view.ListviewWaitView
+                    android:id="@+id/empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/qrcode_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_choice"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/capture_crop_view"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qr_code_new_bg">
+
+                    <ImageView
+                        android:id="@+id/capture_scan_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/scan_new_line" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_blueTooth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_choice"
+                android:layout_margin="@dimen/dp_20"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_blueTooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/backgroud_new"
+                    android:gravity="center"
+                    android:textColor="@color/sing_in_color" />
+
+                <TextView
+                    android:id="@+id/tv_disConnection"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="@string/disconnect"
+                    android:textColor="@color/red_border" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+         

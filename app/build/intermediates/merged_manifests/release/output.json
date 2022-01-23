@@ -1,0 +1,1 @@
+[{"outputType":{"type":"MERGED_MANIFESTS"},"apkData":{"type":"MAIN","splits":[],"versionCode":122,"versionName":"1.2.2","enabled":true,"outputFile":"app-release.apk","fullName":"release","baseName":"release"},"path":"AndroidManifest.xml","properties":{"packageId":"com.bcnetech.hyphoto","split":"","minSdkVersion":"21"}}]

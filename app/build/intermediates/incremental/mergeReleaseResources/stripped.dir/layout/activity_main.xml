@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bcnetech.hyphoto.ui.view.CustomDrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mablum"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/content_rel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <android.support.v4.app.FragmentTabHost
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/ablum_left_img"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginBottom="@dimen/dp_40" />
+        <ImageView
+            android:id="@+id/ablum_right_img"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_40"/>
+
+        <!--<ImageView
+            android:id="@+id/big_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_line"
+            android:visibility="gone"/>-->
+        <ImageView
+            android:id="@+id/bg_blur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/backgroud_translucent"
+            android:visibility="gone"/>
+        <com.bcnetech.hyphoto.ui.view.AlbumViewPager
+            android:id="@+id/big_imgview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_line"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <com.bcnetech.bizcam.ui.view.MainLeftView
+        android:id="@+id/ablum_left_content"
+        android:layout_width="@dimen/dp_568"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:layout_gravity="start"/>
+
+
+
+</com.bcnetech.hyphoto.ui.view.CustomDrawerLayout>
+
+
+
+

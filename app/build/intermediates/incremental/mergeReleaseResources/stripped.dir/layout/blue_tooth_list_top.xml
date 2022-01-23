@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/iv_content"/>
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="173dp"
+        android:layout_margin="@dimen/dp_40"
+        android:background="@drawable/bg">
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="173dp"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
+
+        <com.bcnetech.bcnetechlibrary.view.ListviewWaitView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="173dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/qrcode_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_280"
+        android:background="#1D1E1F"
+
+        android:layout_alignParentBottom="true"
+        >
+        <ImageView
+            android:layout_above="@+id/tv_qr_returun"
+            android:id="@+id/iv_qr_return"
+            android:src="@drawable/close4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_qr_returun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="切换扫码选择"
+            style="@style/FontWhite14"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/register_bg"
+        android:layout_centerVertical="true">
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:src="@drawable/register_bg"-->
+            <!--android:scaleType="fitXY"/>-->
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_close"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_32"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_132"
+            android:text="Final Step..."
+            android:textColor="@color/black"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/tv_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_44"
+            android:text="We have send you a Email,"
+            android:textColor="@color/text_item_child"/>
+
+        <TextView
+            android:id="@+id/tv_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_one"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="Please check"
+            android:textColor="@color/text_item_child"/>
+
+        <TextView
+            android:id="@+id/tv_twoUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_two"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="Please check"
+            android:textColor="@color/text_item_child"
+            android:visibility="gone"/>
+
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:layout_below="@+id/tv_twoUpload"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="123"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_item_child"/>
+
+        <TextView
+            android:id="@+id/tv_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_account"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="To confirm your email address to"
+            android:textColor="@color/text_item_child"/>
+
+        <TextView
+            android:id="@+id/tv_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_three"
+            android:layout_marginLeft="@dimen/dp_62"
+            android:layout_marginTop="@dimen/dp_14"
+            android:text="complete your BCEASY account."
+            android:textColor="@color/text_item_child"/>
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="@dimen/dp_320"
+            android:layout_height="@dimen/dp_100"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_200"
+            android:text="Sign in now"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/main_able_bg"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_36"
+            android:text="@string/to_backup_dialog_message_four"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:visibility="gone"/>
+
+
+        <ImageView
+            android:id="@+id/iv_registerLogo"
+            android:layout_width="@dimen/dp_64"
+            android:layout_height="@dimen/dp_64"
+            android:src="@drawable/register_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/iv_bceasy"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:visibility="gone"/>
+
+
+        <ImageView
+            android:id="@+id/iv_bceasy"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_20"
+            android:src="@drawable/bceasy_logo"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_36"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

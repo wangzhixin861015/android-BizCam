@@ -1,0 +1,2672 @@
+/*
+ * Copyright (C) 2012 CyberAgent
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.bcnetech.bizcamerlibrary.camera.utils;
+
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.ImageFormat;
+import android.graphics.Matrix;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.SurfaceTexture;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraManager;
+import android.hardware.camera2.CameraMetadata;
+import android.hardware.camera2.CaptureRequest;
+import android.hardware.camera2.CaptureResult;
+import android.hardware.camera2.TotalCaptureResult;
+import android.hardware.camera2.params.MeteringRectangle;
+import android.hardware.camera2.params.RggbChannelVector;
+import android.hardware.camera2.params.StreamConfigurationMap;
+import android.media.Image;
+import android.media.ImageReader;
+import android.media.MediaRecorder;
+import android.os.Build;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.text.TextUtils;
+import android.util.Log;
+import android.util.Range;
+import android.util.Size;
+import android.util.SparseIntArray;
+import android.view.Surface;
+import android.view.TextureView;
+
+import com.bcnetech.bcnetechlibrary.bean.CameraParm;
+import com.bcnetech.bcnetechlibrary.bean.CameraParm2;
+import com.bcnetech.bcnetechlibrary.util.LogUtil;
+import com.bcnetech.bizcamerlibrary.camera.CameraTextureView;
+import com.bcnetech.bizcamerlibrary.camera.data.CameraSettings;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.DecodeHintType;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.PlanarYUVLuminanceSource;
+import com.google.zxing.ReaderException;
+import com.google.zxing.Result;
+import com.google.zxing.common.HybridBinarizer;
+import com.google.zxing.qrcode.QRCodeReader;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
+
+import static com.bcnetech.bcnetechlibrary.util.LogUtil.TAG;
+
+@TargetApi(21)
+
+public class Camera2Helper implements CameraHelperObj {
+    private CameraSettings camera_settings;
+    private Activity activity;
+    private CameraDevice mCameraDevice;
+    private ImageReader mImageReader;
+    private TextureView textureView;
+    private String mCameraId;
+    private boolean isinit = false;
+    public static boolean accessGranted = true;
+    private Surface surface;
+
+
+    private int characteristics_sensor_orientation;
+    private boolean characteristics_is_front_facing;
+
+
+    private CameraDataListener cameraDataListener;
+
+    /**
+     * 最大宽高比差
+     */
+    private static final double MAX_ASPECT_DISTORTION = 0;
+
+
+    private int mAfState = CameraMetadata.CONTROL_AF_STATE_INACTIVE;
+
+
+    /**
+     * {@link CameraCharacteristics}
+     * CameraDevice属性描述类
+     */
+    private CameraCharacteristics mCameraCharacteristics;
+    /**
+     * A {@link Semaphore} to prevent the app from exiting before closing the camera.
+     * 防止app在关闭相机之前退出
+     */
+    private Semaphore mCameraOpenCloseLock = new Semaphore(1);
+    /**
+     * 扫描二维码计数
+     */
+    private Semaphore mCapturePicture = new Semaphore(1);
+
+    /**
+     * {@link CaptureRequest.Builder} for the camera preview
+     * CameraRequest和CameraRequest.Builder：当程序调用setRepeatingRequest()方法进行预览时，或调用capture()方法进行拍照时，都需要传入CameraRequest参数。CameraRequest代表了一次捕获请求，用于描述捕获图片的各种参数设置，比如对焦模式、曝光模式……总之，程序需要对照片所做的各种控制，都通过CameraRequest参数进行设置。CameraRequest.Builder则负责生成CameraRequest对象。
+     */
+    private CaptureRequest.Builder mPreviewRequestBuilder;
+    /**
+     * {@link CaptureRequest} generated by {@link #mPreviewRequestBuilder}
+     */
+    private CaptureRequest mPreviewRequest;
+
+    /**
+     * The current state of camera state for taking pictures.
+     */
+    private int mState = STATE_PREVIEW;
+
+
+    /**
+     * A {@link CameraCaptureSession } for camera preview.
+     * 系统向摄像头发送Capture请求，而摄像头会返回CameraMetadata。这一切建立在一个叫作CameraCaptureSession的会话中。
+     */
+    private CameraCaptureSession mCaptureSession;
+    /**
+     * 判断设备是否支持闪光灯
+     */
+    private boolean mFlashSupported;
+
+    /**
+     * Camera state: Showing camera preview.
+     * 相机预览
+     */
+    private static final int STATE_PREVIEW = 0;
+
+    /**
+     * Camera state: Waiting for the focus to be locked.
+     */
+    private static final int STATE_WAITING_LOCK = 1;
+
+    /**
+     * Camera state: Waiting for the exposure to be precapture state.
+     */
+    private static final int STATE_WAITING_PRECAPTURE = 2;
+
+    /**
+     * Camera state: Waiting for the exposure state to be something other than precapture.
+     */
+    private static final int STATE_WAITING_NON_PRECAPTURE = 3;
+
+    /**
+     * Camera state: Picture was taken.
+     */
+    private static final int STATE_PICTURE_TAKEN = 4;
+
+    /**
+     * 开始扫码
+     */
+    private static final int STATE_QR_PREVIEW = 5;
+
+    private static final int STATE_WAITING_AUTOFOCUS = 6;
+
+
+    private int mSensorOrientation;
+    private Size mPreviewSize;
+    private Size recordSize;
+    /**
+     * 设置宽高比
+     */
+    private Size currentPreviewRatio;
+    /**
+     * 设置拍照尺寸
+     */
+    private Size selectPicSize;
+    /**
+     * 设置最小的拍照尺寸（避免320*240的图片出现）
+     */
+    private static final int MINSIZE = 800;
+
+    private static final int MAXSIZE = 3000;
+    /**
+     * 当前设置的拍照大小
+     */
+    private int currentPicSize = SIZEMIDDLE;
+    /**
+     * 当前设置的拍照尺寸
+     */
+    private int currentPicRatio = PREVIEW_43;
+    private TackPhotoCallback mTackPhotoCallback;
+    /**
+     * 拍照完成后生成的bitmap
+     */
+    private Bitmap saveBitmap;
+    /**
+     * 稀疏数组：用来替代hashmap避免造成内存浪费
+     */
+    private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
+
+    private QRRunnable qrRunnable;
+    /**
+     * 当前的相机旋转角度
+     */
+    private int currentRatio = 0;
+
+    /**
+     * 录制视频
+     */
+    // private Camera2RecordModel camera2RecordModel;
+
+    /**
+     * 录制Url
+     */
+    private String recordUrl = "";
+    private boolean isvideo = false;
+
+    private CameraParm cameraParm;
+    private CameraParm2 cameraParm2;
+    private boolean isQRMode = false;
+    private boolean startQR = false;
+
+    /**
+     * 扫描二维码
+     */
+    private QRCodeReader mQrReader;
+    private static final int sImageFormat = ImageFormat.YUV_420_888;
+    private MultiFormatReader mMultiFormatReader;
+    private CameraStateInter cameraStateInter;
+
+    /**
+     * MediaRecorder
+     */
+    private MediaRecorder mMediaRecorder;
+
+    private boolean isRecording = false;
+
+    /**
+     * 视频保存路径
+     */
+    private String mNextVideoAbsolutePath;
+
+    static {
+        ORIENTATIONS.append(Surface.ROTATION_0, 90);
+        ORIENTATIONS.append(Surface.ROTATION_90, 0);
+        ORIENTATIONS.append(Surface.ROTATION_180, 270);
+        ORIENTATIONS.append(Surface.ROTATION_270, 180);
+    }
+
+
+    /**
+     * 捕获图片
+     *
+     * @param mImage
+     */
+    private void Image2Bitmap(final Image mImage) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
+                byte[] bytes = new byte[buffer.remaining()];
+                buffer.get(bytes);
+              /*  byte[] objCbp=new byte[8];
+                objCbp[0]=1;
+                objCbp[1]=0;
+                objCbp[2]=10;
+                objCbp[3]=20;
+                objCbp[4]=30;
+                objCbp[5]=40;
+                objCbp[6]=50;
+                objCbp[7]=60;*/
+
+//               byte[] dstBuf=Process.jpegImwriteDataToBuf(bytes,objImgInfo,objCbp);
+                mTackPhotoCallback.getPhotoByteSuccess(bytes, cameraParm);
+                saveBitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                mImage.close();
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mTackPhotoCallback.getPhotoSuccess(saveBitmap, cameraParm);
+                    }
+                });
+            }
+        }).start();
+    }
+
+    /**
+     * Saves a JPEG {@link Image} into the specified {@link File}.
+     */
+    /* private static class ImageSaver implements Runnable {
+
+     *//**
+     * The JPEG image
+     *//*
+        private final Image mImage;
+        */
+    /**
+     * The file we save the image into.
+     *//*
+        private final File mFile;
+
+
+        public ImageSaver(Image image, File file) {
+            mImage = image;
+            mFile = file;
+        }
+
+
+        @Override
+        public void run() {
+            ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
+            byte[] bytes = new byte[buffer.remaining()];
+            buffer.get(bytes);
+            FileOutputStream output = null;
+            try {
+                output = new FileOutputStream(mFile);
+                output.write(bytes);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                mImage.close();
+                if (null != output) {
+                    try {
+                        output.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }*/
+
+    private boolean isAutoFous = true;
+    private boolean using_android_l;
+
+
+    public Camera2Helper(final Context context, TextureView textureView, int pv, int ps, boolean isflashOn, Size recordSize) {
+        startBackgroundThread();
+        this.activity = (Activity) context;
+        this.textureView = textureView;
+        currentPicSize = ps;
+        currentPicRatio = pv;
+        this.using_android_l = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+        if (currentPicRatio == PREVIEW_169) {
+            isvideo = false;
+            currentPreviewRatio = new Size(PHOTO_WIDTH2_S, PHOTO_HEIGHT2_S);
+
+        } else if (currentPicRatio == PREVIEW_43) {
+            isvideo = false;
+            currentPreviewRatio = new Size(PHOTO_WIDTH_S, PHOTO_HEIGHT_S);
+        } else if (currentPicRatio == PREVIEW_11) {
+            isvideo = false;
+            currentPreviewRatio = new Size(1000, 1000);
+        } else if (currentPicRatio == 0) {
+            //videomode
+            this.recordSize = recordSize;
+            isvideo = true;
+            currentPreviewRatio = recordSize;
+            //prepareRecordModel();
+        }
+        if (textureView.isAvailable()) {
+            openCamera(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight());
+        }
+        camera_settings = CameraSettings.getCameraSettings();
+        camera_settings.misFlashOn = isflashOn;
+    }
+
+    /**
+     * 扫码界面初始化
+     *
+     * @param textureView
+     * @param context
+     */
+    public Camera2Helper(Context context, CameraTextureView textureView) {
+        startBackgroundThread();
+        isQRMode = true;
+        this.textureView = textureView;
+        this.activity = (Activity) context;
+        currentPreviewRatio = new Size(PHOTO_WIDTH_S, PHOTO_HEIGHT_S);
+        if (textureView.isAvailable()) {
+            openCamera(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight());
+        } else {
+            textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() {
+                @Override
+                public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+                    openCamera(width, height);
+                }
+
+                @Override
+                public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+
+                }
+
+                @Override
+                public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+                    return false;
+                }
+
+                @Override
+                public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+
+                }
+            });
+        }
+
+    }
+
+    public Size getmPreviewSize() {
+        if (currentPreviewRatio != null)
+            return currentPreviewRatio;
+        return null;
+    }
+
+    /**
+     * A {@link Handler} for running tasks in the background.
+     */
+    private Handler mBackgroundHandler;
+    /**
+     * An additional thread for running tasks that shouldn't block the UI.
+     */
+    private HandlerThread mBackgroundThread;
+
+    /**
+     * 开启子线程
+     */
+    public void startBackgroundThread() {
+        mBackgroundThread = new HandlerThread("CameraBackground");
+        mBackgroundThread.start();
+        mBackgroundHandler = new Handler(mBackgroundThread.getLooper());
+    }
+
+    /**
+     * 关闭子线程
+     */
+    public void stopBackgroundThread() {
+        if (mBackgroundThread == null)
+            return;
+        mBackgroundThread.quitSafely();
+        try {
+            mBackgroundThread.join();
+            mBackgroundThread = null;
+            mBackgroundHandler = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * onPause 调用方法(在Activity或Fragment生命周期调用)
+     */
+    public void onPause() {
+        closeCamera();
+        stopBackgroundThread();
+    }
+
+    @Override
+    public void onDestroy() {
+       /* if (null != camera_settings) {
+            CameraSettings.onDestroy();
+        }*/
+    }
+
+    @Override
+    public boolean onResume() {
+        if (openCamera(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight())) {
+            startBackgroundThread();
+            return true;
+        } else {
+            return false;
+        }
+      /*  if (textureView.isAvailable()) {
+            openCamera(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight());
+        } else {
+            textureView.setSurfaceTextureListener(mSurfaceTextureListener);
+        }*/
+      /*  if (camera2RecordModel != null)
+            camera2RecordModel.setmVideoSize(recordSize == null ? mPreviewSize : recordSize);*/
+    }
+
+    /*//入口
+    public void setTextureView() {
+        if (textureView.isAvailable()) {
+            openCamera(textureView.getWidth(), textureView.getHeight());
+        } else {
+            textureView.setSurfaceTextureListener(mSurfaceTextureListener);
+        }
+    }*/
+
+    private String QRresult;
+
+    /**
+     * This a callback object for the {@link ImageReader}. "onImageAvailable" will be called when a
+     * still image is ready to be saved.
+     */
+    private ImageReader.OnImageAvailableListener mOnImageAvailableListener
+            = new ImageReader.OnImageAvailableListener() {
+        /**
+         *  当有一张图片可用时会回调此方法，但有一点一定要注意：
+         *  一定要调用 reader.acquireNextImage()和close()方法，否则画面就会卡住
+         **/
+        @Override
+        public void onImageAvailable(final ImageReader reader) {
+            if (!isQRMode) {
+                Image2Bitmap(reader.acquireLatestImage());
+            } else {
+                if (startQR) {
+                    if (qrRunnable == null) {
+                        qrRunnable = new QRRunnable();
+                    }
+                    qrRunnable.mreader = reader;
+
+                    new Thread(qrRunnable).run();
+                }
+            }
+        }
+
+    };
+    //private Rect mcropRect;
+
+    class QRRunnable implements Runnable {
+        public ImageReader mreader;
+
+        @Override
+        public synchronized void run() {
+            LogUtil.d("QRCODE: We Got Lot of Pictures!!!");
+            // getQR(reader);
+            Image image = mreader.acquireLatestImage();
+            if (image == null)
+                return;
+            ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+            int imageWidth = image.getWidth();
+            int imageHeight = image.getHeight();
+            byte[] data = new byte[buffer.remaining()];
+            buffer.get(data);
+            image.close();
+            Result result = decode(imageWidth, imageHeight, data);
+            mCapturePicture.release();
+            if (result != null && !TextUtils.isEmpty(result.getText())) {
+                QRresult = result.getText().toString();
+                startQR = false;
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        getQRInterface.getQR(QRresult);
+                    }
+                });
+            }
+        }
+    }
+
+    public void setCropRect(Rect rect) {
+        //mcropRect = rect;
+    }
+
+    /**
+     * A {@link CameraCaptureSession.CaptureCallback} that handles events related to JPEG capture.
+     */
+    private CameraCaptureSession.CaptureCallback mCaptureCallback
+            = new CameraCaptureSession.CaptureCallback() {
+
+        private void process(CaptureResult result) {
+            switch (mState) {
+                case STATE_PREVIEW: {
+                    break;
+                }
+
+                case STATE_WAITING_LOCK: {
+                    LogUtil.d("process " + "STATE_WAITING_LOCK");
+                    captureStillPicture();
+                   /* Integer afState = result.get(CaptureResult.CONTROL_AF_STATE);
+                    if (afState == null) {
+                        captureStillPicture();
+                    } else if (CaptureResult.CONTROL_AF_STATE_FOCUSED_LOCKED == afState ||
+                            CaptureResult.CONTROL_AF_STATE_NOT_FOCUSED_LOCKED == afState) {
+                        // CONTROL_AE_STATE can be null on some devices
+                        Integer aeState = result.get(CaptureResult.CONTROL_AE_STATE);
+                        if (aeState == null ||
+                                aeState == CaptureResult.CONTROL_AE_STATE_CONVERGED) {
+                            captureStillPicture();
+                        } else {
+                            runPrecaptureSequence();
+                        }
+                    } else if (CaptureResult.CONTROL_AF_MODE_OFF == afState) {
+                        captureStillPicture();
+                    }
+//                    captureStillPicture();*/
+                    break;
+                }
+                case STATE_WAITING_PRECAPTURE: {
+                    LogUtil.d("process " + "STATE_WAITING_PRECAPTURE");
+                    // CONTROL_AE_STATE can be null on some devices
+                    Integer aeState = result.get(CaptureResult.CONTROL_AE_STATE);
+                    if (aeState == null ||
+                            aeState == CaptureResult.CONTROL_AE_STATE_PRECAPTURE ||
+                            aeState == CaptureRequest.CONTROL_AE_STATE_FLASH_REQUIRED) {
+                        mState = STATE_WAITING_NON_PRECAPTURE;
+                    }
+                    break;
+                }
+                case STATE_WAITING_NON_PRECAPTURE: {
+                    LogUtil.d("process " + "STATE_WAITING_NON_PRECAPTURE");
+                    // CONTROL_AE_STATE can be null on some devices
+                    Integer aeState = result.get(CaptureResult.CONTROL_AE_STATE);
+                    if (aeState == null || aeState != CaptureResult.CONTROL_AE_STATE_PRECAPTURE) {
+                        captureStillPicture();
+                    }
+                    break;
+                }
+                case STATE_WAITING_AUTOFOCUS: {
+
+                    Integer afState = result.get(CaptureResult.CONTROL_AF_STATE);
+                    //获取失败
+                    if (afState == null) {
+                        return;
+                    }
+                    //这次的值与之前的一样，忽略掉
+                    if (afState.intValue() == mAfState) {
+                        return;
+                    }
+                    mAfState = afState.intValue();
+
+
+                    if (CaptureResult.CONTROL_AF_STATE_FOCUSED_LOCKED == afState ||
+                            CaptureResult.CONTROL_AF_STATE_NOT_FOCUSED_LOCKED == afState) {
+                        mState = STATE_PREVIEW;
+//                        cancelAutoFocus();
+//                        startNormalPreview();
+                        /*reset_continuous_focus_runnable = new Runnable() {
+                            @Override
+                            public void run() {
+                                reset_continuous_focus_runnable = null;
+                                cancelAutoFocus();
+                                startNormalPreview();
+                            }
+                        };
+                        reset_continuous_focus_handler.postDelayed(reset_continuous_focus_runnable, 3000);*/
+                    }
+                }
+            }
+
+
+        }
+
+        @Override
+        public void onCaptureProgressed(@NonNull CameraCaptureSession session,
+                                        @NonNull CaptureRequest request,
+                                        @NonNull CaptureResult partialResult) {
+            mCaptureSession = session;
+            if (isQRMode) {
+                QRprocess(partialResult);
+            } else {
+                process(partialResult);
+            }
+        }
+
+        @Override
+        public void onCaptureCompleted(@NonNull CameraCaptureSession session,
+                                       @NonNull CaptureRequest request,
+                                       @NonNull TotalCaptureResult result) {
+            mCaptureSession = session;
+            if (isQRMode) {
+                QRprocess(result);
+            } else {
+                process(result);
+                getCameraData(result);
+            }
+//            updatePreview();
+        }
+
+    };
+
+    private Runnable reset_continuous_focus_runnable;
+    private final Handler reset_continuous_focus_handler = new Handler();
+
+    ////关闭时线程仍未关闭
+    private void startNormalPreview() {
+        if (mCaptureSession == null)
+            return;
+        // Auto focus should be continuous for camera preview.
+        mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+
+//        mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON);
+
+        mPreviewRequest = mPreviewRequestBuilder.build();
+        try {
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+//            Log.e(TAG, "setRepeatingRequest failed, errMsg: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Run the precapture sequence for capturing a still image. This method should be called when
+     * we get a response in {@link #mCaptureCallback} from {@link #lockFocus()}.
+     */
+    private void runPrecaptureSequence() {
+        try {
+            // This is how to tell the camera to trigger.
+            mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_PRECAPTURE_TRIGGER,
+                    CaptureRequest.CONTROL_AE_PRECAPTURE_TRIGGER_START);
+            // Tell #mCaptureCallback to wait for the precapture sequence to be set.
+            mState = STATE_WAITING_PRECAPTURE;
+            mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
+                    mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //base on Nexcus 6P:[0,10],对焦焦距
+    private float valueAF = 0.0f;
+    //base on Nexcus 6P:[12,-12],曝光量
+    private int valueAE = 0;
+    //base on Nexcus 6P:[234324552,9516],曝光时间
+    private long valueAETime = (234324552 - 9516) / 2;
+    private int valueWB = -1;
+    //base on Nexcus 6P:[60,7656],iso
+    private int valueISO = 1000;
+
+    /**
+     * 开始拍照
+     * Capture a still picture. This method should be called when we get a response in
+     */
+    private void captureStillPicture() {
+        try {
+
+            if (null == activity || null == mCameraDevice) {
+                return;
+            }
+            mState = STATE_PICTURE_TAKEN;
+// This is the CaptureRequest.Builder that we use to take a picture.
+            final CaptureRequest.Builder captureBuilder =
+                    mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
+            //将imageReader的surface作为CaptureRequest.Builder的目标
+            if (!camera_settings.misAutoCamera) {
+                previewBuilder2CaptureBuilder(captureBuilder);
+            } else {
+                captureBuilder.set(CaptureRequest.CONTROL_AF_MODE,
+                        CaptureRequest.CONTROL_AF_MODE_AUTO);
+            }
+            captureBuilder.addTarget(mImageReader.getSurface());
+
+            // Use the same AE and AF modes as the preview.
+            // 设置自动对焦模式
+           /* captureBuilder.set(CaptureRequest.CONTROL_AF_MODE,
+                    CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+            setAutoFlash(captureBuilder);*/
+
+            // Orientation 根据设备方向计算设置照片的方向
+            int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
+            captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, getOrientation(rotation));
+
+            CameraCaptureSession.CaptureCallback CaptureCallback
+                    = new CameraCaptureSession.CaptureCallback() {
+
+                @Override
+                public void onCaptureCompleted(@NonNull CameraCaptureSession session,
+                                               @NonNull CaptureRequest request,
+                                               @NonNull TotalCaptureResult result) {
+
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //mTackPhotoCallback.getPhotoSuccess(saveBitmap);
+                            // mTackPhotoCallback.tackPhotoSuccess(mFile.toString());
+                        }
+                    });
+//                    if (camera_settings.misAutoCamera)
+//                    unlockFocus();
+                }
+            };
+            // 停止连续取景
+            // mCaptureSession.stopRepeating();
+            // 捕获静态图像
+
+            // mCaptureSession.capture(mPreviewRequest,mCaptureCallback,mBackgroundHandler);
+            mCaptureSession.capture(captureBuilder.build(), CaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void previewBuilder2CaptureBuilder(CaptureRequest.Builder mCaptureBuilder) {
+        if (mPreviewRequestBuilder == null)
+            return;
+        //AWB
+        mCaptureBuilder.set(CaptureRequest.CONTROL_AWB_MODE, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AWB_MODE));
+        //AE
+        mCaptureBuilder.set(CaptureRequest.CONTROL_AE_MODE, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AE_MODE));
+        //曝光时间
+        mCaptureBuilder.set(CaptureRequest.SENSOR_EXPOSURE_TIME, mPreviewRequestBuilder.get(CaptureRequest.SENSOR_EXPOSURE_TIME));
+        //        } else if (mPreviewBuilder.get(CaptureRequest.CONTROL_AE_MODE) == CameraMetadata.CONTROL_AE_MODE_ON) {
+        //曝光增益
+        mCaptureBuilder.set(CaptureRequest.CONTROL_AE_EXPOSURE_COMPENSATION, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AE_EXPOSURE_COMPENSATION));
+        //白平衡
+        mCaptureBuilder.set(CaptureRequest.COLOR_CORRECTION_MODE, mPreviewRequestBuilder.get(CaptureRequest.COLOR_CORRECTION_MODE));
+        mCaptureBuilder.set(CaptureRequest.COLOR_CORRECTION_GAINS, mPreviewRequestBuilder.get(CaptureRequest.COLOR_CORRECTION_GAINS));
+        //AF
+//        if (mPreviewBuilder.get(CaptureRequest.CONTROL_AF_MODE) == CameraMetadata.CONTROL_AF_MODE_OFF) {
+        //手动聚焦的值
+        mCaptureBuilder.set(CaptureRequest.LENS_FOCUS_DISTANCE, mPreviewRequestBuilder.get(CaptureRequest.LENS_FOCUS_DISTANCE));
+//        }
+        //effects
+        mCaptureBuilder.set(CaptureRequest.CONTROL_EFFECT_MODE, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_EFFECT_MODE));
+        //ISO
+        mCaptureBuilder.set(CaptureRequest.SENSOR_SENSITIVITY, mPreviewRequestBuilder.get(CaptureRequest.SENSOR_SENSITIVITY));
+        //AF REGIONS
+        mCaptureBuilder.set(CaptureRequest.CONTROL_AF_REGIONS, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AF_REGIONS));
+//        mCaptureBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_START);
+        //AE REGIONS
+        mCaptureBuilder.set(CaptureRequest.CONTROL_AE_REGIONS, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AE_REGIONS));
+//        mCaptureBuilder.set(CaptureRequest.CONTROL_AE_PRECAPTURE_TRIGGER, CameraMetadata.CONTROL_AE_PRECAPTURE_TRIGGER_START);
+        //SCENSE
+        mCaptureBuilder.set(CaptureRequest.CONTROL_SCENE_MODE, mPreviewRequestBuilder.get(CaptureRequest.CONTROL_SCENE_MODE));
+        //zoom
+        mCaptureBuilder.set(CaptureRequest.SCALER_CROP_REGION, mPreviewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION));
+    }
+
+    private int getOrientation(int rotation) {
+        // Sensor orientation is 90 for most devices, or 270 for some devices (eg. Nexus 5X)
+        // We have to take that into account and rotate JPEG properly.
+        // For devices with orientation of 90, we simply return our mapping from ORIENTATIONS.
+        // For devices with orientation of 270, we need to rotate the JPEG 180 degrees.
+        return (ORIENTATIONS.get(rotation) + mSensorOrientation + 270) % 360;
+    }
+
+    //设置自动闪光
+    private void setAutoFlash(CaptureRequest.Builder requestBuilder) {
+        if (mFlashSupported) {
+            requestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
+                    CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
+        }
+    }
+
+    /**
+     * Unlock the focus. This method should be called when still image capture sequence is
+     * finished.
+     */
+    private void unlockFocus() {
+        if (mCaptureSession == null)
+            return;
+        try {
+            // Reset the auto-focus trigger
+            mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
+                    CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+            //setAutoFlash(mPreviewRequestBuilder);
+            mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
+                    mBackgroundHandler);
+            // After this, the camera will go back to the normal state of preview.
+            mState = STATE_PREVIEW;
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback,
+                    mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Lock the focus as the first step for a still image capture.
+     * 锁定焦距
+     */
+    private void lockFocus() {
+        if (mCaptureSession == null)
+            return;
+        try {
+            // This is how to tell the camera to lock focus.
+//            mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
+//                    CameraMetadata.CONTROL_AF_MODE_AUTO);
+            // Tell #mCaptureCallback to wait for the lock.
+            mState = STATE_WAITING_LOCK;
+            mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
+                    mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Initiate a still image capture.
+     */
+    public void takePicture(TackPhotoCallback tackPhotoCallback) {
+        this.mTackPhotoCallback = tackPhotoCallback;
+        lockFocus();
+    }
+
+
+   /* public interface TackPhotoCallback {
+        void tackPhotoSuccess(String photoPath);
+
+        void getPhotoSuccess(Bitmap bitmap, CameraParm cameraParm);
+
+        void tackPhotoError(Exception e);
+    }*/
+
+
+    /**
+     * 开启指定相机
+     */
+    private boolean openCamera(int width, int height) {
+        setUpCameraOutputs(width, height);
+        configureTransform(width, height);
+
+        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            if (!mCameraOpenCloseLock.tryAcquire(3000, TimeUnit.MILLISECONDS)) {
+                throw new RuntimeException("Time out waiting to lock camera opening.");
+            }
+            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return false;
+            }
+            manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
+            return true;
+            // camera2RecordModel = new Camera2RecordModel(mBackgroundHandler, activity, textureView);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+            return false;
+        } catch (InterruptedException e) {
+            return false;
+            //throw new RuntimeException("Interrupted while trying to lock camera opening.", e);
+        }
+    }
+
+    /**
+     * 对预览图片的大小和方向做了适配
+     *
+     * @param viewWidth
+     * @param viewHeight
+     */
+    private void configureTransform(int viewWidth, int viewHeight) {
+
+        if (null == mPreviewSize || null == activity) {
+            return;
+        }
+        int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
+        Matrix matrix = new Matrix();
+        RectF viewRect = new RectF(0, 0, viewWidth, viewHeight);
+        RectF bufferRect = new RectF(0, 0, mPreviewSize.getHeight(), mPreviewSize.getWidth());
+        float centerX = viewRect.centerX();
+        float centerY = viewRect.centerY();
+        if (Surface.ROTATION_90 == rotation || Surface.ROTATION_270 == rotation) {
+            bufferRect.offset(centerX - bufferRect.centerX(), centerY - bufferRect.centerY());
+            matrix.setRectToRect(viewRect, bufferRect, Matrix.ScaleToFit.FILL);
+            float scale = Math.max(
+                    (float) viewHeight / mPreviewSize.getHeight(),
+                    (float) viewWidth / mPreviewSize.getWidth());
+            matrix.postScale(scale, scale, centerX, centerY);
+            matrix.postRotate(90 * (rotation - 2), centerX, centerY);
+        } else if (Surface.ROTATION_180 == rotation) {
+            matrix.postRotate(180, centerX, centerY);
+        }
+        textureView.setTransform(matrix);
+        isinit = true;
+    }
+
+
+    /**
+     * Closes the current {@link CameraDevice}.
+     * 关闭相机
+     */
+    public void closeCamera() {
+        try {
+            if (isQRMode) {
+                mCapturePicture.acquire();
+                // isQRMode = false;
+                startQR = false;
+            }
+            if (null != mCaptureSession) {
+                mCaptureSession.close();
+                mCaptureSession = null;
+            }
+
+            if (null != mCameraDevice) {
+                mCameraDevice.close();
+                mCameraDevice = null;
+            }
+            if (null != mImageReader) {
+                mImageReader.close();
+                mImageReader = null;
+            }
+
+            if (null != mImageReader) {
+                mMediaRecorder.stop();
+                mMediaRecorder.reset();
+                mMediaRecorder.release();
+                mMediaRecorder = null;
+            }
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Interrupted while trying to lock camera closing.", e);
+        } finally {
+            mCameraOpenCloseLock.release();
+            mCapturePicture.release();
+        }
+        isinit = false;
+    }
+
+    /**
+     * 状态回调
+     * {@link CameraDevice.StateCallback} is called when {@link CameraDevice} changes its state.
+     */
+    private final CameraDevice.StateCallback mStateCallback = new CameraDevice.StateCallback() {
+
+        @Override
+        //打开
+        public void onOpened(@NonNull CameraDevice cameraDevice) {
+            //开启相机
+            // This method is called when the camera is opened.  We start camera preview here.
+            mCameraOpenCloseLock.release();
+            mCameraDevice = cameraDevice;
+
+
+            characteristics_sensor_orientation = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
+            characteristics_is_front_facing = mCameraCharacteristics.get(CameraCharacteristics.LENS_FACING) == CameraCharacteristics.LENS_FACING_FRONT;
+
+            if (mPreviewSize != null) {
+               /* if (isvideo) {
+                    createCameraVideoSession();
+                } else {
+                    createCameraPreviewSession();
+                }*/
+                createCameraPreviewSession();
+            }
+            // createCameraPreviewSession();
+        }
+
+        @Override
+        //失去链接
+        public void onDisconnected(@NonNull CameraDevice cameraDevice) {
+            mCameraOpenCloseLock.release();
+            cameraDevice.close();
+            mCameraDevice = null;
+        }
+
+        @Override
+        //错误
+        public void onError(@NonNull CameraDevice cameraDevice, int error) {
+            mCameraOpenCloseLock.release();
+            cameraDevice.close();
+            mCameraDevice = null;
+            if (null != activity) {
+                activity.finish();
+            }
+        }
+    };
+
+    // private File mFile;
+    private void initPreviewBuilder() {
+        mPreviewRequestBuilder.set(CaptureRequest.CONTROL_MODE, CameraMetadata.CONTROL_MODE_OFF);
+
+        mPreviewRequestBuilder.set(CaptureRequest.LENS_FOCUS_DISTANCE, valueAF);
+        mPreviewRequestBuilder.set(CaptureRequest.SENSOR_EXPOSURE_TIME, valueAETime);
+        mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_EXPOSURE_COMPENSATION, valueAE);
+        mPreviewRequestBuilder.set(CaptureRequest.SENSOR_SENSITIVITY, valueISO);
+    }
+
+    public void stopPreView() {
+        if (mCaptureSession == null)
+            return;
+        try {
+            mCaptureSession.stopRepeating();
+            mPreviewRequestBuilder.removeTarget(surface);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Creates a new {@link CameraCaptureSession} for camera preview.
+     * 首先通过TextureView的getSurfaceTexture() 拿到 对应 SurfaceTexture 是不是SurfaceView的getSurfaceHolder()很像
+     * 设置显示大小，创建Surface实例
+     * 之后，调用 CameraDevice createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW) 创建预览请求
+     * 并设置target, CaptureRequest.Builder addTarget(Surface surface)
+     * 然后调用CameraDevice createCaptureSession()，创建一个相机回话
+     * 建立预览
+     */
+    /**
+     * Creates a new {@link CameraCaptureSession} for camera preview.
+     */
+    private void createCameraPreviewSession() {
+        try {
+
+            SurfaceTexture texture = textureView.getSurfaceTexture();
+            assert texture != null;
+            // We configure the size of default buffer to be the size of camera preview we want.
+            texture.setDefaultBufferSize(mPreviewSize.getWidth(), mPreviewSize.getHeight());
+
+            // This is the output Surface we need to start preview.
+
+            surface = new Surface(texture);
+
+            // We set up a CaptureRequest.Builder with the output Surface. 创建作为预览的CaptureRequest.Builder
+            mPreviewRequestBuilder
+                    = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW);
+            if (isQRMode) {
+                if (mQrReader == null)
+                    mQrReader = new QRCodeReader();
+               /* Surface mImageSurface = mImageReader.getSurface();
+                mPreviewRequestBuilder.addTarget(mImageSurface);*/
+            }
+            // 将textureView的surface作为CaptureRequest.Builder的目标
+            mPreviewRequestBuilder.addTarget(surface);
+            //initPreviewBuilder();
+            // Here, we create a CameraCaptureSession for camera preview. 该对象负责管理处理预览请求和拍照请求
+            mCameraDevice.createCaptureSession(Arrays.asList(surface, mImageReader.getSurface()),
+                    new CameraCaptureSession.StateCallback() {
+
+                        @Override
+                        public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
+                            // The camera is already closed
+                            if (null == mCameraDevice) {
+                                return;
+                            }
+
+                            // When the session is ready, we start displaying the preview.
+                            mCaptureSession = cameraCaptureSession;
+                            try {
+                                // Auto focus should be continuous for camera preview. 设置自动对焦模式
+                                if (null != camera_settings && !isQRMode) {
+                                    //专业模式
+                                    if (camera_settings.misAutoCamera == false) {
+                                        restoreCameraParam();
+                                    }
+                                    if (camera_settings.misFlashOn) {
+                                        camera_settings.setFlash(mPreviewRequestBuilder);
+                                    }
+                                    camera_settings.setAe(mPreviewRequestBuilder);
+                                } else {
+                                    mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
+                                            CaptureRequest.CONTROL_AF_MODE_AUTO);
+                                }
+                                mPreviewRequest = mPreviewRequestBuilder.build();
+
+                                // 设置预览时连续捕获图像数据
+                                mCaptureSession.setRepeatingRequest(mPreviewRequest,
+                                        mCaptureCallback, mBackgroundHandler);
+                                cameraStateInter.onOpened();
+                            } catch (CameraAccessException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onConfigureFailed(
+                                @NonNull CameraCaptureSession cameraCaptureSession) {
+                        }
+                    }, null
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*private CameraCaptureSession.StateCallback mSessionCaptureCallback = new CameraCaptureSession.StateCallback() {
+        @Override
+        public void onConfigured(CameraCaptureSession session) {
+            Log.d("linc", "mSessionPreviewStateCallback onConfigured");
+            mCaptureSession = session;
+            try {
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
+                        CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
+                        CaptureRequest.CONTROL_AE_MODE_ON);
+                session.setRepeatingRequest(mPreviewRequestBuilder.build(), mCaptureCallback, mBackgroundHandler);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+                Log.e("linc", "set preview builder failed." + e.getMessage());
+            }
+        }
+
+        @Override
+        public void onConfigureFailed(CameraCaptureSession session) {
+
+        }
+    };*/
+
+
+    /**
+     * 设置预览分辨率及其拍照尺寸
+     *
+     * @param width  The width of available size for camera preview
+     * @param height The height of available size for camera preview
+     */
+    private void setUpCameraOutputs(int width, int height) {
+        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            for (String cameraId : manager.getCameraIdList()) {
+                // 获取指定摄像头的特性
+                mCameraCharacteristics
+                        = manager.getCameraCharacteristics(cameraId);
+
+                // We don't use a front facing camera in this sample.
+                Integer facing = mCameraCharacteristics.get(CameraCharacteristics.LENS_FACING);
+                if (facing != null && facing == CameraCharacteristics.LENS_FACING_FRONT) {
+                    continue;
+                }
+
+                // 获取摄像头支持的配置属性
+                StreamConfigurationMap map = mCameraCharacteristics.get(
+                        CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+                if (map == null) {
+                    continue;
+                }
+                ArrayList outputList = new ArrayList(Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)));
+                currentPreviewRatio = caclulateSupportPictureSize(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight(), outputList);
+                if (currentPreviewRatio == null) {
+                    //采用支持的最大分辨率拍摄图片
+                    Size largest = Collections.max(
+                            Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)),
+                            new CompareSizesByArea());
+                    currentPreviewRatio = largest;
+                }
+                // 创建一个ImageReader对象，用于获取摄像头的图像数据
+                LogUtil.d("SelectPictureSize: " + currentPreviewRatio.getWidth() + " " + currentPreviewRatio.getHeight());
+                if (isQRMode) {
+                    mImageReader = ImageReader.newInstance(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight(), sImageFormat, /*maxImages*/2);
+                    startQR = true;
+                } else {
+                    startQR = false;
+                    mImageReader = ImageReader.newInstance(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight(), ImageFormat.JPEG, /*maxImages*/2);
+                }
+                mImageReader.setOnImageAvailableListener(
+                        mOnImageAvailableListener, mBackgroundHandler);
+
+                // Find out if we need to swap dimension to get the preview size relative to sensor coordinate.
+                int displayRotation = activity.getWindowManager().getDefaultDisplay().getRotation();
+                //no inspection ConstantConditions
+                mSensorOrientation = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
+                boolean swappedDimensions = false;
+                switch (displayRotation) {
+                    case Surface.ROTATION_0:
+                    case Surface.ROTATION_180:
+                        if (mSensorOrientation == 90 || mSensorOrientation == 270) {
+                            swappedDimensions = true;
+                        }
+                        break;
+                    case Surface.ROTATION_90:
+                    case Surface.ROTATION_270:
+                        if (mSensorOrientation == 0 || mSensorOrientation == 180) {
+                            swappedDimensions = true;
+                        }
+                        break;
+                    default:
+
+                }
+
+                /**
+                 * 获取屏幕分辨率（支持的最大预览分辨率）
+                 */
+                Point displaySize = new Point();
+                activity.getWindowManager().getDefaultDisplay().getSize(displaySize);
+                int rotatedPreviewWidth = width;
+                int rotatedPreviewHeight = height;
+                int maxPreviewWidth = displaySize.x;
+                int maxPreviewHeight = displaySize.y;
+                /**
+                 * 判断相机方向
+                 */
+                if (swappedDimensions) {
+                    rotatedPreviewWidth = height;
+                    rotatedPreviewHeight = width;
+                    maxPreviewWidth = displaySize.y;
+                    maxPreviewHeight = displaySize.x;
+                }
+
+
+                // Danger, W.R.! Attempting to use too large a preview size could  exceed the camera
+                // bus' bandwidth limitation, resulting in gorgeous previews but the storage of
+                // garbage capture data.   获取最佳的预览尺寸
+                mPreviewSize = chooseOptimalSize(map.getOutputSizes(SurfaceTexture.class),
+                        rotatedPreviewWidth, rotatedPreviewHeight, currentPreviewRatio);
+                LogUtil.d("Select Preview Size: " + mPreviewSize.toString());
+                // We fit the aspect ratio of TextureView to the size of preview we picked.
+                //根据选中的预览尺寸来调整预览组件（TextureView）的长宽比
+               /* int orientation = textureView.getResources().getConfiguration().orientation;
+                if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    textureView.setAspectRatio(
+                            mPreviewSize.getWidth(), mPreviewSize.getHeight());
+                } else {
+                    textureView.setAspectRatio(
+                            mPreviewSize.getHeight(), mPreviewSize.getWidth());
+                }*/
+
+                // Check if the flash is supported.
+                Boolean available = mCameraCharacteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
+                mFlashSupported = available == null ? false : available;
+
+                mCameraId = cameraId;
+                return;
+            }
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            // Currently an NPE is thrown when the Camera2API is used but not supported on the
+            // device this code runs.
+        }
+    }
+
+    private ArrayList<Size> preList;
+    private ArrayList<Size> supportAllSizeList;
+
+    /**
+     * 通过传入的宽高过滤支持的拍照尺寸和预览尺寸
+     *
+     * @param screenWidth
+     * @param screenHeight
+     * @param sizelist
+     */
+    private Size caclulateSupportPictureSize(int screenWidth, int screenHeight, ArrayList<Size> sizelist) {
+        int w = Math.max(screenWidth, screenHeight);
+        int h = Math.min(screenWidth, screenHeight);
+        screenWidth = w;
+        screenHeight = h;
+        final int allPix = screenWidth * screenHeight;
+        // 排序
+        Collections.sort(sizelist, new Comparator<Size>() {
+            @Override
+            public int compare(Size a, Size b) {
+                int aPixels = a.getHeight() * a.getWidth();
+                int bPixels = b.getHeight() * b.getWidth();
+                if (aPixels >= allPix && bPixels >= allPix) {
+                    if (bPixels > aPixels) {
+                        return -1;
+                    }
+                    if (bPixels < aPixels) {
+                        return 1;
+                    }
+                    return 0;
+                } else if (aPixels < allPix && bPixels < allPix) {
+                    if (bPixels < aPixels) {
+                        return -1;
+                    }
+                    if (bPixels > aPixels) {
+                        return 1;
+                    }
+                    return 0;
+                } else {
+                    if (bPixels < aPixels) {
+                        return -1;
+                    }
+                    if (bPixels > aPixels) {
+                        return 1;
+                    }
+                    return 0;
+                }
+
+            }
+        });
+        if (this.supportAllSizeList == null)
+            this.supportAllSizeList = new ArrayList<>(sizelist);
+        for (int i = 0; i < sizelist.size(); i++) {
+            LogUtil.d("previewAllSizes: " + sizelist.get(i).getWidth() + "x" + sizelist.get(i).getHeight());
+        }
+
+        // 移除不符合条件的分辨率
+        double screenAspectRatio = screenHeight
+                / (double) screenWidth;
+        Iterator<Size> it = sizelist.iterator();
+        while (it.hasNext()) {
+            Size supportedPreviewResolution = it.next();
+            int width = supportedPreviewResolution.getWidth();
+            int height = supportedPreviewResolution.getHeight();
+            // 在camera分辨率与屏幕分辨率宽高比不相等的情况下，找出差距最小的一组分辨率
+            // 由于camera的分辨率是width>height，我们设置的portrait模式中，width<height
+            // 因此这里要先交换然后在比较宽高比
+             /*boolean isCandidatePortrait = width > height;
+           int maybeFlippedWidth = isCandidatePortrait ? height : width;
+            int maybeFlippedHeight = isCandidatePortrait ? width : height;
+            double aspectRatio = (double) maybeFlippedWidth / (double) maybeFlippedHeight;*/
+            double aspectRatio = (double) height / (double) width;
+            double distortion = Math.abs(aspectRatio - screenAspectRatio);
+            if (width < MINSIZE && height < MINSIZE || distortion > MAX_ASPECT_DISTORTION) {
+                it.remove();
+            }
+        }
+        Collections.sort(sizelist, new Comparator<Size>() {
+            @Override
+            public int compare(Size a, Size b) {
+                int aPixels = a.getHeight() * a.getWidth();
+                int bPixels = b.getHeight() * b.getWidth();
+                if (bPixels < aPixels) {
+                    return -1;
+                }
+                if (bPixels > aPixels) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
+        this.preList = sizelist;
+        LogUtil.d("previewSupportedSizes : " + sizelist.toString());
+        if (null != cameraDataListener) {
+            cameraDataListener.getPreSize(sizelist);
+        }
+        if (currentPicSize == SIZELARGE) {
+            return sizelist.get(0);
+        } else if (currentPicSize == SIZESMALL) {
+            return sizelist.get(sizelist.size() - 1);
+        } else {
+            return sizelist.get((int) sizelist.size() / 2);
+        }
+        //return selectPicSize;
+       /* for (int i = 0; i < sizelist.size(); i++) {
+            // 找到与屏幕分辨率完全匹配的预览界面分辨率直接返回
+            if (sizelist.get(i).getWidth() == screenWidth
+                    && sizelist.get(i).getHeight() == screenHeight) {
+                return sizelist.get(i);
+            }
+        }*/
+
+        // 如果没有找到合适的，并且还有候选的像素，对于照片，则取其中最大比例的，而不是选择与屏幕分辨率相同的
+       /* if (!sizelist.isEmpty()) {
+            return sizelist.get(0);
+        }*/
+
+        // 没有找到合适的，就返回默认的
+        // return new Size(720, 1280);
+    }
+
+    @Override
+    public void setMPreViewSize(String preViewSize, String pictureSize) {
+        if (!isinit)
+            return;
+        int pv = Integer.parseInt(preViewSize);
+        int ps = Integer.parseInt(pictureSize);
+        StreamConfigurationMap map = mCameraCharacteristics.get(
+                CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+        if (map == null) {
+            return;
+        }
+        if (currentPicRatio == pv && currentPicSize == ps) {
+            return;
+        }
+        currentPicRatio = pv;
+        currentPicSize = ps;
+
+        if (pv == PREVIEW_169) {
+            currentPreviewRatio = new Size(PHOTO_WIDTH2_S, PHOTO_HEIGHT2_S);
+
+        } else if (pv == PREVIEW_43) {
+            currentPreviewRatio = new Size(PHOTO_WIDTH_S, PHOTO_HEIGHT_S);
+        }
+        // currentPreviewRatio = caclulateSupportPictureSize(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight(), outputList);
+        setUpCameraOutputs(currentPreviewRatio.getWidth(), currentPreviewRatio.getHeight());
+        createCameraPreviewSession();
+    }
+
+    /**
+     * 筛选合适的预览尺寸
+     * Given {@code choices} of {@code Size}s supported by a camera, choose the smallest one that
+     * is at least as large as the respective texture view size, and that is at most as large as the
+     * respective max size, and whose aspect ratio matches with the specified value. If such size
+     * doesn't exist, choose the largest one that is at most as large as the respective max size,
+     * and whose aspect ratio matches with the specified value.
+     *
+     * @param choices           The list of sizes that the camera supports for the intended output
+     *                          class
+     * @param textureViewWidth  The width of the texture view relative to sensor coordinate
+     * @param textureViewHeight The height of the texture view relative to sensor coordinate
+     * @param aspectRatio       The aspect ratio
+     * @return The optimal {@code Size}, or an arbitrary one if none were big enough
+     */
+    private static Size chooseOptimalSize(Size[] choices, int textureViewWidth,
+                                          int textureViewHeight, Size aspectRatio) {
+
+        // Collect the supported resolutions that are at least as big as the preview Surface
+        List<Size> bigEnough = new ArrayList<>();
+        // Collect the supported resolutions that are smaller than the preview Surface
+        List<Size> notBigEnough = new ArrayList<>();
+        int w = aspectRatio.getWidth();
+        int h = aspectRatio.getHeight();
+        for (Size option : choices) {
+            if (option.getWidth() <= MAXSIZE && option.getHeight() <= MAXSIZE &&
+                    option.getHeight() == option.getWidth() * h / w) {
+                if (option.getWidth() >= textureViewWidth &&
+                        option.getHeight() >= textureViewHeight) {
+                    bigEnough.add(option);
+                } else {
+                    notBigEnough.add(option);
+                }
+            }
+        }
+
+        // Pick the smallest of those big enough. If there is no one big enough, pick the
+        // largest of those not big enough.
+        if (bigEnough.size() > 0) {
+            return Collections.min(bigEnough, new CompareSizesByArea());
+        } else if (notBigEnough.size() > 0) {
+            return Collections.max(notBigEnough, new CompareSizesByArea());
+        } else {
+            return choices[0];
+        }
+    }
+
+    /**
+     * Compares two {@code Size}s based on their areas.
+     */
+    static class CompareSizesByArea implements Comparator<Size> {
+
+        @Override
+        public int compare(Size lhs, Size rhs) {
+            // We cast here to ensure the multiplications won't overflow
+            //这个函数作用就是返回参数i的符号，如果返回-1则是负数，如果返回0则是0，如果返回1则是正数。
+            return Long.signum((long) lhs.getWidth() * lhs.getHeight() -
+                    (long) rhs.getWidth() * rhs.getHeight());
+        }
+
+    }
+
+    /**
+     * 参数设置
+     */
+   /* private int isoValue = 0;//iso值
+    private float focusValue = 0.0f;//焦距
+    private int wbValue = 0;//白平衡值
+    private long secValue = 0;//曝光时间*/
+
+    //设置相机iso
+    public void setIso(int iso) {
+
+        Range<Integer> iso_range = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE);
+        //获取iso范围:Nexus 5为例:100---10000,此处最小取100,最大取3200
+        int max = iso_range.getUpper();
+        int min = iso_range.getLower();
+        LogUtil.d("camera_iso_range: " + min + " " + max + " " + iso);
+
+        iso_range = new Range<>(min, max);
+        //开启自动模式
+
+        if (iso_range.contains(iso)) {
+            camera_settings.iso = iso;
+            camera_settings.setIso(mPreviewRequestBuilder);
+        }
+
+        try {
+            mPreviewRequest = mPreviewRequestBuilder.build();
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void setFocusDistance(boolean isAutoFocus, float focus_distance) {
+        camera_settings.misAutoFocus = isAutoFocus;
+        if (isAutoFocus) {
+            int focus_mode = CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE;
+            //mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, focus_mode);
+            camera_settings.has_af_mode = true;
+            camera_settings.af_mode = focus_mode;
+            camera_settings.setFocusMode(mPreviewRequestBuilder);
+            try {
+                mPreviewRequest = mPreviewRequestBuilder.build();
+                mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+        } else {
+            float min_distance = mCameraCharacteristics.get(CameraCharacteristics.LENS_INFO_MINIMUM_FOCUS_DISTANCE);
+
+            if (focus_distance < 0.0f)
+                focus_distance = 0.0f;
+            else if (focus_distance > min_distance)
+                focus_distance = min_distance;
+            int focus_mode = CaptureRequest.CONTROL_AF_MODE_OFF;
+            camera_settings.focus_distance = focus_distance;
+
+            camera_settings.has_af_mode = true;
+            camera_settings.af_mode = focus_mode;
+            camera_settings.setFocusDistance(mPreviewRequestBuilder);
+            try {
+                mPreviewRequest = mPreviewRequestBuilder.build();
+                mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+
+    //设置相机白平衡模式
+    public void setWhiteBalance(int supported_values) {
+
+        int wbMode = CameraMetadata.CONTROL_AWB_MODE_OFF;
+        camera_settings.white_balance = wbMode;
+        camera_settings.valueWB = supported_values;
+        camera_settings.setWB(mPreviewRequestBuilder);
+
+        try {
+            mPreviewRequest = mPreviewRequestBuilder.build();
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //设置相机白平衡模式
+    public void setWhiteBalanceRGB(RggbChannelVector rggb) {
+
+        int wbMode = CameraMetadata.CONTROL_AWB_MODE_OFF;
+        camera_settings.white_balance = wbMode;
+        camera_settings.rggbChannelVector = rggb;
+        camera_settings.setWBRGB(mPreviewRequestBuilder);
+
+        try {
+            mPreviewRequest = mPreviewRequestBuilder.build();
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    //设置相机曝光时间
+    public void setSec(long sec) {
+        /**Nexus 5为例:
+         * range: 866975130 13231
+         * 换算成秒为：
+         * 0.000013231s－－－0.866975130s
+         * 1/64000s——0.8s
+         */
+
+        Range<Long> exposure_time_range = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_EXPOSURE_TIME_RANGE);
+        if (exposure_time_range != null) {
+            long min_exposure_time = exposure_time_range.getLower();
+            long max_exposure_time = exposure_time_range.getUpper();
+            if (sec > max_exposure_time) {
+                sec = max_exposure_time;
+            }
+            if (sec < min_exposure_time) {
+                sec = min_exposure_time;
+            }
+            this.valueAETime = sec;
+
+            if (sec >= min_exposure_time && sec <= max_exposure_time) {
+
+                sec = Math.min(sec, 1000000000L / 12);
+                camera_settings.exposure_time = sec;
+                camera_settings.setExposure_time(mPreviewRequestBuilder);
+            }
+
+        }
+        try {
+            mPreviewRequest = mPreviewRequestBuilder.build();
+            mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Converts a red, green even, green odd and blue components to a white balance temperature.
+     * Note that this is not necessarily an inverse of convertTemperatureToRggb, since many rggb
+     * values can map to the same temperature.
+     */
+
+    private int convertRggbToTemperature(RggbChannelVector rggbChannelVector) {
+        int min_white_balance_temperature_c = 1000;
+        int max_white_balance_temperature_c = 15000;
+
+        float red = rggbChannelVector.getRed();
+        float green_even = rggbChannelVector.getGreenEven();
+        float green_odd = rggbChannelVector.getGreenOdd();
+        float blue = rggbChannelVector.getBlue();
+        float green = 0.5f * (green_even + green_odd);
+
+
+        float max = Math.max(red, blue);
+        if (green > max)
+            green = max;
+
+        float scale = 255.0f / max;
+        red *= scale;
+        green *= scale * 2;
+        blue *= scale;
+
+
+/*		int red_i = (int)red;
+        int green_i = (int)green;
+		int blue_i = (int)blue;*/
+        int temperature;
+        if (red == blue) {
+            temperature = 6600;
+        } else if (red > blue) {
+            // temperature <= 6600
+            float t_g = (float) (100 * Math.exp((green + 161.1195681661) / 99.4708025861));
+            if (blue == 0) {
+                temperature = (int) t_g;
+            } else {
+                float t_b = (float) (100 * (Math.exp((blue + 305.0447927307) / 138.5177312231) + 10));
+                temperature = (int) ((t_g + t_b) / 2);
+            }
+        } else {
+            // temperature >= 6700
+            if (red <= 1 || green <= 1) {
+                temperature = max_white_balance_temperature_c;
+            } else {
+                float t_r = (float) (100 * (Math.pow(red / 329.698727446, 1.0 / -0.1332047592) + 60.0));
+                float t_g = (float) (100 * (Math.pow(green / 288.1221695283, 1.0 / -0.0755148492) + 60.0));
+                temperature = (int) ((t_r + t_g) / 2);
+
+            }
+        }
+        temperature = Math.max(temperature, min_white_balance_temperature_c);
+        temperature = Math.min(temperature, max_white_balance_temperature_c);
+
+        return temperature;
+    }
+
+
+    /**
+     * 获取设备摄像头个数
+     *
+     * @return
+     */
+    public int getNumberOfCameras() {
+        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            return manager.getCameraIdList().length;
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        } catch (AssertionError e) {
+            // had reported java.lang.AssertionError on Google Play, "Expected to get non-empty characteristics" from CameraManager.getOrCreateDeviceIdListLocked(CameraManager.java:465)
+            // yes, in theory we shouldn't catch AssertionError as it represents a programming error, however it's a programming error by Google (a condition they thought couldn't happen)
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    /*检测是否支持camera2
+    Rather than allowing Camera2 API on all Android 5+ devices, we restrict it to cases where all cameras have at least LIMITED support.
+	 * (E.g., Nexus 6 has FULL support on back camera, LIMITED support on front camera.)
+	 * For now, devices with only LEGACY support should still with the old API.
+	 */
+    public boolean allowCamera2Support(int cameraId) {
+        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            //相机支持程度:在CameraMetadata中定义，其中FULL值为1，LEGACY值为2，LIMITED值为0，其支持程度为FULL > LIMITED > LEGACY。
+            String cameraIdS = manager.getCameraIdList()[Integer.valueOf(cameraId)];
+            CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraIdS);
+            int support = characteristics.get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL);
+            /*if( support == CameraMetadata.INFO_SUPPORTED_HARDWARE_LEVEL_LEGACY )
+                Log.d(TAG, "Camera " + cameraId + " has LEGACY Camera2 support");
+            else if( support == CameraMetadata.INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED )
+                Log.d(TAG, "Camera " + cameraId + " has LIMITED Camera2 support");
+            else if( support == CameraMetadata.INFO_SUPPORTED_HARDWARE_LEVEL_FULL )
+                Log.d(TAG, "Camera " + cameraId + " has FULL Camera2 support");
+            else
+                Log.d(TAG, "Camera " + cameraId + " has unknown Camera2 support?!");
+           */
+            //support在limit和full时表示支持camera2
+            return support == CameraMetadata.INFO_SUPPORTED_HARDWARE_LEVEL_LIMITED || support == CameraMetadata.INFO_SUPPORTED_HARDWARE_LEVEL_FULL;
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    private Rect calculateTapArea(Camera mCameraInstance, float x, float y, float coefficient) {
+        float focusAreaSize = 300;
+        int areaSize = Float.valueOf(focusAreaSize * coefficient).intValue();
+        int centerX = (int) (x * 2000 - 1000);//-1000~1000
+        int centerY = (int) (y * 2000 - 1000);
+        int left = clamp(centerX - areaSize / 2, -1000, 1000);
+        int right = clamp(left + areaSize, -1000, 1000);
+        int top = clamp(centerY - areaSize / 2, -1000, 1000);
+        int bottom = clamp(top + areaSize, -1000, 1000);
+        //  return new Rect(left, top, right, bottom);
+        RectF rectF = new RectF(left, top, right, bottom);
+        return new Rect(Math.round(rectF.top), Math.round(rectF.left), Math.round(rectF.bottom), Math.round(rectF.right));
+    }
+
+    private int clamp(int x, int min, int max) {
+        if (x > max) {
+            return max;
+        }
+        if (x < min) {
+            return min;
+        }
+        return x;
+    }
+
+    private MeteringRectangle convertAreaToMeteringRectangle(Rect sensor_rect, Area area) {
+        Rect camera2_rect = convertRectToCamera2(sensor_rect, area.rect);
+        return new MeteringRectangle(camera2_rect, area.weight);
+    }
+
+    private Rect convertRectToCamera2(Rect crop_rect, Rect rect) {
+        // CameraController.Area is always [-1000, -1000] to [1000, 1000] for the viewable region
+        // but for CameraController2, we must convert to be relative to the crop region
+        double left_f = (rect.left + 1000) / 2000.0;
+        double top_f = (rect.top + 1000) / 2000.0;
+        double right_f = (rect.right + 1000) / 2000.0;
+        double bottom_f = (rect.bottom + 1000) / 2000.0;
+        int left = (int) (crop_rect.left + left_f * (crop_rect.width() - 1));
+        int right = (int) (crop_rect.left + right_f * (crop_rect.width() - 1));
+        int top = (int) (crop_rect.top + top_f * (crop_rect.height() - 1));
+        int bottom = (int) (crop_rect.top + bottom_f * (crop_rect.height() - 1));
+        left = Math.max(left, crop_rect.left);
+        right = Math.max(right, crop_rect.left);
+        top = Math.max(top, crop_rect.top);
+        bottom = Math.max(bottom, crop_rect.top);
+        left = Math.min(left, crop_rect.right);
+        right = Math.min(right, crop_rect.right);
+        top = Math.min(top, crop_rect.bottom);
+        bottom = Math.min(bottom, crop_rect.bottom);
+
+        return new Rect(left, top, right, bottom);
+    }
+
+    /**
+     * Returns the viewable rect - this is crop region if available.
+     * We need this as callers will pass in (or expect returned) CameraController.Area values that
+     * are relative to the current view (i.e., taking zoom into account) (the old Camera API in
+     * CameraController1 always works in terms of the current view, whilst Camera2 works in terms
+     * of the full view always). Similarly for the rect field in CameraController.Face.
+     */
+    private Rect getViewableRect() {
+        if (mPreviewRequestBuilder != null) {
+            Rect crop_rect = mPreviewRequestBuilder.get(CaptureRequest.SCALER_CROP_REGION);
+            if (crop_rect != null) {
+                return crop_rect;
+            }
+        }
+        Rect sensor_rect = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE);
+        sensor_rect.right -= sensor_rect.left;
+        sensor_rect.left = 0;
+        sensor_rect.bottom -= sensor_rect.top;
+        sensor_rect.top = 0;
+        return sensor_rect;
+    }
+
+
+    @Override
+    public void pointFocus(Camera mCameraInstance, List<Area> areas) {
+
+    }
+
+
+    @Override
+    public void pointFocus(List<Area> areas) {
+
+        Rect sensor_rect = getViewableRect();
+
+        camera_settings.af_regions = new MeteringRectangle[areas.size()];
+
+        int i = 0;
+        for (Area area : areas) {
+            camera_settings.af_regions[i++] = convertAreaToMeteringRectangle(sensor_rect, area);
+        }
+
+        if (camera_settings.misAutoFocus) {
+            if (mCameraCharacteristics.get(CameraCharacteristics.CONTROL_MAX_REGIONS_AF) > 0) {
+                cancelAutoFocus();
+
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_REGIONS, camera_settings.af_regions);
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_AUTO);
+//                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_IDLE);
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_START);
+                updatePreview();
+
+                try {
+                    capture(mPreviewRequestBuilder.build());
+                } catch (CameraAccessException e) {
+                    e.printStackTrace();
+                }
+                mState = STATE_WAITING_AUTOFOCUS;
+
+
+            }
+        }
+    }
+
+    //设置相机iso
+    public void lockIso(boolean isAutoIso, int iso) {
+
+        Range<Integer> iso_range = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE);
+        //获取iso范围:Nexus 5为例:100---10000,此处最小取100,最大取3200
+        int max = iso_range.getUpper();
+        int min = iso_range.getLower();
+        LogUtil.d("camera_iso_range: " + min + " " + max + " " + iso);
+
+        iso_range = new Range<>(min, max);
+        //开启自动模式
+        if (isAutoIso) {
+            camera_settings.misAutoCamera = true;
+            camera_settings.setAEmodeOn(mPreviewRequestBuilder);
+        } else {
+            if (iso_range.contains(iso)) {
+                camera_settings.misAutoCamera = false;
+                camera_settings.iso = iso;
+                camera_settings.setIso(mPreviewRequestBuilder);
+            }
+        }
+
+
+    }
+
+    public void lockFocusDistance(boolean isAutoFocus, float focus_distance) {
+        if (mCaptureSession == null)
+            return;
+        camera_settings.misAutoFocus = isAutoFocus;
+        if (isAutoFocus) {
+            int focus_mode = CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE;
+            //mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, focus_mode);
+            camera_settings.has_af_mode = true;
+            camera_settings.af_mode = focus_mode;
+            camera_settings.setFocusMode(mPreviewRequestBuilder);
+            try {
+                mPreviewRequest = mPreviewRequestBuilder.build();
+                mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+        } else {
+            float min_distance = mCameraCharacteristics.get(CameraCharacteristics.LENS_INFO_MINIMUM_FOCUS_DISTANCE);
+
+            if (focus_distance < 0.0f)
+                focus_distance = 0.0f;
+            else if (focus_distance > min_distance)
+                focus_distance = min_distance;
+            int focus_mode = CaptureRequest.CONTROL_AF_MODE_OFF;
+            camera_settings.focus_distance = focus_distance;
+
+            camera_settings.has_af_mode = true;
+            camera_settings.af_mode = focus_mode;
+            camera_settings.setFocusDistance(mPreviewRequestBuilder);
+
+        }
+
+    }
+
+
+    //设置相机白平衡模式
+    public void lockWhiteBalance(boolean isAutoWB, int supported_values) {
+        if (isAutoWB) {
+            int wbMode = CameraMetadata.CONTROL_AWB_MODE_AUTO;
+            camera_settings.white_balance = wbMode;
+            camera_settings.valueWB = supported_values;
+            mPreviewRequestBuilder.set(CaptureRequest.COLOR_CORRECTION_MODE, CaptureRequest.COLOR_CORRECTION_MODE_FAST);
+            mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AWB_MODE, wbMode);
+        } else {
+            int wbMode = CameraMetadata.CONTROL_AWB_MODE_OFF;
+            camera_settings.white_balance = wbMode;
+            camera_settings.valueWB = supported_values;
+            camera_settings.setWB(mPreviewRequestBuilder);
+        }
+
+
+    }
+
+    //设置相机白平衡模式
+    public void lockWhiteBalance(boolean isAutoWB, int supported_values, RggbChannelVector rggb) {
+        if (isAutoWB) {
+            int wbMode = CameraMetadata.CONTROL_AWB_MODE_AUTO;
+            camera_settings.white_balance = wbMode;
+            camera_settings.valueWB = supported_values;
+            mPreviewRequestBuilder.set(CaptureRequest.COLOR_CORRECTION_MODE, CaptureRequest.COLOR_CORRECTION_MODE_FAST);
+            mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AWB_MODE, wbMode);
+        } else {
+            int wbMode = CameraMetadata.CONTROL_AWB_MODE_OFF;
+            camera_settings.white_balance = wbMode;
+            camera_settings.valueWB = supported_values;
+            camera_settings.setWB(mPreviewRequestBuilder, rggb);
+        }
+
+
+    }
+
+    //设置相机白平衡模式
+    public void lockWhiteBalanceRGB(RggbChannelVector rggb) {
+
+        int wbMode = CameraMetadata.CONTROL_AWB_MODE_OFF;
+        camera_settings.white_balance = wbMode;
+        camera_settings.rggbChannelVector = rggb;
+        camera_settings.setWBRGB(mPreviewRequestBuilder);
+
+
+    }
+
+    //设置相机曝光时间
+    public void lockSec(boolean isAutoSec, long sec) {
+        /**Nexus 5为例:
+         * range: 866975130 13231
+         * 换算成秒为：
+         * 0.000013231s－－－0.866975130s
+         * 1/64000s——0.8s
+         */
+        if (isAutoSec) {
+            camera_settings.setAEmodeOn(mPreviewRequestBuilder);
+        } else {
+            Range<Long> exposure_time_range = mCameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_EXPOSURE_TIME_RANGE);
+            if (exposure_time_range != null) {
+                long min_exposure_time = exposure_time_range.getLower();
+                long max_exposure_time = exposure_time_range.getUpper();
+                if (sec > max_exposure_time) {
+                    sec = max_exposure_time;
+                }
+                if (sec < min_exposure_time) {
+                    sec = min_exposure_time;
+                }
+                this.valueAETime = sec;
+
+                if (sec >= min_exposure_time && sec <= max_exposure_time) {
+
+                    sec = Math.min(sec, 1000000000L / 12);
+                    sec = Math.max(sec, 100000L);
+                    camera_settings.exposure_time = sec;
+                    camera_settings.setExposure_time(mPreviewRequestBuilder);
+                }
+
+            }
+            LogUtil.d("camera_exposure_time: " + sec + "");
+
+        }
+
+    }
+
+
+    /**
+     * 获取摄像头数据
+     */
+    public void getCameraData(TotalCaptureResult result) {
+        if (result == null)
+            return;
+        long sec = result.get(CaptureResult.SENSOR_EXPOSURE_TIME);
+        int iso = result.get(CaptureResult.SENSOR_SENSITIVITY);
+        RggbChannelVector vector = result.get(CaptureResult.COLOR_CORRECTION_GAINS);
+
+
+        int wb = convertRggbToTemperature(vector);
+        float focus = result.get(CaptureResult.LENS_FOCUS_DISTANCE);
+        if (null == cameraParm) {
+            cameraParm = new CameraParm(wb + "", iso + "", sec + "", focus + "", vector.getRed() + "", vector.getGreenEven() + "", vector.getGreenOdd() + "", vector.getBlue() + "");
+        } else {
+            cameraParm.setIso(iso + "");
+            cameraParm.setWhiteBalance(wb + "");
+            cameraParm.setSec(sec + "");
+            cameraParm.setFocalLength(focus + "");
+            cameraParm.setRed(vector.getRed() + "");
+            cameraParm.setGreenEven(vector.getGreenEven() + "");
+            cameraParm.setGreenOdd(vector.getGreenOdd() + "");
+            cameraParm.setBlue(vector.getBlue() + "");
+        }
+
+        if (null == cameraParm2) {
+            cameraParm2 = new CameraParm2();
+            cameraParm2.setCameraParm(cameraParm);
+            cameraParm2.setVector(vector);
+        } else {
+            cameraParm2.setCameraParm(cameraParm);
+            cameraParm2.setVector(vector);
+        }
+
+
+//        cameraDataListener.getCameraData(sec, iso, wb, focus);
+    }
+
+
+    public void lockAllCameraParam() {
+        camera_settings.misAutoCamera = false;
+        cameraDataListener.getCameraData(Long.parseLong(cameraParm2.getCameraParm().getSec()),
+                Integer.parseInt(cameraParm2.getCameraParm().getIso()),
+                Integer.valueOf(cameraParm2.getCameraParm().getWhiteBalance()),
+                Float.parseFloat(cameraParm.getFocalLength()));
+        lockSec(false, Long.parseLong(cameraParm2.getCameraParm().getSec()));
+        lockIso(false, Integer.parseInt(cameraParm2.getCameraParm().getIso()));
+
+        //setFocusDistance(false,Float.parseFloat(cameraParm.getFocalLength()));
+        lockWhiteBalanceRGB(cameraParm2.getVector());
+
+        updatePreview();
+    }
+
+    public void unlockAllCameraParam() {
+        if (camera_settings != null) {
+            camera_settings.misAutoCamera = true;
+            lockWhiteBalance(true, 0);
+
+            lockIso(true, 0);
+            lockSec(true, 0);
+            lockFocusDistance(true, 0);
+
+            updatePreview();
+        }
+    }
+
+    @Override
+    public void lockPresetCameraParam(String sec, String iso, String wb, String focus) {
+    /*    camera_settings.misAutoCamera = false;
+        cameraDataListener.getCameraData(Long.parseLong(sec),
+                Integer.parseInt(iso),
+                Integer.valueOf(wb),
+                Float.parseFloat(focus));
+        lockIso(false, Integer.parseInt(iso));
+        lockSec(false, Long.parseLong(sec));
+//        lockFocusDistance(false,Float.valueOf(focus));
+        lockWhiteBalance(false, Integer.valueOf(wb));
+
+        updatePreview();*/
+    }
+
+    @Override
+    public void lockPresetCameraParam(String sec, String iso, String wb, String focus, String mRed, String mGreenEven, String mGreenOdd, String mBlue) {
+        camera_settings.misAutoCamera = false;
+        cameraDataListener.getCameraData(Long.parseLong(sec),
+                Integer.parseInt(iso),
+                Integer.valueOf(wb),
+                Float.parseFloat(focus));
+        lockIso(false, Integer.parseInt(iso));
+        lockSec(false, Long.parseLong(sec));
+//        lockFocusDistance(false,Float.valueOf(focus));
+
+        RggbChannelVector rggb = new RggbChannelVector(Float.parseFloat(mRed), Float.parseFloat(mGreenEven), Float.parseFloat(mGreenOdd), Float.parseFloat(mBlue));
+        lockWhiteBalance(false, Integer.valueOf(wb), rggb);
+
+        updatePreview();
+    }
+
+    public void restoreCameraParam() {
+
+        camera_settings.setIso(mPreviewRequestBuilder);
+
+        camera_settings.setExposure_time(mPreviewRequestBuilder);
+
+        if (camera_settings.valueWB == 0) {
+            camera_settings.setWBRGB(mPreviewRequestBuilder);
+        } else {
+            camera_settings.setWB(mPreviewRequestBuilder);
+        }
+
+        if (!camera_settings.misAutoFocus) {
+            camera_settings.setFocusMode(mPreviewRequestBuilder);
+            camera_settings.setFocusDistance(mPreviewRequestBuilder);
+        }
+
+
+    }
+
+
+    public ArrayList<Size> getPreSize() {
+        return preList;
+    }
+
+    public ArrayList<Size> getAllSize() {
+        return supportAllSizeList;
+    }
+
+    public void notifyPreRatio(int preType) {
+        StreamConfigurationMap map = mCameraCharacteristics.get(
+                CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+        if (map == null) {
+            return;
+        }
+        ArrayList outputList = new ArrayList(Arrays.asList(map.getOutputSizes(ImageFormat.JPEG)));
+
+        Size mSize = null;
+        if (preType == PREVIEW_169) {
+            mSize = new Size(PHOTO_WIDTH2_S, PHOTO_HEIGHT2_S);
+
+        } else if (preType == PREVIEW_43) {
+            mSize = new Size(PHOTO_WIDTH_S, PHOTO_HEIGHT_S);
+        } else if (preType == PREVIEW_11) {
+            mSize = new Size(PHOTO_WIDTH_S, PHOTO_HEIGHT_S);
+        }
+        currentPreviewRatio = caclulateSupportPictureSize(mSize.getWidth(), mSize.getHeight(), outputList);
+
+    }
+
+    public void setAF(boolean isAutoFous) {
+        this.isAutoFous = isAutoFous;
+    }
+    /*public void setPicSaveFile(File file) {
+        this.mFile = file;
+    }*/
+
+    @Override
+    public CameraCharacteristics getmCameraCharacteristics() {
+        return mCameraCharacteristics;
+    }
+
+    /**
+     * 更新预览
+     */
+    private void updatePreview() {
+        try {
+            mCaptureSession.setRepeatingRequest(mPreviewRequestBuilder.build(), mCaptureCallback, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i("updatePreview", "ExceptionExceptionException");
+        }
+    }
+
+    /**
+     * 调整自动曝光(AE)目标图像亮度。
+     * 这个请求在android.control.aeMode!= OFF生效。
+     * 或者即使在手动模式 android.control.aeLock == true。操作时也会生效。
+     *
+     * @param ae
+     */
+    public void setAe(int ae) {
+        camera_settings.valueAE = ae;
+        camera_settings.setAe(mPreviewRequestBuilder);
+        updatePreview();
+    }
+
+
+    /**
+     * 初始化mediaRecorder
+     *
+     * @throws IOException
+     */
+    public void setUpMediaRecorder() throws IOException {
+        mMediaRecorder = new MediaRecorder();
+        mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
+        mMediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        if (mNextVideoAbsolutePath == null || mNextVideoAbsolutePath.isEmpty()) {
+            mNextVideoAbsolutePath = getVideoFilePath(activity);
+        }
+        mMediaRecorder.setOutputFile(mNextVideoAbsolutePath);
+        mMediaRecorder.setVideoEncodingBitRate(10000000);
+        mMediaRecorder.setVideoFrameRate(30);
+        if (recordSize == null)
+            recordSize = new Size(textureView.getWidth(), textureView.getHeight());
+        mMediaRecorder.setVideoSize(recordSize.getWidth(), recordSize.getHeight());
+        mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
+        mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        mMediaRecorder.setOrientationHint(currentRatio);
+      /*  int orientation = activity.getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            textureView.setAspectRatio(mPreviewSize.getWidth(), mPreviewSize.getHeight());
+        } else {
+            textureView.setAspectRatio(mPreviewSize.getHeight(), mPreviewSize.getWidth());
+        }*/
+        mMediaRecorder.prepare();
+    }
+
+    private String getVideoFilePath(Context context) {
+        final File dir = context.getExternalFilesDir(null);
+        return (dir == null ? "" : (dir.getAbsolutePath() + "/"))
+                + System.currentTimeMillis() + ".mp4";
+    }
+
+    /**
+     * 开始摄像
+     */
+    public void startVideo() {
+        if (null == mCameraDevice || !textureView.isAvailable() || null == mPreviewSize) {
+            return;
+        }
+        try {
+            if (mCaptureSession != null) {
+                mCaptureSession.close();
+                mCaptureSession = null;
+            }
+            SurfaceTexture texture = textureView.getSurfaceTexture();
+            assert texture != null;
+            texture.setDefaultBufferSize(mPreviewSize.getWidth(), mPreviewSize.getHeight());
+            CaptureRequest.Builder captureRequest = mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_RECORD);
+            previewBuilder2CaptureBuilder(captureRequest);
+            List<Surface> surfaces = new ArrayList<>();
+            // Set up Surface for the camera preview
+            Surface previewSurface = new Surface(texture);
+            surfaces.add(previewSurface);
+            captureRequest.addTarget(previewSurface);
+
+            // Set up Surface for the MediaRecorder
+            Surface recorderSurface = mMediaRecorder.getSurface();
+            surfaces.add(recorderSurface);
+            captureRequest.addTarget(recorderSurface);
+            mPreviewRequestBuilder = captureRequest;
+
+
+            // Start a capture session
+            // Once the session starts, we can update the UI and start recording
+            mCameraDevice.createCaptureSession(surfaces, new CameraCaptureSession.StateCallback() {
+
+                @Override
+                public void onConfigured(@NonNull CameraCaptureSession cameraCaptureSession) {
+                    mCaptureSession = cameraCaptureSession;
+                    isRecording = true;
+                    updatePreview();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mMediaRecorder.start();
+                        }
+                    }).start();
+                }
+
+                @Override
+                public void onConfigureFailed(@NonNull CameraCaptureSession cameraCaptureSession) {
+
+                }
+            }, mBackgroundHandler);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void stopVideo() {
+        // UI
+        //mButtonVideo.setText(R.string.record);
+        // Stop recording
+        mMediaRecorder.stop();
+        mMediaRecorder.release();
+        mMediaRecorder = null;
+        // mMediaRecorder.reset();
+        isRecording = false;
+        LogUtil.d("Video saved: " + mNextVideoAbsolutePath);
+        //startPreview();
+    }
+
+
+    /**
+     * 开始录像
+     */
+    public void startRecordingVideo() {
+        startVideo();
+    }
+
+    public void setRecordSize(Size size) {
+        recordSize = size;
+        //  camera2RecordModel.setmVideoSize(size == null ? mPreviewSize : size);
+    }
+
+    /**
+     * 初始化录像
+     */
+    public void prepareRecordModel() {
+        mNextVideoAbsolutePath = recordUrl;
+        // camera2RecordModel.setRecordUrl(recordUrl);
+        try {
+            setUpMediaRecorder();
+            // camera2RecordModel.setUpMediaRecorder(mCameraDevice, mPreviewRequestBuilder, mCaptureSession);
+        } catch (IOException e) {
+        }
+    }
+
+    /**
+     * 结束录像
+     */
+    public void stopRecordingVideo() {
+        stopVideo();
+        createCameraPreviewSession();
+        //camera2RecordModel.stopRecordingVideo();
+
+    }
+
+    public void setRecordUrl(String recordUrl) {
+        this.recordUrl = recordUrl;
+    }
+
+    public String getRecordUrl() {
+        // return camera2RecordModel.getRecordUrl();
+        return mNextVideoAbsolutePath;
+    }
+
+
+    public void setCameraDataListener(CameraDataListener cameraDataListener) {
+        this.cameraDataListener = cameraDataListener;
+    }
+
+   /* public interface CameraDataListener {
+
+        void getPreSize(ArrayList<Size> sizes);
+
+        void getCameraData(long sec, int iso, int wb, float focus);
+
+    }*/
+
+    private Result decode(int imageWidth, int imageHeight, byte[] data) {
+        Result result = null;
+        //MultiFormatReader multiFormatReader = getMultiFormatReader();
+
+        PlanarYUVLuminanceSource planarYUVLuminanceSource = new PlanarYUVLuminanceSource(data, imageWidth, imageHeight, 0, 0, imageWidth, imageHeight, false);
+        if (planarYUVLuminanceSource != null) {
+            BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(planarYUVLuminanceSource));
+            try {
+                result = mQrReader.decode(bitmap);
+            } catch (ReaderException re) {
+                Log.d(TAG, ": ", re);
+            } finally {
+                mQrReader.reset();
+            }
+        }
+        return result;
+    }
+
+    private MultiFormatReader getMultiFormatReader() {
+        if (mMultiFormatReader == null) {
+            mMultiFormatReader = new MultiFormatReader();
+            Collection<BarcodeFormat> decodeFormats = EnumSet.noneOf(BarcodeFormat.class);
+            decodeFormats.addAll(DecodeFormatManager.ONE_D_FORMATS);
+            decodeFormats.addAll(DecodeFormatManager.QR_CODE_FORMATS);
+            decodeFormats.addAll(DecodeFormatManager.DATA_MATRIX_FORMATS);
+
+            final Map<DecodeHintType, Object> hints = new EnumMap<>(DecodeHintType.class);
+            hints.put(DecodeHintType.POSSIBLE_FORMATS, decodeFormats);
+            hints.put(DecodeHintType.CHARACTER_SET, "UTF8");
+            // hints.put(DecodeHintType.NEED_RESULT_POINT_CALLBACK, new ViewfinderResultPointCallback(mViewfinderView));
+            mMultiFormatReader.setHints(hints);
+        }
+        return mMultiFormatReader;
+    }
+
+    private void QRprocess(CaptureResult partialResult) {
+        if (mCaptureSession != null && startQR) {
+            if (mPreviewRequestBuilder.get(CaptureRequest.CONTROL_AF_MODE) != CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE) {
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+                try {
+                    mPreviewRequest = mPreviewRequestBuilder.build();
+                    mCaptureSession.setRepeatingRequest(mPreviewRequest, mCaptureCallback, mBackgroundHandler);
+                } catch (CameraAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+            Integer afState = partialResult.get(CaptureResult.CONTROL_AF_STATE);
+            Integer aeState = partialResult.get(CaptureResult.CONTROL_AE_STATE);
+            if (afState == null) {
+                analyseQRCode();
+            } else if (afState == CaptureRequest.CONTROL_AF_STATE_PASSIVE_FOCUSED) {
+                analyseQRCode();
+            } else if (afState == CaptureRequest.CONTROL_AF_STATE_INACTIVE && aeState == CaptureRequest.CONTROL_AE_STATE_CONVERGED) {
+                analyseQRCode();
+            }
+        }
+    }
+
+    private void analyseQRCode() {
+        if (mCaptureSession != null && mCapturePicture.tryAcquire() && startQR) {
+            try {
+                mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CaptureRequest.CONTROL_AF_TRIGGER_START);
+                // mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_MODE, CaptureRequest.CONTROL_AE_MODE_ON);
+                mPreviewRequestBuilder.addTarget(mImageReader.getSurface());
+                CameraCaptureSession.CaptureCallback captureCallback
+                        = new CameraCaptureSession.CaptureCallback() {
+
+                    @Override
+                    public void onCaptureCompleted(@NonNull CameraCaptureSession session,
+                                                   @NonNull CaptureRequest request,
+                                                   @NonNull TotalCaptureResult result) {
+                        if (startQR)
+                            unlockFocus();
+                    }
+                };
+                mCaptureSession.stopRepeating();
+                mCaptureSession.capture(mPreviewRequestBuilder.build(), captureCallback, mBackgroundHandler);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void setGetQRInter(CameraHelperObj.getQRInterface getQRInter) {
+        this.getQRInterface = getQRInter;
+    }
+
+    private CameraHelperObj.getQRInterface getQRInterface;
+
+
+    @Override
+    public void setCameraStateInter(CameraStateInter cameraStateInter) {
+        this.cameraStateInter = cameraStateInter;
+    }
+
+    ////
+    @Override
+    public Camera.Size getPreviewSize(Camera mCameraInstance) {
+        return null;
+    }
+
+
+    @Override
+    public void setFlash2(boolean isflashon, Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public void setEV2(int ev, Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public void setWhiteBalance(String wb, Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public void setIso(String iso, Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public void setFocus(Camera mCameraInstance, String focus) {
+
+    }
+
+    @Override
+    public void setEV(String ev, Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public void setFlash(boolean isflash, Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public Camera openCamera(int id) {
+        return null;
+    }
+
+    @Override
+    public Camera.Parameters getCurrentParameters() {
+        return null;
+    }
+
+    @Override
+    public void getCameraInfo(int cameraId, CameraHelper.CameraInfo2 cameraInfo) {
+
+    }
+
+    @Override
+    public int getCameraDisplayOrientation(int cameraId) {
+        return 0;
+    }
+
+    @Override
+    public HashMap<String, String> getCameraParams(Camera mCameraInstance) {
+        return null;
+    }
+
+    @Override
+    public void setCameraParms(Camera mCameraInstance) {
+
+    }
+
+    @Override
+    public void pointFocus(Camera mCameraInstance, float x, float y) {
+
+    }
+
+    @Override
+    public Camera.Size getAdapterSize(Camera mCameraInstance) {
+        return null;
+    }
+
+    @Override
+    public void cancelAutoFocus() {
+        if (mCameraDevice == null || mCaptureSession == null) {
+            return;
+        }
+        mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_CANCEL);
+        mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CameraMetadata.CONTROL_AF_TRIGGER_IDLE);
+        updatePreview();
+    }
+
+    private void capture(CaptureRequest request) throws CameraAccessException {
+
+        if (mCameraDevice == null || mCaptureSession == null) {
+            return;
+        }
+        mCaptureSession.capture(request, mCaptureCallback, mBackgroundHandler);
+    }
+
+    /**
+     * If the user touches the screen in continuous focus mode, we switch the camera_controller to autofocus mode.
+     * After the autofocus completes, we set a reset_continuous_focus_runnable to switch back to the camera_controller
+     * back to continuous focus after a short delay.
+     * This function removes any pending reset_continuous_focus_runnable.
+     */
+    private void removePendingContinuousFocusReset() {
+
+        if (reset_continuous_focus_runnable != null) {
+            reset_continuous_focus_handler.removeCallbacks(reset_continuous_focus_runnable);
+            reset_continuous_focus_runnable = null;
+        }
+    }
+
+    @Override
+    public ArrayList<Size> getAllPreviewSize() {
+        return null;
+    }
+
+    @Override
+    public int getCameraOrientation() {
+        return characteristics_sensor_orientation;
+    }
+
+    @Override
+    public boolean isFrontFacing() {
+        return characteristics_is_front_facing;
+    }
+
+    public void setCurrentRatio(int ratio) {
+        this.currentRatio = ratio;
+    }
+
+
+    @Override
+    public void setCurrentType(boolean isVideo) {
+
+    }
+
+    @Override
+    public void setFpsRate(int rate) {
+
+    }
+
+    @Override
+    public void setMPreViewSize2(Size preview, Size pciture) {
+
+    }
+
+    @Override
+    public void setAutoFous(Camera mCameraInstance, boolean b) {
+
+    }
+
+    @Override
+    public void setisAi360(boolean isAi360) {
+
+    }
+}

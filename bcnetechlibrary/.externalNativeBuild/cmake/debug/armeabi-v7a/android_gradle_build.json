@@ -1,0 +1,111 @@
+
+{
+	"buildFiles" : [ "/Users/a1234/android-BizCam/bcnetechlibrary/CMakeLists.txt" ],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/Users/a1234/Library/Android/sdk/android-sdk-macosx/cmake/3.6.4111459/bin/cmake --build /Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"jx_ffmpeg_jni-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "jx_ffmpeg_jni",
+			"buildCommand" : "/Users/a1234/Library/Android/sdk/android-sdk-macosx/cmake/3.6.4111459/bin/cmake --build /Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a --target jx_ffmpeg_jni",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_yuv_encode_h264.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_pcm_encode_aac.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_media_muxer.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_jni_handler.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_ffmpeg_jni.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/threadsafe_queue.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_log.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/cmdutils.c",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/ffmpeg.c",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/ffmpeg_filter.c",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/ffmpeg_opt.c",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_ffmpeg_cmd_run.c",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				},
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot  -Djx_ffmpeg_jni_EXPORTS -I../../../../ffmpeg-3.2.5 -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -isystem /Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=21 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/Users/a1234/android-BizCam/bcnetechlibrary/src/main/cpp/jx_ffmpeg_config.cpp",
+					"workingDirectory" : "/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/a1234/android-BizCam/bcnetechlibrary/build/intermediates/cmake/debug/obj/armeabi-v7a/libjx_ffmpeg_jni.so",
+			"toolchain" : "10607509458868774602"
+		}
+	},
+	"toolchains" : 
+	{
+		"10607509458868774602" : 
+		{
+			"cCompilerExecutable" : "/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

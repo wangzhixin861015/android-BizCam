@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_aipreview.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_aipreview.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/aihint_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/aihint_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_ai360.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_ai360.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/camera_setting_new_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/camera_setting_new_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/progress_dialog_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetechlibrary/build/intermediates/packaged_res/release/layout/progress_dialog_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_watermarksetting.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_watermarksetting.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/surfview_camera_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/surfview_camera_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/filterwait_view.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/filterwait_view.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/cloud_new_top_select_view.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/cloud_new_top_select_view.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_goods_market.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_goods_market.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/card_dialog_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/bcnetechlibrary/build/intermediates/packaged_res/release/layout/card_dialog_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/surfview_camera_new_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/surfview_camera_new_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_camera_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_camera_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_image_select.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_image_select.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/main_ablum_new_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/main_ablum_new_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/recoder_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/recoder_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/part_parms_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/part_parms_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_camerasetting.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_camerasetting.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/ablum_new_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/ablum_new_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/camerasetting_item_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/camerasetting_item_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/camera_welcome_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/camera_welcome_layout.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/blue_tooth_list_c2_view.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/blue_tooth_list_c2_view.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/activity_cut.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/activity_cut.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/blue_tooth_list_new_pop.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/blue_tooth_list_new_pop.xml"
+    },
+    {
+        "merged": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeReleaseResources/stripped.dir/layout/panorama_edit_layout.xml",
+        "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/layout/panorama_edit_layout.xml"
+    }
+]

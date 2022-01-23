@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/top_cobox_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/iv_down"
+        android:layout_width="@dimen/dp_108"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/rl_choose"
+        android:padding="@dimen/dp_50"
+        android:src="@drawable/btn_down"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_market"
+        android:layout_width="@dimen/dp_108"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/rl_choose"
+        android:padding="@dimen/dp_45"
+
+        android:src="@drawable/market"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_choose"
+        android:layout_width="@dimen/dp_406"
+        android:layout_height="@dimen/dp_72"
+        android:layout_centerInParent="true"
+        android:background="@drawable/cobox_choose_bg">
+
+        <LinearLayout
+            android:id="@+id/ll_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@drawable/cobox_choose_left_bg">
+
+            <ImageView
+                android:id="@+id/cobox_btn"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:src="@drawable/coboxoff" />
+
+            <!--<ImageView
+                android:id="@+id/iv_downNew"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_14"
+                android:src="@drawable/btn_down" />-->
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ll_left"
+            android:gravity="center"
+            android:text="@string/cobox_choose"
+            android:textColor="@color/text_color1"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

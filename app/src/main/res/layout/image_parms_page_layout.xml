@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="62dp"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll_exposure"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_exposure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="曝光"
+                    android:textColor="#ADB5C2"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_exposure"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:visibility="gone"
+                    android:src="@drawable/parms_page_select_bg" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/ll_whiteLevels"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="gone">-->
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_whiteLevels"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="白色色阶"-->
+            <!--android:textColor="#ADB5C2"-->
+            <!--android:textSize="14sp" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_whiteLevels"-->
+            <!--android:layout_width="@dimen/dp_40"-->
+            <!--android:layout_height="@dimen/dp_4"-->
+            <!--android:layout_marginTop="@dimen/dp_8"-->
+            <!--android:src="@drawable/parms_page_select_bg"-->
+            <!--android:visibility="gone" />-->
+
+
+            <!--</LinearLayout>-->
+
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/ll_definition"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="gone">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_definition"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="清晰度"-->
+            <!--android:textColor="#ADB5C2"-->
+            <!--android:textSize="14sp" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_definition"-->
+            <!--android:layout_width="@dimen/dp_40"-->
+            <!--android:layout_height="@dimen/dp_4"-->
+            <!--android:layout_marginTop="@dimen/dp_8"-->
+            <!--android:src="@drawable/parms_page_select_bg"-->
+            <!--android:visibility="gone" />-->
+
+
+            <!--</LinearLayout>-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll_contrast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_contrast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="对比度"
+                    android:textColor="#ADB5C2"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_contrast"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:src="@drawable/parms_page_select_bg"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/ll_blackLevels"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="gone">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_blackLevels"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="黑色色阶"-->
+            <!--android:textColor="#ADB5C2"-->
+            <!--android:textSize="14sp" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_blackLevels"-->
+            <!--android:layout_width="@dimen/dp_40"-->
+            <!--android:layout_height="@dimen/dp_4"-->
+            <!--android:layout_marginTop="@dimen/dp_8"-->
+            <!--android:src="@drawable/parms_page_select_bg"-->
+            <!--android:visibility="gone" />-->
+
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/ll_sharpen"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="gone">-->
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_sharpen"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="锐化"-->
+            <!--android:textColor="#ADB5C2"-->
+            <!--android:textSize="14sp" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_sharpen"-->
+            <!--android:layout_width="@dimen/dp_40"-->
+            <!--android:layout_height="@dimen/dp_4"-->
+            <!--android:layout_marginTop="@dimen/dp_8"-->
+            <!--android:src="@drawable/parms_page_select_bg"-->
+            <!--android:visibility="gone" />-->
+
+
+            <!--</LinearLayout>-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll_highlight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_highlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="高光"
+                    android:textColor="#ADB5C2"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_highlight"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_4"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:src="@drawable/parms_page_select_bg"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/ll_vividness"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical"-->
+            <!--android:visibility="gone">-->
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_vividness"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="12dp"-->
+            <!--android:text="鲜艳度"-->
+            <!--android:textColor="#ADB5C2"-->
+            <!--android:textSize="14sp" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_vividness"-->
+            <!--android:layout_width="@dimen/dp_40"-->
+            <!--android:layout_height="@dimen/dp_4"-->
+            <!--android:layout_marginTop="@dimen/dp_8"-->
+            <!--android:src="@drawable/parms_page_select_bg"-->
+            <!--android:visibility="gone" />-->
+
+
+            <!--</LinearLayout>-->
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_page_underline"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_4"
+        android:src="@drawable/parms_page_select_bg"
+        android:scaleType="matrix"
+        android:visibility="visible"/>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/grid_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dp_3"
+        android:layout_marginRight="@dimen/dp_3"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/grid_item_check"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_3"
+        android:src="@drawable/bgbitmap2"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/grid_video"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_22"
+        android:layout_marginBottom="@dimen/dp_22"
+        android:src="@drawable/video"
+        android:visibility="invisible"
+        />
+</RelativeLayout>

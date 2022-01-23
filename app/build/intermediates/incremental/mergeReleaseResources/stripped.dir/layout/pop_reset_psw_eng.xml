@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_aphle40">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="340dp"
+        android:layout_height="620dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/dp_48"
+        android:layout_marginLeft="@dimen/dp_36"
+        android:layout_marginRight="@dimen/dp_36"
+        android:layout_marginTop="@dimen/dp_48"
+        android:background="@drawable/reset_bg"
+        android:elevation="10dp">
+
+        <ImageView
+            android:id="@+id/pop_dismiss"
+            android:layout_width="@dimen/dp_104"
+            android:layout_height="@dimen/dp_104"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_44"
+            android:padding="@dimen/dp_24"
+            android:src="@drawable/new_close" />
+
+        <TextView
+            android:id="@+id/retrieve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pop_dismiss"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_104"
+            android:text="Retrieve"
+            android:textColor="@color/black_lv2"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/retrieve_message_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/retrieve"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_44"
+            android:lineSpacingExtra="10dp"
+            android:textColor="@color/grey_item"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/retrieve_message_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/retrieve_message_top"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_marginTop="10dp"
+            android:textColor="#00f"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/retrieve_message_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/retrieve_message_mail"
+            android:layout_marginLeft="@dimen/dp_60"
+            android:layout_marginRight="@dimen/dp_60"
+            android:lineSpacingExtra="10dp"
+            android:textColor="@color/grey_item"
+            android:textSize="14sp" />
+
+        <!-- <RelativeLayout
+             android:layout_width="@dimen/dp_320"
+             android:layout_height="@dimen/dp_100"
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="@dimen/dp_52"
+             android:background="@drawable/blue_item_bg">
+
+            &lt;!&ndash; <TextView
+                 android:id="@+id/tv_resending"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:text="Sending again"
+                 android:textColor="@color/white"
+                 android:textSize="14sp" />&ndash;&gt;
+         </RelativeLayout>-->
+        <ImageView
+            android:id="@+id/tv_resending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_52"
+            />
+    </RelativeLayout>
+</RelativeLayout>

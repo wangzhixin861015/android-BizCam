@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_172"
+        android:layout_marginBottom="@dimen/dp_14"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:background="@color/white">
+
+        <FrameLayout
+            android:id="@+id/fl_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/upload_item_img"
+                android:layout_width="@dimen/dp_140"
+                android:layout_height="@dimen/dp_140"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:layout_marginTop="@dimen/dp_16"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/grid_video"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/video"
+                android:visibility="invisible" />
+
+
+        </FrameLayout>
+
+
+
+        <TextView
+            android:id="@+id/upload_content_name"
+            style="@style/FontBlack14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_44"
+            android:layout_toRightOf="@+id/fl_item" />
+
+        <TextView
+            android:id="@+id/upload_content_time"
+            style="@style/FontBlack16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_content_name"
+            android:layout_marginLeft="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_toRightOf="@+id/fl_item" />
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/ll_reUpload"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_marginRight="@dimen/dp_28"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:gravity="center">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/iv_message"-->
+        <!--android:layout_width="@dimen/dp_36"-->
+        <!--android:layout_height="@dimen/dp_40"-->
+        <!--android:src="@drawable/reup"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_message"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/preset_content_name"-->
+        <!--style="@style/FontWhiteAlpha40_14"-->
+        <!--android:layout_marginTop="@dimen/dp_16"-->
+        <!--android:text="重新上传"/>-->
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PullToRefresh">
+
+        <!-- A drawable to use as the background of the Refreshable View -->
+        <attr name="ptrRefreshableViewBackground" format="reference|color" />
+
+        <!-- A drawable to use as the background of the Header and Footer Loading Views -->
+        <attr name="ptrHeaderBackground" format="reference|color" />
+
+        <!-- Text Color of the Header and Footer Loading Views -->
+        <attr name="ptrHeaderTextColor" format="reference|color" />
+
+        <!-- Text Color of the Header and Footer Loading Views Sub Header -->
+        <attr name="ptrHeaderSubTextColor" format="reference|color" />
+
+        <!-- Mode of Pull-to-Refresh that should be used -->
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0" />
+            <flag name="pullFromStart" value="0x1" />
+            <flag name="pullFromEnd" value="0x2" />
+            <flag name="both" value="0x3" />
+            <flag name="manualOnly" value="0x4" />
+
+            <!-- These last two are depreacted -->
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+        </attr>
+
+        <!-- Whether the Indicator overlay(s) should be used -->
+        <attr name="ptrShowIndicator" format="reference|boolean" />
+
+        <!-- Drawable to use as Loading Indicator. Changes both Header and Footer. -->
+        <attr name="ptrDrawable" format="reference" />
+
+        <!-- Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. -->
+        <attr name="ptrDrawableStart" format="reference" />
+
+        <!-- Drawable to use as Loading Indicator in the Footer View. Overrides value set in ptrDrawable. -->
+        <attr name="ptrDrawableEnd" format="reference" />
+
+        <!-- Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh. -->
+        <attr name="ptrOverScroll" format="reference|boolean" />
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views -->
+        <attr name="ptrHeaderTextAppearance" format="reference" />
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr name="ptrSubHeaderTextAppearance" format="reference" />
+
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0" />
+            <flag name="flip" value="0x1" />
+        </attr>
+
+        <!-- Whether the user can scroll while the View is Refreshing -->
+        <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean" />
+
+        <!--
+        	Whether PullToRefreshListView has it's extras enabled. This allows the user to be 
+        	able to scroll while refreshing, and behaves better. It acheives this by adding
+        	Header and/or Footer Views to the ListView.
+        -->
+        <attr name="ptrListViewExtrasEnabled" format="reference|boolean" />
+
+        <!--
+        	Whether the Drawable should be continually rotated as you pull. This only
+        	takes effect when using the 'Rotate' Animation Style.
+        -->
+        <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean" />
+
+        <!-- BELOW HERE ARE DEPRECEATED. DO NOT USE. -->
+        <attr name="ptrAdapterViewBackground" format="reference|color" />
+        <attr name="ptrDrawableTop" format="reference" />
+        <attr name="ptrDrawableBottom" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Theme">
+        <attr name="progressHintStyle" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ProgressHint">
+        <attr name="popupLayout" format="reference" />
+        <attr name="popupOffset" format="dimension" />
+        <attr name="popupStyle" format="enum">
+            <enum name="follow" value="0" />
+            <enum name="fixed" value="1" />
+        </attr>
+        <attr name="popupAnimationStyle" format="reference" />
+        <attr name="popupAlwaysShown" format="boolean" />
+        <attr name="popupDraggable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AutoLineFeedLayout">
+        <attr name="debug" format="boolean"></attr>
+
+        <attr name="paddingLeft" format="reference|dimension" />
+        <attr name="paddingRight" format="reference|dimension" />
+        <attr name="paddingTop" format="reference|dimension" />
+        <attr name="paddingBottom" format="reference|dimension" />
+
+        <attr name="verticalSpacing" format="reference|dimension" />
+        <attr name="horizontalSpacing" format="reference|dimension" />
+    </declare-styleable>
+    <!-- 带有数字进度条的attrs -->
+    <declare-styleable name="NumberProgressBar">
+        <attr name="progress" format="integer" />
+        <attr name="max" format="integer" />
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_offset" format="dimension" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="ucrop_UCropView">
+
+        <!--Crop image view-->
+        <attr name="ucrop_aspect_ratio_x" format="float"/>
+        <attr name="ucrop_aspect_ratio_y" format="float"/>
+
+        <!--Overlay view-->
+        <attr name="ucrop_show_oval_crop_frame" format="boolean"/>
+        <attr name="ucrop_circle_dimmed_layer" format="boolean"/>
+        <attr name="ucrop_dimmed_color" format="color"/>
+
+        <attr name="ucrop_grid_stroke_size" format="dimension"/>
+        <attr name="ucrop_grid_color" format="color"/>
+        <attr name="ucrop_grid_row_count" format="integer"/>
+        <attr name="ucrop_grid_column_count" format="integer"/>
+        <attr name="ucrop_show_grid" format="boolean"/>
+
+        <attr name="ucrop_frame_stroke_size" format="dimension"/>
+        <attr name="ucrop_frame_color" format="color"/>
+        <attr name="ucrop_show_frame" format="boolean"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="ucrop_AspectRatioTextView">
+
+        <attr name="ucrop_artv_ratio_title" format="string"/>
+
+        <attr name="ucrop_artv_ratio_x" format="float"/>
+        <attr name="ucrop_artv_ratio_y" format="float"/>
+
+    </declare-styleable>
+
+</resources>

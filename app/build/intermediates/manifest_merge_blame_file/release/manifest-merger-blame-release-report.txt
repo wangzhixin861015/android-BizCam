@@ -1,0 +1,634 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bcnetech.hyphoto"
+4    android:versionCode="122"
+5    android:versionName="1.2.2" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml
+10
+11    <!-- 添加WiFi以及访问网络的权限： -->
+12    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+12-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:6:5-95
+12-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+13-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:7:5-92
+13-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:7:22-73
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:8:5-95
+14-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:8:22-76
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:9:5-92
+15-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:9:22-73
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:10:5-83
+16-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:10:22-64
+17    <uses-permission android:name="android.permission.WAKE_LOCK" />
+17-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:11:5-84
+17-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:11:22-65
+18    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+18-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:12:5-95
+18-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:12:22-76
+19    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+19-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:13:5-80
+19-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:13:22-78
+20    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+21
+22
+23    <!-- 操作外部存储设备文件： -->
+24    <uses-permission android:name="android.permission.VIBRATE" />
+24-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:17:5-66
+24-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:17:22-63
+25    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+25-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:18:5-81
+25-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:18:22-78
+26    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+26-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:19:5-80
+26-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:19:22-77
+27    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+27-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:20:5-78
+27-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:20:22-75
+28    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+28-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:22:5-73
+28-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:22:22-70
+29    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+29-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:24:5-82
+29-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:24:22-80
+30    <uses-permission
+30-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:26:5-28:36
+31        android:name="android.hardware.usb.host"
+31-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:27:9-49
+32        android:required="false" />
+32-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:28:9-33
+33
+34    <uses-feature
+34-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:30:5-32:35
+35        android:name="android.hardware.usb.host"
+35-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:31:9-49
+36        android:required="true" />
+36-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:32:9-32
+37    <!-- 这个声明会导致不支持该版本的设备无法安装。 -->
+38    <!-- Tell the system this app requires OpenGL ES 2.0. -->
+39    <uses-feature
+39-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:35:5-37:35
+40        android:glEsVersion="0x00020000"
+40-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:36:9-41
+41        android:required="true" />
+41-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:37:9-32
+42
+43    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+43-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:38:5-71
+43-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:38:22-68
+44    <uses-permission android:name="android.permission.CAMERA" />
+44-->[:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-65
+44-->[:bizcameralibrary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bizcameralibrary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:22-62
+45    <uses-permission android:name="android.permission.BLUETOOTH" />
+45-->[:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:5-68
+45-->[:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:11:22-65
+46    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+46-->[:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-74
+46-->[:bluetoothlibarary] /Users/mac/work/android-BizCam_1.git/android-BizCam.git/bluetoothlibarary/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-71
+47
+48    <application
+48-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:39:5-336:19
+49        android:name="com.bcnetech.hyphoto.App"
+49-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:42:9-28
+50        android:allowBackup="true"
+50-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:43:9-35
+51        android:anyDensity="true"
+51-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:44:9-34
+52        android:extractNativeLibs="true"
+52-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:41:9-41
+53        android:hardwareAccelerated="true"
+53-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:45:9-43
+54        android:icon="@mipmap/ic_launcher_round"
+54-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:46:9-49
+55        android:label="@string/app_name"
+55-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:47:9-41
+56        android:largeHeap="true"
+56-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:48:9-33
+57        android:maxAspectRatio="2.1"
+57-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:50:9-37
+58        android:supportsRtl="true"
+58-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:49:9-35
+59        android:theme="@style/Transparent_Theme"
+59-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:51:9-49
+60        android:usesCleartextTraffic="true" >
+60-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:40:9-44
+61
+62        <!-- 友盟配置 -->
+63        <meta-data
+63-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:54:9-56:56
+64            android:name="UMENG_APPKEY"
+64-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:55:13-40
+65            android:value="5987d1cd1061d2181e0001cc" />
+65-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:56:13-53
+66        <!-- 适配全面屏(ratio_float = 屏幕高 / 屏幕宽) -->
+67        <meta-data
+67-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:58:9-60:43
+68            android:name="android.max_aspect"
+68-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:59:17-50
+69            android:value="ratio_float" />
+69-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:60:13-40
+70        <!-- 适配刘海屏(华为手机) -->
+71        <meta-data
+71-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:62:9-64:36
+72            android:name="android.notch_support"
+72-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:63:13-49
+73            android:value="true" />
+73-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:64:13-33
+74
+75        <activity
+75-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:66:9-75:20
+76            android:name="com.bcnetech.hyphoto.ui.activity.WelcomeActivity"
+76-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:67:13-56
+77            android:theme="@style/welcome_Theme" >
+77-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:68:13-49
+78            <intent-filter>
+78-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:70:13-74:29
+79                <action android:name="android.intent.action.MAIN" />
+79-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:71:17-69
+79-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:71:25-66
+80
+81                <category android:name="android.intent.category.LAUNCHER" />
+81-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:73:17-77
+81-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:73:27-74
+82            </intent-filter>
+83        </activity>
+84
+85        <!--
+86         <intent-filter>
+87             <action android:name="android.intent.action.MAIN" />
+88
+89             <category android:name="android.intent.category.LAUNCHER" />
+90         </intent-filter>
+91        -->
+92
+93        <activity
+93-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:84:9-90:20
+94            android:name="com.bcnetech.hyphoto.ui.activity.AlbumNewActivity"
+94-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:85:13-57
+95            android:launchMode="singleTop"
+95-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:86:13-43
+96            android:screenOrientation="portrait"
+96-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:87:13-49
+97            android:windowSoftInputMode="stateHidden|stateUnchanged|adjustPan" >
+97-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:88:13-79
+98        </activity>
+99        <activity
+99-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:92:9-94:61
+100            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.LightRatioActivity"
+100-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:93:13-72
+101            android:screenOrientation="portrait" />
+101-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:94:13-49
+102        <activity
+102-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:95:9-97:61
+103            android:name="com.bcnetech.hyphoto.ui.activity.cloud.CloudInfoActivity"
+103-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:96:13-64
+104            android:screenOrientation="portrait" />
+104-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:97:13-49
+105        <activity
+105-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:98:9-101:61
+106            android:name="com.bcnetech.hyphoto.ui.activity.cloud.CloundActivity"
+106-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:99:13-61
+107            android:launchMode="singleTask"
+107-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:100:13-44
+108            android:screenOrientation="portrait" />
+108-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:101:13-49
+109        <activity
+109-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:102:9-105:61
+110            android:name="com.bcnetech.hyphoto.ui.activity.cloud.CloundNewActivity"
+110-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:103:13-64
+111            android:launchMode="singleTask"
+111-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:104:13-44
+112            android:screenOrientation="portrait" />
+112-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:105:13-49
+113        <activity
+113-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:106:9-109:61
+114            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.SettingDetailActivity"
+114-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:107:13-75
+115            android:launchMode="singleTop"
+115-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:108:13-43
+116            android:screenOrientation="portrait" />
+116-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:109:13-49
+117        <activity
+117-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:111:9-114:61
+118            android:name="com.bcnetech.hyphoto.ui.activity.AgreeActivity"
+118-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:112:13-54
+119            android:launchMode="singleTop"
+119-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:113:13-43
+120            android:screenOrientation="portrait" />
+120-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:114:13-49
+121        <activity
+121-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:115:9-117:61
+122            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.PartParmsActivity"
+122-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:116:13-68
+123            android:screenOrientation="portrait" />
+123-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:117:13-49
+124        <activity
+124-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:120:9-122:61
+125            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.BgRepairActivity"
+125-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:121:13-67
+126            android:screenOrientation="portrait" />
+126-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:122:13-49
+127        <activity
+127-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:123:9-125:61
+128            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.AutoRecoveryActivity"
+128-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:124:13-71
+129            android:screenOrientation="portrait" />
+129-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:125:13-49
+130        <activity
+130-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:128:9-130:61
+131            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.AtmosphereActivity"
+131-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:129:13-69
+132            android:screenOrientation="portrait" />
+132-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:130:13-49
+133        <activity
+133-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:131:9-133:61
+134            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.CutActivity"
+134-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:132:13-65
+135            android:screenOrientation="portrait" />
+135-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:133:13-49
+136        <activity
+136-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:134:9-136:61
+137            android:name="com.bcnetech.hyphoto.ui.activity.market.TemplateActivcity"
+137-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:135:13-65
+138            android:screenOrientation="portrait" />
+138-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:136:13-49
+139        <activity
+139-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:138:9-143:81
+140            android:name="com.bcnetech.hyphoto.ui.activity.camera.SurfViewCameraActivity"
+140-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:139:13-70
+141            android:hardwareAccelerated="true"
+141-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:140:13-47
+142            android:launchMode="singleTask"
+142-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:141:13-44
+143            android:screenOrientation="portrait"
+143-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:142:13-49
+144            android:windowSoftInputMode="adjustPan|stateUnspecified" />
+144-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:143:13-69
+145        <activity
+145-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:145:9-147:61
+146            android:name="com.bcnetech.hyphoto.ui.activity.camera.RecoderActivity"
+146-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:146:13-63
+147            android:screenOrientation="portrait" />
+147-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:147:13-49
+148        <activity
+148-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:148:9-150:61
+149            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.PresetLoadManageActivity"
+149-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:149:13-78
+150            android:screenOrientation="portrait" />
+150-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:150:13-49
+151        <activity
+151-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:151:9-153:61
+152            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.UploadManagerActivity"
+152-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:152:13-75
+153            android:screenOrientation="portrait" />
+153-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:153:13-49
+154
+155        <service android:name="com.bcnetech.hyphoto.service.UpdataService" />
+155-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:155:9-58
+155-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:155:18-55
+156
+157        <activity
+157-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:157:9-160:61
+158            android:name="com.bcnetech.hyphoto.ui.activity.market.MarketFragmentActivity"
+158-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:158:13-70
+159            android:launchMode="singleTask"
+159-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:159:13-44
+160            android:screenOrientation="portrait" />
+160-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:160:13-49
+161        <activity
+161-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:161:9-163:61
+162            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.CropRotateActivity"
+162-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:162:13-69
+163            android:screenOrientation="portrait" />
+163-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:163:13-49
+164        <activity
+164-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:164:9-167:61
+165            android:name="com.bcnetech.hyphoto.ui.activity.ImageSelectorActivity"
+165-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:165:13-62
+166            android:launchMode="singleTop"
+166-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:166:13-43
+167            android:screenOrientation="portrait" />
+167-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:167:13-49
+168        <activity
+168-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:168:9-171:61
+169            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.ImageParmsNewActivity"
+169-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:169:13-72
+170            android:launchMode="singleTop"
+170-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:170:13-43
+171            android:screenOrientation="portrait" />
+171-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:171:13-49
+172        <activity
+172-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:172:9-174:61
+173            android:name="com.bcnetech.hyphoto.ui.activity.photoedit.BizMattingNewActivity"
+173-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:173:13-72
+174            android:screenOrientation="portrait" />
+174-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:174:13-49
+175        <activity
+175-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:175:9-180:81
+176            android:name="com.bcnetech.hyphoto.ui.activity.camera.SurfViewCameraNewActivity"
+176-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:176:13-73
+177            android:hardwareAccelerated="true"
+177-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:177:13-47
+178            android:launchMode="singleTask"
+178-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:178:13-44
+179            android:screenOrientation="portrait"
+179-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:179:13-49
+180            android:windowSoftInputMode="adjustPan|stateUnspecified" />
+180-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:180:13-69
+181        <activity
+181-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:181:9-185:85
+182            android:name="com.bcnetech.hyphoto.ui.activity.MainActivity"
+182-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:182:13-53
+183            android:screenOrientation="portrait"
+183-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:183:13-49
+184            android:theme="@style/welcome_Theme"
+184-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:184:13-49
+185            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+185-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:185:13-73
+186        <activity
+186-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:186:9-190:85
+187            android:name="com.bcnetech.hyphoto.ui.activity.MainUsActivity"
+187-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:187:13-55
+188            android:screenOrientation="portrait"
+188-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:188:13-49
+189            android:theme="@style/welcome_Theme"
+189-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:189:13-49
+190            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+190-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:190:13-73
+191        <activity
+191-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:191:9-194:61
+192            android:name="com.bcnetech.hyphoto.ui.activity.camera.CameraSettingActivity"
+192-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:192:13-69
+193            android:launchMode="singleTask"
+193-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:193:13-44
+194            android:screenOrientation="portrait" />
+194-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:194:13-49
+195        <activity
+195-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:195:9-198:61
+196            android:name="com.bcnetech.hyphoto.ui.activity.camera.WaterMarkSettingActivity"
+196-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:196:13-72
+197            android:launchMode="singleTask"
+197-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:197:13-44
+198            android:screenOrientation="portrait" />
+198-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:198:13-49
+199        <activity
+199-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:199:9-202:61
+200            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.UserCenterActivity"
+200-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:200:13-72
+201            android:launchMode="singleTask"
+201-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:201:13-44
+202            android:screenOrientation="portrait" />
+202-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:202:13-49
+203        <activity
+203-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:203:9-206:61
+204            android:name="com.bcnetech.hyphoto.ui.activity.GoodsMarketActivity"
+204-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:204:13-60
+205            android:launchMode="singleTask"
+205-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:205:13-44
+206            android:screenOrientation="portrait" />
+206-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:206:13-49
+207        <activity
+207-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:208:9-211:61
+208            android:name="com.bcnetech.hyphoto.ui.activity.camera.AICameraActivity"
+208-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:209:13-64
+209            android:launchMode="singleTask"
+209-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:210:13-44
+210            android:screenOrientation="portrait" />
+210-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:211:13-49
+211        <activity
+211-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:213:9-216:61
+212            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.BizCamUToActivity"
+212-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:214:13-71
+213            android:launchMode="singleTask"
+213-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:215:13-44
+214            android:screenOrientation="portrait" />
+214-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:216:13-49
+215        <activity
+215-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:217:9-220:61
+216            android:name="com.bcnetech.hyphoto.ui.activity.camera.AiPreviewActivity"
+216-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:218:13-65
+217            android:launchMode="singleTask"
+217-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:219:13-44
+218            android:screenOrientation="portrait" />
+218-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:220:13-49
+219        <activity
+219-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:221:9-224:61
+220            android:name="com.bcnetech.hyphoto.ui.activity.camera.AI360CameraActivity"
+220-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:222:13-67
+221            android:launchMode="singleTask"
+221-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:223:13-44
+222            android:screenOrientation="portrait" />
+222-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:224:13-49
+223        <activity
+223-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:225:9-228:61
+224            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.BizCamHelpActivity"
+224-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:226:13-72
+225            android:launchMode="singleTask"
+225-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:227:13-44
+226            android:screenOrientation="portrait" />
+226-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:228:13-49
+227        <activity
+227-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:229:9-233:59
+228            android:name="com.bcnetech.hyphoto.ui.activity.personCenter.BizCamHelpDetailActivity"
+228-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:230:13-78
+229            android:hardwareAccelerated="true"
+229-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:233:13-47
+230            android:launchMode="singleTask"
+230-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:231:13-44
+231            android:screenOrientation="portrait" />
+231-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:232:13-49
+232
+233        <service android:name="com.bcnetech.hyphoto.service.UpdataService" />
+233-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:155:9-58
+233-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:155:18-55
+234        <!--
+235          <receiver android:name=".receiver.HttpChangReceiver">
+236              <intent-filter>
+237                  <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+238              </intent-filter>
+239          </receiver>
+240        -->
+241
+242
+243        <!-- 注意这个地方的位置，是在application标签里面；android:authorities对应Provider.AUTHORITY -->
+244        <!-- <provider -->
+245        <!-- android:name="com.bcnetech.bizcam.sql.contentprovider.PersonProvider" -->
+246        <!-- android:authorities="com.bcnetech.provider.person" /> -->
+247
+248        <provider
+248-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:247:9-249:101
+249            android:name="com.bcnetech.hyphoto.sql.contentprovider.PresetParmsContentProvider"
+249-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:248:13-75
+250            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.presetparm" />
+250-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:249:13-98
+251        <provider
+251-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:251:9-253:101
+252            android:name="com.bcnetech.hyphoto.sql.contentprovider.LightRatioContentProvider"
+252-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:252:13-74
+253            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.lightratio" />
+253-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:253:13-98
+254        <provider
+254-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:255:9-257:100
+255            android:name="com.bcnetech.hyphoto.sql.contentprovider.ImageUtilContentProvider"
+255-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:256:13-73
+256            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.imageutil" />
+256-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:257:13-97
+257        <provider
+257-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:259:9-261:105
+258            android:name="com.bcnetech.hyphoto.sql.contentprovider.DownLoadInfoContentProvider"
+258-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:260:13-76
+259            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.downloadmanage" />
+259-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:261:13-102
+260        <provider
+260-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:263:9-265:103
+261            android:name="com.bcnetech.hyphoto.sql.contentprovider.UpLoadPicContentProvider"
+261-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:264:13-73
+262            android:authorities="com.bcnetech.hyphoto.bcnetechlibrary.contentprovider.uploadmanage" />
+262-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:265:13-100
+263        <provider
+263-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:268:9-277:20
+264            android:name="android.support.v4.content.FileProvider"
+264-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:269:13-67
+265            android:authorities="com.bcnetech.hyphoto.FileProvider"
+265-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:270:13-68
+266            android:exported="false"
+266-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:272:13-37
+267            android:grantUriPermissions="true" >
+267-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:271:13-47
+268
+269            <!-- 元数据 -->
+270            <meta-data
+270-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:274:13-276:49
+271                android:name="android.support.FILE_PROVIDER_PATHS"
+271-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:275:13-63
+272                android:resource="@xml/file_path" />
+272-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:276:13-46
+273        </provider>
+274
+275        <activity
+275-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:282:9-288:20
+276            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
+276-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:283:13-77
+277            android:configChanges="keyboardHidden|orientation"
+277-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:284:13-63
+278            android:exported="false"
+278-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:286:13-37
+279            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+279-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:285:13-72
+280        </activity>
+281        <activity
+281-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:290:9-295:20
+282            android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
+282-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:290:19-76
+283            android:configChanges="keyboardHidden|orientation"
+283-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:291:13-63
+284            android:exported="false"
+284-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:292:13-37
+285            android:windowSoftInputMode="adjustResize" >
+285-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:293:13-55
+286        </activity>
+287        <activity
+287-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:298:9-307:20
+288            android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
+288-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:301:13-73
+289            android:launchMode="singleTask"
+289-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:300:13-44
+290            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+290-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:299:13-83
+291            <intent-filter>
+291-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:302:13-305:29
+292                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+292-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:303:17-92
+292-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:303:25-89
+293
+294                <category android:name="android.intent.category.DEFAULT" />
+294-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:304:17-76
+294-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:304:27-73
+295            </intent-filter>
+296        </activity>
+297        <activity
+297-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:309:9-313:75
+298            android:name="com.bcnetech.hyphoto.wxapi.WXEntryActivity"
+298-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:310:13-50
+299            android:configChanges="keyboardHidden|orientation|screenSize"
+299-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:311:13-74
+300            android:exported="true"
+300-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:312:13-36
+301            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+301-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:313:13-72
+302        <activity
+302-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:316:9-328:20
+303            android:name="com.tencent.tauth.AuthActivity"
+303-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:317:13-58
+304            android:launchMode="singleTask"
+304-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:318:13-44
+305            android:noHistory="true" >
+305-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:319:13-37
+306            <intent-filter>
+306-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:320:13-327:29
+307                <action android:name="android.intent.action.VIEW" />
+307-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:321:17-69
+307-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:321:25-66
+308
+309                <category android:name="android.intent.category.DEFAULT" />
+309-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:304:17-76
+309-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:304:27-73
+310                <category android:name="android.intent.category.BROWSABLE" />
+310-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:324:17-78
+310-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:324:27-75
+311
+312                <data android:scheme="tencent1106394618" />
+312-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:326:17-60
+312-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:326:23-57
+313            </intent-filter>
+314        </activity>
+315        <activity
+315-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:331:9-334:76
+316            android:name="com.tencent.connect.common.AssistActivity"
+316-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:332:13-69
+317            android:configChanges="orientation|keyboardHidden|screenSize"
+317-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:334:13-74
+318            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+318-->/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/AndroidManifest.xml:333:13-72
+319
+320        <provider
+320-->[com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:8:9-11:40
+321            android:name="com.squareup.picasso.PicassoProvider"
+321-->[com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:9:13-64
+322            android:authorities="com.bcnetech.hyphoto.com.squareup.picasso"
+322-->[com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:10:13-72
+323            android:exported="false" />
+323-->[com.squareup.picasso:picasso:2.71828] /Users/mac/.gradle/caches/transforms-2/files-2.1/cec97af56e764c962a8ee2df8c8ac84a/picasso-2.71828/AndroidManifest.xml:11:13-37
+324        <provider
+324-->[com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:9:9-12:40
+325            android:name="com.liulishuo.okdownload.OkDownloadProvider"
+325-->[com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:10:13-71
+326            android:authorities="com.bcnetech.hyphoto.com.liulishuo.okdownload"
+326-->[com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:11:13-76
+327            android:exported="false" />
+327-->[com.liulishuo.okdownload:okdownload:1.0.5] /Users/mac/.gradle/caches/transforms-2/files-2.1/146009ed8bdfa8e5a34f48ab49977297/okdownload-1.0.5/AndroidManifest.xml:12:13-37
+328
+329        <activity
+329-->[com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:9-172
+330            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+330-->[com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:19-85
+331            android:exported="false"
+331-->[com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:146-170
+332            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+332-->[com.google.android.gms:play-services-base:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b14dee9ab53d4df78ae1cb1c06ef9576/play-services-base-10.2.0/AndroidManifest.xml:19:86-145
+333
+334        <meta-data
+334-->[com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:20:9-121
+335            android:name="com.google.android.gms.version"
+335-->[com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:20:20-65
+336            android:value="@integer/google_play_services_version" />
+336-->[com.google.android.gms:play-services-basement:10.2.0] /Users/mac/.gradle/caches/transforms-2/files-2.1/b161ca843ae6cf65d66545becde2a24f/play-services-basement-10.2.0/AndroidManifest.xml:20:66-119
+337    </application>
+338
+339</manifest>

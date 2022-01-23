@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <color name="withe_span">#eeffffff</color>
+   <color name="white">#ffffffff</color>
+   <color name="black">#ff000000</color>
+   <color name="black_top">#ee000000</color>
+   <color name="blue">#0164f7</color>
+   <color name="translucent" >#00000000</color>
+   <color name="dialog_button_bg">#ff303338</color>
+   <color name="gray">#ff9b9b9b</color>
+   <drawable name="transpart">#00000000</drawable>
+   <color name="blue_line">#1C67BF</color>
+   <color name="blue_dotted_line">#0068B7</color>
+   <color name="default_loading">#ffffff</color>
+   <color name="dg_color_translucent">#CC000000</color><!-- 半透明 -->
+   <color name="text_item_child">#ADB5C2</color>
+   <color name="sing_in_color">#0057FF</color>
+   <color name="color_white40">#66ffffff</color>
+
+   <!--Crop View-->
+   <color name="ucrop_color_default_crop_grid">#80ffffff</color>
+   <color name="ucrop_color_default_crop_frame">#ffffff</color>
+   <color name="ucrop_color_default_dimmed">#8c000000</color>
+   <color name="ucrop_color_default_logo">#4f212121</color>
+
+
+
+</resources>
+
+

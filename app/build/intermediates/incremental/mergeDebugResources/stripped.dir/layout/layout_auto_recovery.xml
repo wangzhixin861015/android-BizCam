@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black">
+
+
+    <com.bcnetech.hyphoto.ui.view.TitleView
+        android:id="@+id/bgrepair_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/title_bg"
+        android:elevation="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bgr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_rotate"
+        android:layout_below="@id/bgrepair_title"
+        android:background="@color/backgroud_new">
+
+        <com.bcnetech.hyphoto.ui.view.ScaleImageView
+
+            android:id="@+id/bgr_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true" />
+
+        <com.bcnetech.hyphoto.ui.view.BGPaintView
+            android:id="@+id/bgr_paint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <com.bcnetech.bcnetechlibrary.view.BifacialView
+        android:id="@+id/bifacialView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_rotate"
+        android:layout_below="@id/bgrepair_title"
+        android:layout_centerInParent="true"
+        android:background="@color/white"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_rotate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_112"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="9dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/recoveryRel0"
+            android:background="@drawable/shape_button_press"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:padding="@dimen/dp_4"
+                android:id="@+id/recovery0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                 />
+            <Button
+                android:text="@string/original_drawing"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_margin="@dimen/dp_4"
+                android:id="@+id/recoveryButton0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recoveryRel1"
+            android:background="@drawable/shape_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:padding="@dimen/dp_4"
+                android:id="@+id/recovery1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <Button
+                android:visibility="gone"
+                android:layout_margin="@dimen/dp_4"
+                android:id="@+id/recoveryButton1"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="M1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recoveryRel2"
+            android:background="@drawable/shape_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:padding="@dimen/dp_4"
+                android:id="@+id/recovery2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <Button
+                android:visibility="gone"
+                android:layout_margin="@dimen/dp_4"
+                android:id="@+id/recoveryButton2"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="M2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recoveryRel3"
+            android:background="@drawable/shape_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:padding="@dimen/dp_4"
+                android:id="@+id/recovery3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <Button
+                android:visibility="gone"
+                android:layout_margin="@dimen/dp_4"
+                android:id="@+id/recoveryButton3"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="M3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recoveryRel4"
+            android:background="@drawable/shape_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:padding="@dimen/dp_4"
+                android:id="@+id/recovery4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <Button
+                android:visibility="gone"
+                android:layout_margin="@dimen/dp_4"
+                android:id="@+id/recoveryButton4"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="M4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/recoveryRel5"
+            android:background="@drawable/shape_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_5"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:padding="@dimen/dp_4"
+                android:id="@+id/recovery5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <Button
+                android:visibility="gone"
+                android:layout_margin="@dimen/dp_4"
+                android:id="@+id/recoveryButton5"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="M5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

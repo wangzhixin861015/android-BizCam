@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/newbg">
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:background="@drawable/title_bg"
+        android:elevation="2dp">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/bgrepair_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bgr"
+        android:background="@color/backgroud_new"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_rotate"
+        android:layout_below="@id/top_layout">
+
+        <com.bcnetech.hyphoto.ui.view.ScaleImageView
+
+            android:id="@+id/bgr_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true" />
+
+        <com.bcnetech.hyphoto.ui.view.BGPaintView
+            android:id="@+id/bgr_paint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+    <com.bcnetech.bcnetechlibrary.view.BifacialView
+        android:background="@color/white"
+        android:visibility="gone"
+        android:id="@+id/bifacialView"
+        android:layout_above="@+id/ll_rotate"
+        android:layout_below="@id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        />
+    <LinearLayout
+
+        android:elevation="9dp"
+        android:background="@color/white"
+        android:id="@+id/ll_rotate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_112"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/mark_bg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/new_eyeoff"
+            android:padding="@dimen/dp_40"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/mark_main"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/undo_selector"
+            android:padding="@dimen/dp_30"
+            android:layout_weight="1"/>
+        <com.bcnetech.bcnetechlibrary.view.MyImageView
+            android:layout_gravity="center"
+            android:src="@drawable/new_eyeoff"
+            android:scaleType="centerInside"
+            android:id="@+id/eye"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"  />
+    </LinearLayout>
+
+</RelativeLayout>

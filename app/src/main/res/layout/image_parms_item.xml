@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tiaozhengcanshu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_84"
+        android:gravity="center_vertical|right"
+        android:text="@string/exposire"
+        android:textColor="@color/white_aphle40"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_name"
+      >
+
+        <com.bcnetech.bcnetechlibrary.view.NumberSeekBar
+            android:id="@+id/sb_name"
+            style="@style/img_parms_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_38"
+            android:layout_marginTop="@dimen/dp_82"
+            android:progress="50" />
+
+        <ImageView
+            android:layout_width="@dimen/dp_12"
+            android:layout_height="@dimen/dp_20"
+            android:src="@drawable/line3"
+            android:layout_below="@+id/sb_name"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/tv_advises"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:text="@string/opinions"
+                android:textColor="#707070"/>
+
+            <EditText
+                android:id="@+id/edit_advises"
+                android:gravity="top"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_170"
+                android:hint="@string/adivse_hint"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:background="@color/white"
+                style="@style/FontBlack14"
+                android:textColorHint="#C7C7C7"
+                android:layout_below="@+id/tv_advises"/>
+
+            <TextView
+                android:id="@+id/tv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_52"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:text="@string/images"
+                android:layout_below="@+id/edit_advises"
+                android:textColor="#707070"/>
+
+            <com.bcnetech.hyphoto.ui.view.FeedBackFlowLayout
+                android:id="@+id/rl_select_fb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tv_image"
+                android:gravity="center_vertical"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:layout_below="@+id/rl_select_fb"
+                android:text="@string/name"
+                android:textColor="#707070" />
+
+            <LinearLayout
+                android:id="@+id/ll_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_below="@+id/tv_name">
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:layout_height="@dimen/dp_82"
+                    android:hint="@string/adivse_name"
+                    style="@style/FontBlack14"
+                    android:paddingLeft="16dp"
+                    android:textColorHint="#C7C7C7" />
+
+                <ImageView
+                    android:id="@+id/name_clear"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp"
+                    android:src="@drawable/shape"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:text="@string/contact"
+                android:textColor="#707070"
+                android:layout_below="@+id/ll_name"/>
+
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/tv_phone"
+                android:background="@color/white">
+                <EditText
+                    android:id="@+id/edit_phone"
+                    android:singleLine="true"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/dp_82"
+                    android:hint="@string/adivse_phone"
+                    style="@style/FontBlack14"
+                    android:background="@null"
+                    android:paddingLeft="16dp"
+                    android:textColorHint="#C7C7C7" />
+
+                <ImageView
+                    android:id="@+id/phone_clear"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp"
+                    android:src="@drawable/shape"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/sendadvise"
+                android:background="#00f"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_height="@dimen/dp_92"
+                android:layout_below="@id/ll_phone"
+                android:layout_marginTop="@dimen/dp_126"
+                android:gravity="center"
+                style="@style/FontWhite16"
+                android:text="@string/send" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/sendadvise"/>
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

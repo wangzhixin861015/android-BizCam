@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroud_new" android:tag="layout/recoder_layout_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_126"
+            android:elevation="3dp"
+            android:background="@drawable/title_bg">
+
+            <TextView
+                android:id="@+id/delet"
+                style="@style/FontGreg16"
+                android:layout_width="@dimen/dp_168"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#000"
+                android:text="@string/cancel" />
+
+            <TextView
+                android:id="@+id/save"
+                style="@style/FontGreg16"
+                android:layout_width="@dimen/dp_168"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:textColor="#000"
+                android:gravity="center"
+                android:text="@string/save" />
+        </RelativeLayout>
+
+        <!-- <com.bcnetech.bcnetechlibrary.view.addition.widget.SeekBar
+             android:id="@+id/seebar"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/dp_106"
+             android:layout_alignParentBottom="true"/>-->
+        <!-- <VideoBottomView
+             android:id="@+id/bottom_view"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/dp_150"
+             android:layout_alignParentBottom="true"
+             android:background="@color/backgroud_new" />-->
+        <RelativeLayout
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_150"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_150"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp_50"
+                android:src="@drawable/video_play_seleter" />
+
+            <ImageView
+                android:id="@+id/iv_rotate"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_150"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/dp_50"
+                android:src="@drawable/rotate_seleter" />
+
+            <ImageView
+                android:id="@+id/iv_wm"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_150"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp_50"
+                android:src="@drawable/new_wm_gray" />
+        </RelativeLayout>
+
+        <!--  <TextureVideoPlayer
+              android:id="@+id/video_player"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_above="@id/bottom_view"
+              android:layout_below="@id/title" />-->
+        <ImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_view"
+            android:layout_below="@id/title" />
+
+        <TextureView
+            android:id="@+id/video_texture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_view"
+            android:elevation="5dp"
+            android:layout_below="@id/title" />
+    </RelativeLayout>
+         

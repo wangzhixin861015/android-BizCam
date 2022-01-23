@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_92">
+
+        <com.bcnetech.hyphoto.ui.view.RoundedImageView
+            android:id="@+id/list_item"
+            android:scaleType="centerCrop"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:layout_centerInParent="true"
+            app:siBorderAlpha="0.0"
+            app:siBorderWidth="@dimen/dp_0"
+            android:layout_marginLeft="@dimen/dp_20"/>
+
+        <ImageView
+            android:id="@+id/list_item_help"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:layout_marginLeft="@dimen/dp_20"/>
+
+        <ImageView
+            android:id="@+id/list_item_scan"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/scan_off"
+            android:layout_marginLeft="@dimen/dp_20"/>
+
+
+        <TextView
+            android:id="@+id/list_item_none"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:layout_centerInParent="true"
+            android:text="@string/original_drawing"
+            android:gravity="center"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/list_item_check"
+            android:layout_width="@dimen/dp_92"
+            android:layout_height="@dimen/dp_92"
+            android:src="@drawable/blue_background_radius"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:layout_marginLeft="@dimen/dp_20"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

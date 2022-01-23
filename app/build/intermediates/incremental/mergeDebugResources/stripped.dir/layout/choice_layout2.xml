@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_104"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white">
+    <RelativeLayout
+        android:id="@+id/type1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/cencel"
+            android:layout_width="@dimen/dp_72"
+            android:layout_height="@dimen/dp_72"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_24"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:src="@drawable/new_close"/>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_item_child26"/>
+
+        <ImageView
+            android:id="@+id/ok"
+            android:layout_width="@dimen/dp_72"
+            android:layout_height="@dimen/dp_72"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_26"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_16"
+            android:layout_centerVertical="true"
+            android:src="@drawable/new_yes"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/type2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/cencel_type2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/FontWhite14"
+            android:gravity="center"
+            android:text="@string/cancel"/>
+        <View
+            android:layout_width="@dimen/dp_2"
+            android:layout_height="match_parent"
+            android:background="@color/color_white"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"/>
+        <TextView
+            android:id="@+id/ok_type2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            style="@style/FontWhite14"
+            android:text="@string/confirm"/>
+    </LinearLayout>
+</RelativeLayout>

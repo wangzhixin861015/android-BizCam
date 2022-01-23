@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/newbg">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/watermark_setting_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/title_bg"
+            android:elevation="2dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/watermark_setting_title"
+            android:background="@color/backgroud_new">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/watermark"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_wm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/watermark"
+                        android:layout_marginTop="@dimen/dp_64">
+
+                        <TextView
+                            android:id="@+id/tv_sample"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
+                            android:text="@string/sample"
+                            android:textColor="@color/black_aphle40"
+                            android:textSize="@dimen/dp_28" />
+
+                        <RelativeLayout
+                            android:id="@+id/rl_sample"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_508"
+                            android:layout_below="@+id/tv_sample"
+                            android:layout_marginTop="@dimen/dp_16">
+
+                            <com.bcnetech.hyphoto.ui.view.ResizableImageView
+                                android:id="@+id/sample_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginLeft="26dp"
+                                android:layout_marginRight="26dp"
+                                android:src="@drawable/watermark_sample" />
+
+                            <ImageView
+                                android:id="@+id/sample_watermark"
+                                android:layout_width="@dimen/dp_52"
+                                android:layout_height="@dimen/dp_52"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="@dimen/dp_28"
+                                android:layout_marginBottom="@dimen/dp_12"
+                                android:src="@drawable/wm_bizcam"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <com.bcnetech.hyphoto.ui.view.WMFlowLayout
+                            android:id="@+id/rl_select_wm"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/rl_sample"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginRight="26dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

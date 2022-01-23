@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<ZoomableViewGroup-->
+        <!--android:id="@+id/zoomableViewGroup"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/pic_name"-->
+            <!--android:paddingLeft="@dimen/dp_40"-->
+            <!--android:paddingRight="@dimen/dp_40"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:clickable="true" />-->
+    <!--</ZoomableViewGroup>-->
+
+
+    <com.bcnetech.hyphoto.ui.view.ScaleImageView
+        android:id="@+id/pic_name"
+        android:paddingLeft="@dimen/dp_40"
+        android:paddingRight="@dimen/dp_40"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:clickable="true" />
+
+    <com.bcnetech.hyphoto.ui.view.ViewPagerVideoView
+        android:id="@+id/video_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>

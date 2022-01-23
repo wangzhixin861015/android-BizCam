@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+	package
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:3:5-48
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+	android:versionCode
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml:2:1-4:12
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+uses-sdk
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		ADDED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml
+		INJECTED from /Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/AndroidManifest.xml

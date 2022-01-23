@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translucent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:background="@color/black"
+        android:elevation="2dp">
+
+        <com.bcnetech.hyphoto.ui.view.ImageNewUtilsTopView
+            android:id="@+id/image_new_utils_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:background="@drawable/title_bg" />
+    </LinearLayout>
+
+
+    <com.bcnetech.hyphoto.ui.view.ScaleImageView
+        android:id="@+id/scaleimage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+
+        android:id="@+id/panelContent_image"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_196"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="9dp"
+        android:orientation="vertical">
+
+        <com.bcnetech.hyphoto.ui.view.viewPagerIndicator.view.viewpager.SViewPager
+            android:id="@+id/sviewPager_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.bcnetech.hyphoto.ui.view.viewPagerIndicator.view.indicator.FixedIndicatorView
+                android:id="@+id/indicatorView_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_20" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/rl_ai360_share"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_144"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="9dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_ai360_share"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/floder_title"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
+
+    
+
+
+
+    <com.bcnetech.hyphoto.ui.view.ImageparmsNewView
+        android:id="@+id/image_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dg_color_translucent"
+        android:elevation="9dp"
+        android:visibility="gone" />
+
+
+    <com.bcnetech.hyphoto.ui.view.ImageShareParmsEditView
+        android:id="@+id/share_img_edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="9dp"
+        android:fillViewport="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

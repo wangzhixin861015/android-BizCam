@@ -1,0 +1,14 @@
+Executable : /Users/a1234/Library/Android/sdk/android-sdk-macosx/cmake/3.6.4111459/bin/cmake
+arguments : 
+-H/Users/a1234/android-BizCam/bcnetechlibrary
+-B/Users/a1234/android-BizCam/bcnetechlibrary/.externalNativeBuild/cmake/release/armeabi-v7a
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/a1234/android-BizCam/bcnetechlibrary/build/intermediates/cmake/release/obj/armeabi-v7a
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle
+-DCMAKE_TOOLCHAIN_FILE=/Users/a1234/Library/Android/sdk/android-sdk-macosx/ndk-bundle/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/Users/a1234/Library/Android/sdk/android-sdk-macosx/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
+jvmArgs : 
+

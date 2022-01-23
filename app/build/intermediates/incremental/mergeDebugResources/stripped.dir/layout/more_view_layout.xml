@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_more_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/translucent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/down_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@drawable/down_arrow_drawable" />
+
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="191dp"
+        android:layout_height="182dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/down_arrow"
+        android:layout_marginRight="@dimen/dp_32"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/ll_flashDisk"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_112"
+            android:layout_marginLeft="@dimen/dp_32"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/flash_disk_none" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/dp_44"
+                android:gravity="center_vertical"
+                android:text="@string/save_to_usb"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_newFile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_112"
+            android:layout_below="@+id/ll_flashDisk"
+            android:layout_marginLeft="@dimen/dp_32"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/upload" />
+
+            <TextView
+                android:id="@+id/take_photo"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/dp_44"
+                android:gravity="center_vertical"
+                android:text="@string/upload_new_folder"
+                android:textColor="@color/text_item_child"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_112"
+            android:layout_marginLeft="@dimen/dp_32"
+            android:layout_weight="1"
+            android:gravity="center"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/new_delete" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/dp_44"
+                android:gravity="center_vertical"
+                android:text="@string/delete_select"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="隐私政策"
+        android:layout_centerHorizontal="true"
+        android:textColor="#282828"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"/>
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:textColor="#282828"
+        android:lineSpacingMultiplier="1.2"
+        />
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E7E7E7"
+        android:layout_below="@+id/tv_1"
+        android:layout_marginTop="20dp"/>
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:background="#E7E7E7"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/view_1"/>
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="不同意"
+        android:textStyle="bold"
+        android:textColor="#282828"
+        android:layout_toLeftOf="@+id/view_2"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/view_1"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="同意并继续"
+        android:textStyle="bold"
+        android:textColor="@color/letter_j0"
+        android:layout_toRightOf="@+id/view_2"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/view_1"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:padding="8dp"
+        />
+</RelativeLayout>
+

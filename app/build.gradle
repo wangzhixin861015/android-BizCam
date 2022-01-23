@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+
+    signingConfigs {
+        release {
+            keyAlias 'hello'
+            keyPassword '123456'
+            storeFile file('./testwb.jks')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'hello'
+            keyPassword '123456'
+            storeFile file('./testwb.jks')
+            storePassword '123456'
+        }
+    }
+
+    defaultConfig {
+        applicationId APP_PACKAGE
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+
+        versionCode = VERSION_CODE as int
+        versionName = VERSION_NAME
+
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a','x86'
+        }
+        renderscriptTargetApi MIN_SDK_VERSION as int
+        renderscriptSupportModeEnabled true
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+        }
+    }
+
+
+    dataBinding {
+        enabled true
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api 'com.github.lzyzsd:jsbridge:1.0.4'
+//    compile project(':bcnetechlibrary')
+    /*compile(name: 'imageproc-release', ext: 'aar')
+                                        compile(name: 'bluetoothlibarary-release', ext: 'aar')
+                                        compile(name: 'library-release', ext: 'aar')*/
+    //   compile project(':bluetoothlibarary')
+//    compile project(':library')
+//    compile project(':imageproc')
+//    compile project(':bcnetchhttp')
+    api project(':bizcameralibrary')
+//    implementation 'com.liulishuo.filedownloader:library:1.7.6'
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.5'
+    api(rootProject.ext.supportDependencies.picasso) {
+        exclude group: 'com.squareup.okhttp3:okhttp:3.10.0'
+        exclude group: 'com.squareup.okio:okio:1.14.0'
+    }
+    api rootProject.ext.supportDependencies.glide
+    api 'com.android.support:multidex:1.0.3'
+    api 'com.android.support.constraint:constraint-layout:1.1.2'
+    api('com.github.huburt-Hu:NewbieGuide:v2.4.0') {
+        exclude group: 'com.android.support'
+    }
+}
+
+

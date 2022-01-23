@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/nouse_parametres"
+    android:textSize="@dimen/dp_24"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/dp_64"
+    android:layout_marginBottom="@dimen/dp_24"
+    android:textColor="@color/text_item_child"
+    android:visibility="visible"/>
+
+    <View
+        android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_2"
+    android:background="@color/text_item_child26"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_72"
+    android:visibility="visible"/>
+
+</LinearLayout>

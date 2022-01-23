@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/ll_upload"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_3"
+        android:layout_marginRight="@dimen/dp_3"
+        android:background="@drawable/gray_item_bg2"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/grid_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/lamp"
+             />
+
+        <TextView
+            android:id="@+id/grid_item_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备份"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_upload"
+        android:layout_centerHorizontal="true"
+        android:text="123"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_140"
+    android:layout_height="@dimen/dp_192">
+
+    <TextView
+        android:id="@+id/light_number_text"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_grey"
+        style="@style/FontWhite18"/>
+    <TextView
+        android:id="@+id/light_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/light_number_text"
+        android:layout_marginTop="@dimen/dp_12"/>
+</RelativeLayout>

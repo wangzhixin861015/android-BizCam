@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/newbg">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/camera_setting_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/title_bg"
+            android:elevation="2dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/camera_setting_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_camera_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/backgroud_new"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/camera_options"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:layout_marginTop="@dimen/dp_38"
+                        android:text="@string/camerahead"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/dp_24" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/pic_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/pic_ratio"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <!-- <CameraSettingItemView
+                         android:id="@+id/video_size"
+                         android:layout_width="match_parent"
+                         android:layout_height="@dimen/dp_112" />-->
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/video_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/subline"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/watermark"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_export"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_camera_options"
+                    android:background="@color/backgroud_new"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/export"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:layout_marginTop="@dimen/dp_38"
+                        android:text="@string/pic_after"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/dp_24" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/black_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/compress"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_newsetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_export"
+                    android:background="@color/backgroud_new"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/netsetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:layout_marginTop="@dimen/dp_38"
+                        android:text="@string/hardware"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/dp_24" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/cache_clear"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/only_wifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_hardware"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll_export"
+                    android:background="@color/backgroud_new"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/hardware"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/dp_32"
+                        android:layout_marginTop="@dimen/dp_38"
+                        android:text="@string/hardware"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/dp_24" />
+
+                    <com.bcnetech.hyphoto.ui.view.CameraSettingItemView
+                        android:id="@+id/cobox_update"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_112" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/backgroud_new"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/dp_32"
+                    android:paddingTop="@dimen/dp_200"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/dp_24" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

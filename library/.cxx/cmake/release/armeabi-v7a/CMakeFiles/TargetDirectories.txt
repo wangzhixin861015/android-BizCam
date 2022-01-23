@@ -1,0 +1,3 @@
+/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/armeabi-v7a/CMakeFiles/SHARED.dir

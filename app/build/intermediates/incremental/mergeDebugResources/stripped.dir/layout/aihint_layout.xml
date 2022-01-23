@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black" android:tag="layout/aihint_layout_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/dp_108"
+            android:layout_height="@dimen/dp_108"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:src="@drawable/close1" />
+
+        <ImageView
+            android:id="@+id/iv_cobox"
+            android:layout_width="@dimen/dp_108"
+            android:layout_height="@dimen/dp_108"
+            app:layout_constraintBaseline_toBaselineOf="@+id/iv_close"
+            android:padding="18dp"
+            android:src="@drawable/ai_bt"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/cl_bottom"
+                app:layout_constraintHorizontal_chainStyle="spread">
+
+
+                <ImageView
+                    android:id="@+id/iv_bitmap"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_top">
+
+                <LinearLayout
+                    android:id="@+id/ll_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_hint"
+                        android:layout_width="29dp"
+                        android:layout_height="29dp"
+                        android:layout_marginRight="14dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_hint1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ai_hint1"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_hint">
+
+                    <TextView
+                        android:id="@+id/tv_hint2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="56dp"
+                        android:layout_marginTop="30dp"
+                        android:lineSpacingMultiplier="1.25"
+                        android:text="@string/ai_hint2"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_confirm"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/blue_item_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rl_hint">
+
+                    <TextView
+                        android:id="@+id/tv_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/ai_start"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+         

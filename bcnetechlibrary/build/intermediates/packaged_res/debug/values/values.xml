@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#ff000000</color>
+    <color name="black_top">#ee000000</color>
+    <color name="blue">#0164f7</color>
+    <color name="blue_dotted_line">#0068B7</color>
+    <color name="blue_line">#1C67BF</color>
+    <color name="color_white40">#66ffffff</color>
+    <color name="default_loading">#ffffff</color>
+    <color name="dg_color_translucent">#CC000000</color>
+    <color name="dialog_button_bg">#ff303338</color>
+    <color name="gray">#ff9b9b9b</color>
+    <color name="sing_in_color">#0057FF</color>
+    <color name="text_item_child">#ADB5C2</color>
+    <color name="translucent">#00000000</color>
+    <color name="ucrop_color_default_crop_frame">#ffffff</color>
+    <color name="ucrop_color_default_crop_grid">#80ffffff</color>
+    <color name="ucrop_color_default_dimmed">#8c000000</color>
+    <color name="ucrop_color_default_logo">#4f212121</color>
+    <color name="white">#ffffffff</color>
+    <color name="withe_span">#eeffffff</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="dp_0">0dp</dimen>
+    <dimen name="dp_0.5">0.25dp</dimen>
+    <dimen name="dp_1">0.5dp</dimen>
+    <dimen name="dp_10">5dp</dimen>
+    <dimen name="dp_100">50dp</dimen>
+    <dimen name="dp_101">50.5dp</dimen>
+    <dimen name="dp_102">51dp</dimen>
+    <dimen name="dp_104">52dp</dimen>
+    <dimen name="dp_106">53dp</dimen>
+    <dimen name="dp_107">53.5dp</dimen>
+    <dimen name="dp_108">54dp</dimen>
+    <dimen name="dp_11">5.5dp</dimen>
+    <dimen name="dp_110">55dp</dimen>
+    <dimen name="dp_112">56dp</dimen>
+    <dimen name="dp_113">56.5dp</dimen>
+    <dimen name="dp_114">57dp</dimen>
+    <dimen name="dp_116">58dp</dimen>
+    <dimen name="dp_118">59dp</dimen>
+    <dimen name="dp_119">59.5dp</dimen>
+    <dimen name="dp_12">6dp</dimen>
+    <dimen name="dp_120">60dp</dimen>
+    <dimen name="dp_121">60.5dp</dimen>
+    <dimen name="dp_124">62dp</dimen>
+    <dimen name="dp_125">62.5dp</dimen>
+    <dimen name="dp_126">63dp</dimen>
+    <dimen name="dp_128">64dp</dimen>
+    <dimen name="dp_130">65dp</dimen>
+    <dimen name="dp_132">66dp</dimen>
+    <dimen name="dp_134">67dp</dimen>
+    <dimen name="dp_136">68dp</dimen>
+    <dimen name="dp_138">69dp</dimen>
+    <dimen name="dp_14">7dp</dimen>
+    <dimen name="dp_140">70dp</dimen>
+    <dimen name="dp_142">71dp</dimen>
+    <dimen name="dp_144">72dp</dimen>
+    <dimen name="dp_146">73dp</dimen>
+    <dimen name="dp_148">74dp</dimen>
+    <dimen name="dp_15">7.5dp</dimen>
+    <dimen name="dp_150">75dp</dimen>
+    <dimen name="dp_152">76dp</dimen>
+    <dimen name="dp_154">77dp</dimen>
+    <dimen name="dp_156">78dp</dimen>
+    <dimen name="dp_158">79dp</dimen>
+    <dimen name="dp_16">8dp</dimen>
+    <dimen name="dp_160">80dp</dimen>
+    <dimen name="dp_162">81dp</dimen>
+    <dimen name="dp_164">82dp</dimen>
+    <dimen name="dp_168">84dp</dimen>
+    <dimen name="dp_17">8.5dp</dimen>
+    <dimen name="dp_170">85dp</dimen>
+    <dimen name="dp_172">86dp</dimen>
+    <dimen name="dp_176">88dp</dimen>
+    <dimen name="dp_18">9dp</dimen>
+    <dimen name="dp_180">90dp</dimen>
+    <dimen name="dp_182">91dp</dimen>
+    <dimen name="dp_184">92dp</dimen>
+    <dimen name="dp_19">9.5dp</dimen>
+    <dimen name="dp_190">95dp</dimen>
+    <dimen name="dp_192">96dp</dimen>
+    <dimen name="dp_196">98dp</dimen>
+    <dimen name="dp_2">1dp</dimen>
+    <dimen name="dp_20">10dp</dimen>
+    <dimen name="dp_200">100dp</dimen>
+    <dimen name="dp_202">101dp</dimen>
+    <dimen name="dp_204">102dp</dimen>
+    <dimen name="dp_206">103dp</dimen>
+    <dimen name="dp_21">10.5dp</dimen>
+    <dimen name="dp_210">105dp</dimen>
+    <dimen name="dp_212">106dp</dimen>
+    <dimen name="dp_213">106.5dp</dimen>
+    <dimen name="dp_216">108dp</dimen>
+    <dimen name="dp_218">109dp</dimen>
+    <dimen name="dp_22">11dp</dimen>
+    <dimen name="dp_220">110dp</dimen>
+    <dimen name="dp_224">112dp</dimen>
+    <dimen name="dp_226">113dp</dimen>
+    <dimen name="dp_228">114dp</dimen>
+    <dimen name="dp_23">11.5dp</dimen>
+    <dimen name="dp_230">115dp</dimen>
+    <dimen name="dp_238">119dp</dimen>
+    <dimen name="dp_24">12dp</dimen>
+    <dimen name="dp_240">120dp</dimen>
+    <dimen name="dp_248">124dp</dimen>
+    <dimen name="dp_25">12.5dp</dimen>
+    <dimen name="dp_250">125dp</dimen>
+    <dimen name="dp_26">13dp</dimen>
+    <dimen name="dp_260">130dp</dimen>
+    <dimen name="dp_264">132dp</dimen>
+    <dimen name="dp_27">13.5dp</dimen>
+    <dimen name="dp_270">135dp</dimen>
+    <dimen name="dp_28">14dp</dimen>
+    <dimen name="dp_280">140dp</dimen>
+    <dimen name="dp_282">141dp</dimen>
+    <dimen name="dp_284">142dp</dimen>
+    <dimen name="dp_286">143dp</dimen>
+    <dimen name="dp_290">145dp</dimen>
+    <dimen name="dp_294">147dp</dimen>
+    <dimen name="dp_3">1.5dp</dimen>
+    <dimen name="dp_30">15dp</dimen>
+    <dimen name="dp_300">150dp</dimen>
+    <dimen name="dp_308">154dp</dimen>
+    <dimen name="dp_310">155dp</dimen>
+    <dimen name="dp_312">156dp</dimen>
+    <dimen name="dp_32">16dp</dimen>
+    <dimen name="dp_320">160dp</dimen>
+    <dimen name="dp_328">164dp</dimen>
+    <dimen name="dp_33">16.5dp</dimen>
+    <dimen name="dp_330">165dp</dimen>
+    <dimen name="dp_332">166dp</dimen>
+    <dimen name="dp_34">17dp</dimen>
+    <dimen name="dp_340">170dp</dimen>
+    <dimen name="dp_35">17.5dp</dimen>
+    <dimen name="dp_36">18dp</dimen>
+    <dimen name="dp_360">180dp</dimen>
+    <dimen name="dp_370">185dp</dimen>
+    <dimen name="dp_372">186dp</dimen>
+    <dimen name="dp_38">19dp</dimen>
+    <dimen name="dp_380">190dp</dimen>
+    <dimen name="dp_390">195dp</dimen>
+    <dimen name="dp_4">2dp</dimen>
+    <dimen name="dp_40">20dp</dimen>
+    <dimen name="dp_400">200dp</dimen>
+    <dimen name="dp_406">203dp</dimen>
+    <dimen name="dp_408">204dp</dimen>
+    <dimen name="dp_41">20.5dp</dimen>
+    <dimen name="dp_410">205dp</dimen>
+    <dimen name="dp_42">21dp</dimen>
+    <dimen name="dp_422">211dp</dimen>
+    <dimen name="dp_44">22dp</dimen>
+    <dimen name="dp_440">220dp</dimen>
+    <dimen name="dp_45">22.5dp</dimen>
+    <dimen name="dp_452">226dp</dimen>
+    <dimen name="dp_46">23dp</dimen>
+    <dimen name="dp_470">235dp</dimen>
+    <dimen name="dp_48">24dp</dimen>
+    <dimen name="dp_480">240dp</dimen>
+    <dimen name="dp_49">24.5dp</dimen>
+    <dimen name="dp_5">2.5dp</dimen>
+    <dimen name="dp_50">25dp</dimen>
+    <dimen name="dp_508">254dp</dimen>
+    <dimen name="dp_52">26dp</dimen>
+    <dimen name="dp_520">260dp</dimen>
+    <dimen name="dp_533">266.5dp</dimen>
+    <dimen name="dp_534">267dp</dimen>
+    <dimen name="dp_54">27dp</dimen>
+    <dimen name="dp_55">27.5dp</dimen>
+    <dimen name="dp_550">275dp</dimen>
+    <dimen name="dp_556">278dp</dimen>
+    <dimen name="dp_56">28dp</dimen>
+    <dimen name="dp_564">282dp</dimen>
+    <dimen name="dp_568">284dp</dimen>
+    <dimen name="dp_57">28.5dp</dimen>
+    <dimen name="dp_58">29dp</dimen>
+    <dimen name="dp_580">290dp</dimen>
+    <dimen name="dp_592">296dp</dimen>
+    <dimen name="dp_6">3dp</dimen>
+    <dimen name="dp_60">30dp</dimen>
+    <dimen name="dp_600">300dp</dimen>
+    <dimen name="dp_62">31dp</dimen>
+    <dimen name="dp_620">310dp</dimen>
+    <dimen name="dp_64">32dp</dimen>
+    <dimen name="dp_640">320dp</dimen>
+    <dimen name="dp_650">325dp</dimen>
+    <dimen name="dp_652">326dp</dimen>
+    <dimen name="dp_66">33dp</dimen>
+    <dimen name="dp_68">34dp</dimen>
+    <dimen name="dp_7">3.5dp</dimen>
+    <dimen name="dp_70">35dp</dimen>
+    <dimen name="dp_700">350dp</dimen>
+    <dimen name="dp_710">355dp</dimen>
+    <dimen name="dp_72">36dp</dimen>
+    <dimen name="dp_74">37dp</dimen>
+    <dimen name="dp_75">37.5dp</dimen>
+    <dimen name="dp_76">38dp</dimen>
+    <dimen name="dp_8">4dp</dimen>
+    <dimen name="dp_80">40dp</dimen>
+    <dimen name="dp_82">41dp</dimen>
+    <dimen name="dp_84">42dp</dimen>
+    <dimen name="dp_85">42.5dp</dimen>
+    <dimen name="dp_86">43dp</dimen>
+    <dimen name="dp_88">44dp</dimen>
+    <dimen name="dp_89">44.5dp</dimen>
+    <dimen name="dp_90">45dp</dimen>
+    <dimen name="dp_900">450dp</dimen>
+    <dimen name="dp_92">46dp</dimen>
+    <dimen name="dp_96">48dp</dimen>
+    <dimen name="dp_98">49dp</dimen>
+    <dimen name="dp_un24">-12dp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <dimen name="ucrop_default_crop_frame_stoke_width">1dp</dimen>
+    <dimen name="ucrop_default_crop_grid_stoke_width">1dp</dimen>
+    <dimen name="ucrop_default_crop_rect_corner_touch_area_line_length">10dp</dimen>
+    <dimen name="ucrop_default_crop_rect_corner_touch_threshold">30dp</dimen>
+    <dimen name="ucrop_default_crop_rect_min_size">100dp</dimen>
+    <dimen name="ucrop_height_crop_aspect_ratio_text">40dp</dimen>
+    <dimen name="ucrop_height_divider_shadow">3dp</dimen>
+    <dimen name="ucrop_height_horizontal_wheel_progress_line">20dp</dimen>
+    <dimen name="ucrop_height_wrapper_controls">64dp</dimen>
+    <dimen name="ucrop_height_wrapper_states">72dp</dimen>
+    <dimen name="ucrop_margin_horizontal_wheel_progress_line">10dp</dimen>
+    <dimen name="ucrop_margit_top_widget_text">10sp</dimen>
+    <dimen name="ucrop_padding_crop_frame">20dp</dimen>
+    <dimen name="ucrop_padding_crop_frame_bottom">50dp</dimen>
+    <dimen name="ucrop_padding_crop_frame_top">10dp</dimen>
+    <dimen name="ucrop_progress_size">50dp</dimen>
+    <dimen name="ucrop_size_dot_scale_text_view">8dp</dimen>
+    <dimen name="ucrop_size_wrapper_rotate_button">50dp</dimen>
+    <dimen name="ucrop_text_size_widget_text">13sp</dimen>
+    <dimen name="ucrop_width_horizontal_wheel_progress_line">2dp</dimen>
+    <drawable name="transpart">#00000000</drawable>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="gridview" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <item name="scrollview" type="id"/>
+    <item name="tag_first" type="id"/>
+    <item name="tag_second" type="id"/>
+    <item name="webview" type="id"/>
+    <integer name="ucrop_progress_loading_anim_time">1500</integer>
+    <string name="ablum">商拍</string>
+    <string name="account_security">账户安全</string>
+    <string name="add_error">添加失败!</string>
+    <string name="add_parms_info">请输入商拍光影简介(选填)</string>
+    <string name="add_tag">输入或选择标签</string>
+    <string name="add_tag_please">请添加标签</string>
+    <string name="add_watermark">添加水印</string>
+    <string name="addhint">请添加标题</string>
+    <string name="adivse_hint">请输入您的意见或建议来帮助我们更好的改善产品</string>
+    <string name="adivse_name">默认填写注册昵称</string>
+    <string name="adivse_phone">默认填写注册手机号</string>
+    <string name="advise_feedback">意见反馈</string>
+    <string name="ai_360_hint1">如何生成360图片</string>
+    <string name="ai_360_hint2">将您的拍摄物品配合转盘点击进行扫描\n录制并保持手机稳定等待视频录制结束</string>
+    <string name="ai_360_hint3">开始录制</string>
+    <string name="ai_360_hint4">未检测到转盘</string>
+    <string name="ai_360_hint5">生成360图片需要配合转盘，如需了解更多请点击查看详情</string>
+    <string name="ai_360_hint6">查看详情</string>
+    <string name="ai_big">目标过大，请重新拍摄！</string>
+    <string name="ai_empty">未识别物体，请重新拍摄！</string>
+    <string name="ai_hint1">如何拍摄智能图片</string>
+    <string name="ai_hint2">将您的拍摄物品放入取景框进行扫描，然后保持保持稳定，点击屏幕拍摄。</string>
+    <string name="ai_ok">保持手机稳定，请点击拍摄！</string>
+    <string name="ai_photo">智拍</string>
+    <string name="ai_photo_360">360相机</string>
+    <string name="ai_shift">物体发生偏移，请重新拍摄！</string>
+    <string name="ai_small">目标过小，请重新拍摄！</string>
+    <string name="ai_start">开始拍摄</string>
+    <string name="album_hint">请至少选择一个文件</string>
+    <string name="alert">提示</string>
+    <string name="alert_camera">不能同时分享多个视频</string>
+    <string name="alert_message">视频和图片不能同时分享</string>
+    <string name="attach_account">社交平台绑定</string>
+    <string name="auto">自动</string>
+    <string name="auto_healing">智能优化</string>
+    <string name="auto_white_balance">自动白平衡</string>
+    <string name="automatically">图片/视频不丢失，点击开始备份</string>
+    <string name="available">可连接</string>
+    <string name="back_press">再按一次退出程序</string>
+    <string name="background">后台运行</string>
+    <string name="background_light">背灯</string>
+    <string name="background_light_label">背灯:</string>
+    <string name="backstage">在后台下载这 </string>
+    <string name="backstage_download">在后台下载此项?</string>
+    <string name="bceasy_cloud">商拍云</string>
+    <string name="begin_download">开始下载</string>
+    <string name="biz_cam">辉影</string>
+    <string name="bizcam_ut_hint1">请扫描指定二维码</string>
+    <string name="bizcam_ut_hint2">请勿扫描来源不明的二维码</string>
+    <string name="bizcam_ut_hint3">商拍优图登录确认</string>
+    <string name="bizcam_ut_hint4">确认登录</string>
+    <string name="bizcam_ut_hint5">重新扫描</string>
+    <string name="blackwhite">标准黑白对照图</string>
+    <string name="bottom_light">底灯</string>
+    <string name="bottom_light_label">底灯:</string>
+    <string name="brightness">亮度</string>
+    <string name="brush">智能画笔</string>
+    <string name="bt_closed">手机蓝牙未开启</string>
+    <string name="bt_connect_fail">连接失败 请重试</string>
+    <string name="bt_disconnected">蓝牙已断开</string>
+    <string name="bt_help">  扫码连接帮助</string>
+    <string name="built_360">生成360图片</string>
+    <string name="builting_360">360图片生成中…</string>
+    <string name="bulb">钨丝灯</string>
+    <string name="camera">相机</string>
+    <string name="camera_permission">相机权限未打开或没有相机功能</string>
+    <string name="camerahead">摄像头</string>
+    <string name="cancel">取消</string>
+    <string name="cancel_us">取消</string>
+    <string name="change_bg">更换背景</string>
+    <string name="change_colors">更换背景-颜色</string>
+    <string name="change_fail">修改失败!</string>
+    <string name="change_lucency">更换背景-透明</string>
+    <string name="change_master">更换背景-原图</string>
+    <string name="change_password">修改登录密码</string>
+    <string name="change_password_ok">修改密码成功</string>
+    <string name="clear_cache">清理缓存</string>
+    <string name="clear_cache_ok">清除成功</string>
+    <string name="clod_hot">冷暖色调</string>
+    <string name="close_camera_permissions">您已关闭相机权限</string>
+    <string name="close_location_permissions">您已关闭定位权限</string>
+    <string name="close_read_permissions">您已关闭读取设备权限</string>
+    <string name="close_save_permissions">您已关闭存储权限</string>
+    <string name="close_wm">关闭水印</string>
+    <string name="cloud">阴天</string>
+    <string name="clound_ablum">商拍云图库</string>
+    <string name="clound_null">您的商拍云图库还没有任何文件</string>
+    <string name="coalescing">确认合并此底色?</string>
+    <string name="cobox_all">全部</string>
+    <string name="cobox_choose">未连接设备</string>
+    <string name="cobox_help_detail">在蓝牙  （闪烁） 未被连接时点击box设备
+        扫码按钮屏幕出现二维码扫描即可连接box</string>
+    <string name="cobox_s1">适用于 商拍酷宝 s1</string>
+    <string name="cobox_s2">适用于 商拍酷宝 s2</string>
+    <string name="cobox_update">固件升级</string>
+    <string name="code_hint">收到的验证码</string>
+    <string name="color_custom">吸管</string>
+    <string name="color_temperature">色温</string>
+    <string name="color_tint">着色</string>
+    <string name="colors_eraser">彩色画笔  橡皮擦</string>
+    <string name="colors_pen">彩色画笔</string>
+    <string name="colour">色彩</string>
+    <string name="combination">合并此底色</string>
+    <string name="compress">导出图像压缩</string>
+    <string name="confirm">确认</string>
+    <string name="confirm2">知道了</string>
+    <string name="confirm_delete_upload">退出后会终止一切上传操作</string>
+    <string name="confirm_error">两次密码不一致</string>
+    <string name="confirm_psw">确认新密码</string>
+    <string name="confirm_psw_input">请再输一遍新的密码</string>
+    <string name="conn_interrupt">连接断开!</string>
+    <string name="connected">已连接</string>
+    <string name="connecting">正在连接中...</string>
+    <string name="contact">联系方式</string>
+    <string name="contrast">对比度</string>
+    <string name="count_name">昵称</string>
+    <string name="countitem">张</string>
+    <string name="crop_rotate">旋转裁切</string>
+    <string name="customer_service">配件和售后</string>
+    <string name="cuthead_fail"> 截图失败，请重试!</string>
+    <string name="cutout">抠图</string>
+    <string name="data_error">数据错误</string>
+    <string name="defintion">清晰度</string>
+    <string name="delete">删除</string>
+    <string name="delete_images_from">是否删除这 </string>
+    <string name="delete_pic">删除图片</string>
+    <string name="delete_select">删除所选图片</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_watermark">是否删除该水印?</string>
+    <string name="disconnect">断开连接</string>
+    <string name="download">下载</string>
+    <string name="download_error">下载失败，请重试</string>
+    <string name="download_info">下载提示</string>
+    <string name="download_message">现在是非WIFI环境,是否继续下载图片</string>
+    <string name="download_select">下载所选文件</string>
+    <string name="downloaded">已下载</string>
+    <string name="downloading">下载进度：</string>
+    <string name="edit_headimg">编辑头像</string>
+    <string name="edit_parm_name">请输入参数名称</string>
+    <string name="edits">编辑</string>
+    <string name="email">邮箱</string>
+    <string name="empty">没有数据</string>
+    <string name="empty_code">验证码不能为空</string>
+    <string name="empty_content">内容不能为空!</string>
+    <string name="empty_phonenum">手机号码不能为空</string>
+    <string name="empty_psw">输入密码不能为空</string>
+    <string name="empty_tag">标签不能为空</string>
+    <string name="enter_a_valid_password">6～30位包含数字和字母</string>
+    <string name="enter_email">输入邮箱</string>
+    <string name="enter_title">输入标题</string>
+    <string name="eraser">橡皮擦</string>
+    <string name="error">失败</string>
+    <string name="et_yanzhengma">请输入验证码</string>
+    <string name="exposire">曝光</string>
+    <string name="facebook">Facebook</string>
+    <string name="facebook_shareHint">Facebook分享仅支持多张图片或单个视频。</string>
+    <string name="feedback_hint1">意见反馈内容不能为空</string>
+    <string name="feedback_hint2">姓名不能为空</string>
+    <string name="feedback_hint3">联系方式不能为空</string>
+    <string name="file_are_not_uploaded">个文件未上传</string>
+    <string name="file_error">导出失败</string>
+    <string name="file_exist">文件已存在</string>
+    <string name="file_name">文件夹名称</string>
+    <string name="filter">筛选</string>
+    <string name="find_psw">找回密码</string>
+    <string name="finish">完成</string>
+    <string name="fittings">配件</string>
+    <string name="flash_when_turned_on">开启后闪光灯将常亮</string>
+    <string name="focus_len">焦距</string>
+    <string name="folder_all">所有图片</string>
+    <string name="format_date_no_year">yyyy年MM月dd日</string>
+    <string name="format_date_no_year_hh">MM月dd日 HH:mm</string>
+    <string name="free">自由裁切</string>
+    <string name="friday">周五</string>
+    <string name="from_naitve_ablum">从本地相册选取</string>
+    <string name="generate_share_link">生成分享链接中...</string>
+    <string name="go_on_add_tag">继续添加标签</string>
+    <string name="go_set">商拍需要定位权限,是否去设置?</string>
+    <string name="grid_off">辅助线关</string>
+    <string name="grid_on">辅助线开</string>
+    <string name="guide_hint_four">替换抠图背景颜色</string>
+    <string name="guide_hint_one">减号标记要去除的内容</string>
+    <string name="guide_hint_three">撤销上一步</string>
+    <string name="guide_hint_two">加号标记要保留内容</string>
+    <string name="hardware">硬件</string>
+    <string name="hardware_service">硬件产品和售后</string>
+    <string name="head_light">前灯</string>
+    <string name="healing">修复</string>
+    <string name="help_feedback">帮助和反馈</string>
+    <string name="high_light">高光</string>
+    <string name="hint360_1">请保持拍摄稳定</string>
+    <string name="hint360_2">图像数据摄取中…</string>
+    <string name="hint360_3">左右滑动可选择曝光度</string>
+    <string name="image_parms">图片后期</string>
+    <string name="images">图片（选填，请提供问题截图）</string>
+    <string name="import_success">已成功导入到app相册</string>
+    <string name="importing">正在导入</string>
+    <string name="in_the_backup">备份中...</string>
+    <string name="in_the_backup_num">正在备份中 剩余 </string>
+    <string name="infinity">无限远</string>
+    <string name="inner_bright">内部亮度</string>
+    <string name="input_message">请输入内容!</string>
+    <string name="into_fail">导入失败，请重试!</string>
+    <string name="intonative">导出</string>
+    <string name="intonative2">导出系统相册</string>
+    <string name="is_delete_pic">是否删除这张图片?</string>
+    <string name="is_scan">是否缩放图片</string>
+    <string name="iso">感光度</string>
+    <string name="isphone">请输入正确的手机号</string>
+    <string name="lamp">荧光灯</string>
+    <string name="large">大</string>
+    <string name="lead_in">导入</string>
+    <string name="left_light">左灯</string>
+    <string name="left_light_label">左灯:</string>
+    <string name="letter_limit">中文字数不超过50个，英文或数字不超过100个字母或数字</string>
+    <string name="level_line">水平仪和辅助线</string>
+    <string name="light">补光灯</string>
+    <string name="light_off">补光灯关</string>
+    <string name="light_on">补光灯开</string>
+    <string name="list">列表选择</string>
+    <string name="loading">正在载入...</string>
+    <string name="loading_fail">加载失败</string>
+    <string name="logging_fail">登录失败</string>
+    <string name="logging_hint">账号信息同步中</string>
+    <string name="logging_success">登录成功</string>
+    <string name="login">登录</string>
+    <string name="long_name">输入名称不宜太长</string>
+    <string name="long_nickname">昵称不宜过长</string>
+    <string name="long_psw">密码长度不能大于30位</string>
+    <string name="macro">微距</string>
+    <string name="make_preset">生成商拍光影</string>
+    <string name="manual">手动</string>
+    <string name="mark_off">水印关</string>
+    <string name="mark_on">水印开</string>
+    <string name="matting">抠图中</string>
+    <string name="me">我的</string>
+    <string name="model_manager">模版管理</string>
+    <string name="moments">朋友圈</string>
+    <string name="moments_shareHint">朋友圈分享仅支持九张图片。</string>
+    <string name="monday">周一</string>
+    <string name="more">还有</string>
+    <string name="move2_light_label">L2:</string>
+    <string name="move_light">移动灯</string>
+    <string name="move_light_label">L1:</string>
+    <string name="move_pics">移动图片</string>
+    <string name="move_upload">正在使用移动网络上传： </string>
+    <string name="multi_select">批量选择</string>
+    <string name="my_light_ratio">我的光比</string>
+    <string name="name">姓名</string>
+    <string name="name_files"> 请输入文件夹名称</string>
+    <string name="name_parms">输入此商拍光影命名</string>
+    <string name="nature_saturation">自然饱和度</string>
+    <string name="net_setting">网络设置</string>
+    <string name="network_conn_fail">连接失败</string>
+    <string name="network_disconn">请检查网络</string>
+    <string name="new_file">新建</string>
+    <string name="new_files">上传至新建文件夹</string>
+    <string name="new_password">新密码</string>
+    <string name="new_psw">新密码</string>
+    <string name="new_psw_input">请输入新密码</string>
+    <string name="next">下一步</string>
+    <string name="next_step">下一步</string>
+    <string name="nicknameempty">昵称不能为空</string>
+    <string name="nicknameinlegal">昵称不能包含特殊符号或者emoji表情</string>
+    <string name="noname">没有名字:</string>
+    <string name="none">无</string>
+    <string name="none_more_data">已无更多的数据</string>
+    <string name="none_upload">当前无上传任务</string>
+    <string name="not_uploaded">个文件未上传</string>
+    <string name="nouse_parametres">已隐藏下列商拍光影</string>
+    <string name="old_psw">旧密码</string>
+    <string name="old_psw_input">请输入旧密码</string>
+    <string name="only_CE">仅支持数字中／英文</string>
+    <string name="only_save">仅保存</string>
+    <string name="only_wifi">仅限Wi-Fi上传下载</string>
+    <string name="open_bt">请打开蓝牙!</string>
+    <string name="open_camera_permissions">您打开了相机权限</string>
+    <string name="open_location_permissions">您打开了定位权限</string>
+    <string name="open_read_permissions">您打开了读取设备权限</string>
+    <string name="open_save_permissions">您打开了存储权限</string>
+    <string name="open_wm">开启水印</string>
+    <string name="opinions">问题和意见</string>
+    <string name="original">原始比例</string>
+    <string name="original_drawing">原图</string>
+    <string name="other">其他</string>
+    <string name="other_shareHint">分享仅支持多张图片或单个视频。</string>
+    <string name="out_of_memory">内存不足，请退出当前页面...</string>
+    <string name="outer_bright">外部亮度</string>
+    <string name="output_success">导出成功</string>
+    <string name="package_unexist">没有安装应用</string>
+    <string name="parm_adjust">参数调整</string>
+    <string name="parm_exist">光影已存在</string>
+    <string name="password">密码</string>
+    <string name="password_cannot_be_empty">密码不能为空</string>
+    <string name="password_equal">旧密码相同</string>
+    <string name="password_hint">6～30位包含数字和字母</string>
+    <string name="person_info">个人信息</string>
+    <string name="photo_360">360°</string>
+    <string name="photo_360_hint_one">ai360不支持和图片视频同时分享</string>
+    <string name="photo_360_hint_share">内容输入不正确</string>
+    <string name="photo_360_hint_three">ai360链接未生成</string>
+    <string name="photo_360_hint_two">ai360仅支持单个分享</string>
+    <string name="photo_album">相册</string>
+    <string name="photo_ratio">照片比例</string>
+    <string name="pic_after">图片后期</string>
+    <string name="pic_best">商品图片拍摄处理专家</string>
+    <string name="pic_ratio">图片比例</string>
+    <string name="pic_select_none">您没有选择任何图片</string>
+    <string name="pic_size">图片大小</string>
+    <string name="picinfo">图片信息</string>
+    <string name="please_location_permissions">请打开定位权限</string>
+    <string name="please_open_camera_permissions">请打开相机权限</string>
+    <string name="please_open_save_permissions">请打开存储权限</string>
+    <string name="please_upgrade_the_space_or_go_to">请升级空间或是前往</string>
+    <string name="please_verify_your_email">邮箱是否正确</string>
+    <string name="preparm_market">光影市场</string>
+    <string name="preparms">商拍光影</string>
+    <string name="preset_manage">商拍光影管理</string>
+    <string name="preset_manage_tip">商拍光影</string>
+    <string name="psw">密码</string>
+    <string name="public_market">同时发布到市场</string>
+    <string name="publish_hint">（发布此商拍光影可以让更多的用户分享）</string>
+    <string name="pwd_hint">同时包含数字和字母的大于6位数密码</string>
+    <string name="qq">QQ</string>
+    <string name="qqZone_shareHint">QQ空间分享仅支持多张图片或单个视频。</string>
+    <string name="qq_shareHint">QQ分享仅支持多张图片或单个视频。</string>
+    <string name="qq_zone">QQ空间</string>
+    <string name="qr_bottom">切换为手动选择</string>
+    <string name="qr_code">扫码连接</string>
+    <string name="qr_hint">长按COBOX按键可调出二维码</string>
+    <string name="re_upload">重新上传</string>
+    <string name="received_verification_code">收到的验证码</string>
+    <string name="reconnect">是否重新连接蓝牙？</string>
+    <string name="record_error">录制失败,请重试!</string>
+    <string name="refresh">刷新</string>
+    <string name="regist">注册</string>
+    <string name="repairing">修复中</string>
+    <string name="request_gps">当前手机扫描蓝牙需要打开定位功能</string>
+    <string name="resendyzm">重新发送</string>
+    <string name="reset_back">恢复默认</string>
+    <string name="reset_psw_ok">重置密码成功!</string>
+    <string name="rest_count">剩余</string>
+    <string name="right_light">右灯</string>
+    <string name="right_light_label">右灯:</string>
+    <string name="same_tag">已存在相同的标签</string>
+    <string name="sample">示例</string>
+    <string name="saturation">饱和度</string>
+    <string name="saturday">周六</string>
+    <string name="save">保存</string>
+    <string name="save_error">保存失败,请重试</string>
+    <string name="save_into_native">保存到本地商拍相册</string>
+    <string name="save_light_pen">保存此光比</string>
+    <string name="save_lightpen">存储为我的光比设定</string>
+    <string name="save_ok">保存成功</string>
+    <string name="save_to_usb">导出商拍U盘</string>
+    <string name="save_type">保存方式</string>
+    <string name="scan_error">扫描蓝牙失败,请尝试重启app</string>
+    <string name="scan_hint">请确保拍摄物品在取景范围内并保持稳定</string>
+    <string name="scan_is_connection">未扫描到此设备或已被连接</string>
+    <string name="scan_none">未搜索到此蓝牙</string>
+    <string name="scan_start">开始扫描</string>
+    <string name="scanint">智能识别中，请稍后…</string>
+    <string name="scanint2">智能识别中</string>
+    <string name="scanint3">识别成功</string>
+    <string name="security_pass">安全等级强</string>
+    <string name="security_weak">安全等级弱</string>
+    <string name="select">选择</string>
+    <string name="select_cobox">请选择要连接的COBOX设备</string>
+    <string name="select_exist_files">上传至已有的文件夹</string>
+    <string name="select_files">请选择文件夹</string>
+    <string name="select_files_to_upload">请选择上传的文件夹</string>
+    <string name="selected">已选</string>
+    <string name="send">发送</string>
+    <string name="send_captcha">发送验证码到</string>
+    <string name="send_contribute">投稿</string>
+    <string name="send_fail">发送失败!</string>
+    <string name="send_ok">发送成功!</string>
+    <string name="send_phonenum">我们将发送验证码到这个手机号码:</string>
+    <string name="send_success">投稿成功</string>
+    <string name="send_us">发送</string>
+    <string name="server_error">服务器错误</string>
+    <string name="set">设置</string>
+    <string name="set_up">创建</string>
+    <string name="setting_common">通用设置</string>
+    <string name="setting_photo">图片</string>
+    <string name="setting_video">视频</string>
+    <string name="shadow">阴影</string>
+    <string name="share">分享</string>
+    <string name="share_pic">分享图片不能大于九张</string>
+    <string name="shareparms">分享参数</string>
+    <string name="sharpen">锐化</string>
+    <string name="shooting_with1">使用</string>
+    <string name="shooting_with2">拍摄</string>
+    <string name="short_psw">密码长度不能小于6位</string>
+    <string name="shutter">快门</string>
+    <string name="sign_bg">标记背景</string>
+    <string name="sign_in">登录</string>
+    <string name="sign_main">标记主体</string>
+    <string name="sign_up">注册</string>
+    <string name="sina">微博</string>
+    <string name="sina_shareHint">微博分享仅支持九张图片或单个视频。</string>
+    <string name="size">尺寸</string>
+    <string name="space_is_full">空间已满</string>
+    <string name="spyt">商拍优图</string>
+    <string name="start_upload">开始上传...</string>
+    <string name="subline">辅助线</string>
+    <string name="sunday">周日</string>
+    <string name="sunshine">日光</string>
+    <string name="switch_account">切换账号</string>
+    <string name="tag1">金属</string>
+    <string name="tag10">硅胶</string>
+    <string name="tag11">透明体</string>
+    <string name="tag12">吸光体</string>
+    <string name="tag13">反光体</string>
+    <string name="tag14">水晶</string>
+    <string name="tag15">布</string>
+    <string name="tag16">深色</string>
+    <string name="tag17">浅色</string>
+    <string name="tag18">美妆</string>
+    <string name="tag19">健康</string>
+    <string name="tag2">塑料</string>
+    <string name="tag20">食品杂货</string>
+    <string name="tag21">百货</string>
+    <string name="tag22">首饰</string>
+    <string name="tag23">婴儿用品</string>
+    <string name="tag24">钟表</string>
+    <string name="tag25">配饰</string>
+    <string name="tag26">文具</string>
+    <string name="tag3">白色</string>
+    <string name="tag4">鞋子</string>
+    <string name="tag5">木制</string>
+    <string name="tag6">纸</string>
+    <string name="tag7">塑料</string>
+    <string name="tag8">玻璃</string>
+    <string name="tag9">皮</string>
+    <string name="tag_key_translation_z">translation_z</string>
+    <string name="take_photo">拍照</string>
+    <string name="take_photo_fail">拍照失败，请重试!</string>
+    <string name="thursday">周四</string>
+    <string name="title">标题</string>
+    <string name="to_backup">开始备份</string>
+    <string name="to_backup_dialog_message_five">备份将在Wi-Fi网络下进行</string>
+    <string name="to_backup_dialog_message_four">查看商拍云免费存储空间规则</string>
+    <string name="to_backup_dialog_message_one">正在备份中，系统将在您使用Wi-Fi网络时</string>
+    <string name="to_backup_dialog_message_three">登录以下网址查看和管理所有备份文件</string>
+    <string name="to_backup_dialog_message_two">自动将您的图片备份至您的云空间</string>
+    <string name="to_backup_dialog_title">正在备份中...</string>
+    <string name="to_backup_message">在您接入Wi-Fi时，所有图片和视频&lt;br / >将在后台上传至商拍云</string>
+    <string name="to_backup_server_error">服务器发生错误，</string>
+    <string name="to_backup_space_error">空间已满，释放空间后将继续，</string>
+    <string name="to_backup_success">备份完成</string>
+    <string name="to_backup_suspended">暂停中...</string>
+    <string name="to_backup_time">上次备份在 </string>
+    <string name="to_backup_wifi_error">非Wi-Fi暂停中 剩余</string>
+    <string name="to_organize_the_space">整理空间 </string>
+    <string name="token_fail">您的账号已在别处登录!</string>
+    <string name="top_light">顶灯</string>
+    <string name="tuesday">周二</string>
+    <string name="tune_image">参数调整</string>
+    <string name="twitter">Twitter</string>
+    <string name="twitter_shareHint">Twitter分享仅支持单张图片或单个视频。</string>
+    <string name="un_connection">请选择要连接的COBOX设备</string>
+    <string name="unable">字符不可识别</string>
+    <string name="update_cloud_new_file">上传商拍云-新建文件夹</string>
+    <string name="update_cloud_old_file">上传商拍云-选择已有文件夹</string>
+    <string name="update_fail">修改用户信息失败</string>
+    <string name="update_later">以后更新</string>
+    <string name="update_latest">更新到最新版本</string>
+    <string name="update_notify">更新提示</string>
+    <string name="update_now">立即更新</string>
+    <string name="upload">商拍云</string>
+    <string name="upload_all">清空记录</string>
+    <string name="upload_backup">备份</string>
+    <string name="upload_cloud">上传商拍云</string>
+    <string name="upload_download_manage">上传管理</string>
+    <string name="upload_fail">上传失败</string>
+    <string name="upload_folder">文件夹</string>
+    <string name="upload_info">上传提示</string>
+    <string name="upload_manage">上传管理</string>
+    <string name="upload_message">现在是非WIFI环境,是否继续上传图片</string>
+    <string name="upload_new_catelog">上传至新分组</string>
+    <string name="upload_new_folder">新建文件夹</string>
+    <string name="upload_success">上传成功</string>
+    <string name="upload_time">上传时间：</string>
+    <string name="upload_to_cloud">上传至商拍云</string>
+    <string name="uploading">正在上传中...</string>
+    <string name="user_contract">用户协议</string>
+    <string name="user_help">视频教程</string>
+    <string name="verification">验证</string>
+    <string name="video">视频</string>
+    <string name="video_duration">视频时长</string>
+    <string name="video_proportion">视频比例</string>
+    <string name="video_size">视频大小</string>
+    <string name="video_teach">视频教程</string>
+    <string name="video_teach_hint">提示和帮助</string>
+    <string name="videoinfo">视频信息</string>
+    <string name="view_diff">查看对比效果</string>
+    <string name="vividness">鲜艳度</string>
+    <string name="waiting"> 请稍等...</string>
+    <string name="waiting_please">正在加载</string>
+    <string name="water_hint">BizCam</string>
+    <string name="watermark">水印</string>
+    <string name="watermark_no_360">不能用360图片作为水印</string>
+    <string name="watermark_no_video">不能用视频作为水印</string>
+    <string name="watermarked_when_opened">开启后图片将打上水印</string>
+    <string name="wb_eraser">黑白画笔  橡皮擦</string>
+    <string name="weChat_shareHint">微信好友分享仅支持多张图片或单个视频。</string>
+    <string name="we_chat">微信好友</string>
+    <string name="web_url">www.bcyun.com</string>
+    <string name="wednesday">周三</string>
+    <string name="white_balance">白平衡</string>
+    <string name="white_black_pen">黑白画笔</string>
+    <string name="wifi_upload">正在使用Wi-Fi上传： </string>
+    <string name="wlan_cellular_data">使用所有网络上传下载</string>
+    <string name="wrong_psw_style">密码必须同时包含数字和字母!</string>
+    <string name="yanzhengma">验证码</string>
+    <string name="your_cloud"> 项?</string>
+    <string name="your_clouds"> 项?</string>
+    <string name="your_space_is_full">您的空间已满，还有</string>
+    <string name="your_studio"> 项?</string>
+    <style name="Animation.Bottom.Rising" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+    <style name="FontBlack14">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="FontBlack18">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="FontBlack22">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="FontGreg14">
+        <item name="android:textColor">#ff9b9b9b</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="FontWhite14">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="ProgressHintPopupAnimation">
+        <item name="@android:windowEnterAnimation">@anim/progress_hint_popup_show</item>
+        <item name="@android:windowExitAnimation">@anim/progress_hint_popup_hide</item>
+    </style>
+    <style name="Theme.Light.NoTitle.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+       <!-- <item name="android:windowIsFloating">true</item>-->
+    </style>
+    <style name="Theme.Light.NoTitle.NoShadow.Dialog" parent="Theme.Light.NoTitle.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="Widget.ProgressHint" parent="Widget.ProgressHintBase">
+        <item name="popupLayout">@layout/progress_hint_popup</item>
+        <item name="popupStyle">follow</item>
+        <item name="popupAnimationStyle">@style/ProgressHintPopupAnimation</item>
+        <item name="popupOffset">0dp</item>
+        <item name="popupAlwaysShown">false</item>
+        <item name="popupDraggable">true</item>
+    </style>
+    <style name="Widget.ProgressHintBase" parent="android:Widget.Holo.SeekBar"/>
+    <style name="Widget.SeekBar.Normal" parent="@android:style/Widget.SeekBar">
+        <item name="android:maxHeight">5.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/seekbar_horizontal</item>
+        <item name="android:minHeight">5.0dip</item>
+        <item name="android:thumb">@drawable/ats</item>
+        <item name="android:thumbOffset">7.0dip</item>
+    </style>
+    <style name="edit_text">
+        <item name="colorAccent">@color/blue</item>
+        <!-- AppCompatEditText默认状态状态设置底线颜色 -->
+        <item name="colorControlNormal">#616161</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">#616161</item>
+    </style>
+    <style name="folder_all">所有图片</style>
+    <declare-styleable name="AutoLineFeedLayout">
+        <attr format="boolean" name="debug"/>
+
+        <attr format="reference|dimension" name="paddingLeft"/>
+        <attr format="reference|dimension" name="paddingRight"/>
+        <attr format="reference|dimension" name="paddingTop"/>
+        <attr format="reference|dimension" name="paddingBottom"/>
+
+        <attr format="reference|dimension" name="verticalSpacing"/>
+        <attr format="reference|dimension" name="horizontalSpacing"/>
+    </declare-styleable>
+    <declare-styleable name="BlurLayout">
+        <attr format="float" name="blk_downscaleFactor"/>
+        <attr format="integer" name="blk_blurRadius"/>
+        <attr format="integer" name="blk_fps"/>
+        <attr format="dimension" name="blk_cornerRadius"/>
+    </declare-styleable>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="border_width"/>
+        <attr format="color" name="border_color"/>
+        <attr name="img_type">
+            <enum name="circle" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="IndexableRecyclerView">
+        <attr format="integer" name="recyclerColumns"/>
+    </declare-styleable>
+    <declare-styleable name="LetterBar">
+        <attr format="color" name="textColor"/>
+        <attr format="dimension" name="textSize"/>"
+    </declare-styleable>
+    <declare-styleable name="NumberProgressBar">
+        <attr format="integer" name="progress"/>
+        <attr format="integer" name="max"/>
+        <attr format="color" name="progress_unreached_color"/>
+        <attr format="color" name="progress_reached_color"/>
+        <attr format="dimension" name="progress_reached_bar_height"/>
+        <attr format="dimension" name="progress_unreached_bar_height"/>
+        <attr format="dimension" name="progress_text_size"/>
+        <attr format="color" name="progress_text_color"/>
+        <attr format="dimension" name="progress_text_offset"/>
+        <attr format="enum" name="progress_text_visibility">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ProgressHint">
+        <attr format="reference" name="popupLayout"/>
+        <attr format="dimension" name="popupOffset"/>
+        <attr format="enum" name="popupStyle">
+            <enum name="follow" value="0"/>
+            <enum name="fixed" value="1"/>
+        </attr>
+        <attr format="reference" name="popupAnimationStyle"/>
+        <attr format="boolean" name="popupAlwaysShown"/>
+        <attr format="boolean" name="popupDraggable"/>
+    </declare-styleable>
+    <declare-styleable name="PullToRefresh">
+
+        <!-- A drawable to use as the background of the Refreshable View -->
+        <attr format="reference|color" name="ptrRefreshableViewBackground"/>
+
+        <!-- A drawable to use as the background of the Header and Footer Loading Views -->
+        <attr format="reference|color" name="ptrHeaderBackground"/>
+
+        <!-- Text Color of the Header and Footer Loading Views -->
+        <attr format="reference|color" name="ptrHeaderTextColor"/>
+
+        <!-- Text Color of the Header and Footer Loading Views Sub Header -->
+        <attr format="reference|color" name="ptrHeaderSubTextColor"/>
+
+        <!-- Mode of Pull-to-Refresh that should be used -->
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0"/>
+            <flag name="pullFromStart" value="0x1"/>
+            <flag name="pullFromEnd" value="0x2"/>
+            <flag name="both" value="0x3"/>
+            <flag name="manualOnly" value="0x4"/>
+
+            <!-- These last two are depreacted -->
+            <flag name="pullDownFromTop" value="0x1"/>
+            <flag name="pullUpFromBottom" value="0x2"/>
+        </attr>
+
+        <!-- Whether the Indicator overlay(s) should be used -->
+        <attr format="reference|boolean" name="ptrShowIndicator"/>
+
+        <!-- Drawable to use as Loading Indicator. Changes both Header and Footer. -->
+        <attr format="reference" name="ptrDrawable"/>
+
+        <!-- Drawable to use as Loading Indicator in the Header View. Overrides value set in ptrDrawable. -->
+        <attr format="reference" name="ptrDrawableStart"/>
+
+        <!-- Drawable to use as Loading Indicator in the Footer View. Overrides value set in ptrDrawable. -->
+        <attr format="reference" name="ptrDrawableEnd"/>
+
+        <!-- Whether Android's built-in Over Scroll should be utilised for Pull-to-Refresh. -->
+        <attr format="reference|boolean" name="ptrOverScroll"/>
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views -->
+        <attr format="reference" name="ptrHeaderTextAppearance"/>
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr format="reference" name="ptrSubHeaderTextAppearance"/>
+
+        <!-- Style of Animation should be used displayed when pulling. -->
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0"/>
+            <flag name="flip" value="0x1"/>
+        </attr>
+
+        <!-- Whether the user can scroll while the View is Refreshing -->
+        <attr format="reference|boolean" name="ptrScrollingWhileRefreshingEnabled"/>
+
+        <!--
+        	Whether PullToRefreshListView has it's extras enabled. This allows the user to be 
+        	able to scroll while refreshing, and behaves better. It acheives this by adding
+        	Header and/or Footer Views to the ListView.
+        -->
+        <attr format="reference|boolean" name="ptrListViewExtrasEnabled"/>
+
+        <!--
+        	Whether the Drawable should be continually rotated as you pull. This only
+        	takes effect when using the 'Rotate' Animation Style.
+        -->
+        <attr format="reference|boolean" name="ptrRotateDrawableWhilePulling"/>
+
+        <!-- BELOW HERE ARE DEPRECEATED. DO NOT USE. -->
+        <attr format="reference|color" name="ptrAdapterViewBackground"/>
+        <attr format="reference" name="ptrDrawableTop"/>
+        <attr format="reference" name="ptrDrawableBottom"/>
+    </declare-styleable>
+    <declare-styleable name="Theme">
+        <attr format="reference" name="progressHintStyle"/>
+    </declare-styleable>
+    <declare-styleable name="ucrop_AspectRatioTextView">
+
+        <attr format="string" name="ucrop_artv_ratio_title"/>
+
+        <attr format="float" name="ucrop_artv_ratio_x"/>
+        <attr format="float" name="ucrop_artv_ratio_y"/>
+
+    </declare-styleable>
+    <declare-styleable name="ucrop_UCropView">
+
+        <!--Crop image view-->
+        <attr format="float" name="ucrop_aspect_ratio_x"/>
+        <attr format="float" name="ucrop_aspect_ratio_y"/>
+
+        <!--Overlay view-->
+        <attr format="boolean" name="ucrop_show_oval_crop_frame"/>
+        <attr format="boolean" name="ucrop_circle_dimmed_layer"/>
+        <attr format="color" name="ucrop_dimmed_color"/>
+
+        <attr format="dimension" name="ucrop_grid_stroke_size"/>
+        <attr format="color" name="ucrop_grid_color"/>
+        <attr format="integer" name="ucrop_grid_row_count"/>
+        <attr format="integer" name="ucrop_grid_column_count"/>
+        <attr format="boolean" name="ucrop_show_grid"/>
+
+        <attr format="dimension" name="ucrop_frame_stroke_size"/>
+        <attr format="color" name="ucrop_frame_color"/>
+        <attr format="boolean" name="ucrop_show_frame"/>
+
+    </declare-styleable>
+</resources>

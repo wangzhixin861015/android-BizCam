@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/content"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroud_new">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/paint_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroud"
+            android:elevation="2dp" />
+
+        <LinearLayout
+            android:id="@+id/paint_foot"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_144"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:elevation="9dp">
+
+            <RelativeLayout
+                android:id="@+id/paint_content"
+                android:layout_width="253dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_26"
+                android:layout_marginBottom="@dimen/dp_26"
+                android:layout_marginLeft="@dimen/dp_52"
+                android:background="@drawable/biz_matting_bg">
+
+                <ImageView
+                    android:id="@+id/btnevon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dp_52"
+                    android:paddingTop="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:src="@drawable/new_btnevon_down" />
+
+                <ImageView
+                    android:id="@+id/eraser"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/eraser_up" />
+
+                <ImageView
+                    android:id="@+id/btncolouron"
+                    android:layout_width="@dimen/dp_48"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_52"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/new_btncolouron" />
+            </RelativeLayout>
+
+            <com.bcnetech.bcnetechlibrary.view.MyImageView
+                android:id="@+id/eye"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/new_eyeoff" />
+        </LinearLayout>
+
+
+        <com.bcnetech.hyphoto.ui.view.ZoomableViewGroup
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/paint_foot"
+            android:layout_below="@id/paint_title"
+            android:background="@color/backgroud_new">
+
+            <jp.co.cyberagent.android.gpuimage.gputexture.GPUImageViewTexture
+                android:id="@+id/gpuimageview_texture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+
+            <ImageView
+
+                android:id="@+id/final_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+
+            <com.bcnetech.hyphoto.ui.view.PaintView
+                android:id="@+id/paintview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.bcnetech.hyphoto.ui.view.ZoomableViewGroup>
+        <!-- <com.bcnetech.bcnetechlibrary.view.BifacialZoomableView
+             android:background="@color/white"
+             android:layout_above="@id/paint_foot"
+             android:layout_below="@id/paint_title"
+             android:visibility="gone"
+             android:id="@+id/bifacialView"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_centerInParent="true"
+             />-->
+
+        <com.bcnetech.hyphoto.ui.view.WaitProgressBarView
+            android:id="@+id/wait_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+</layout>

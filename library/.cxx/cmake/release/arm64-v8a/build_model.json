@@ -1,0 +1,68 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git",
+      "sdkFolder": "/Users/mac/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates",
+      "gradleModulePathName": ":library",
+      "moduleRootFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library",
+      "makeFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/.cxx",
+      "cxxFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx",
+      "ndkFolder": "/Users/mac/Library/Android/sdk/ndk-bundle",
+      "ndkVersion": "22.1.7171670",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "release",
+    "soFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates/cmake/release/lib",
+    "objFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates/cmake/release/obj",
+    "jsonFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release",
+    "gradleBuildOutputFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 21,
+  "cxxBuildFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a",
+  "jsonFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a",
+  "objFolder": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/build/intermediates/cmake/release/obj/arm64-v8a",
+  "buildCommandFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/build_command.txt",
+  "buildOutputFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/build_output.txt",
+  "modelOutputFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/build_generation_state.json",
+    "cacheKeyFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cxx/release/arm64-v8a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/library/.cxx/cmake/release/arm64-v8a/compile_commands.json"
+}

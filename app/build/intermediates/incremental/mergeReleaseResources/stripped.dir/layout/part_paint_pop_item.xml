@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_168"
+    android:layout_height="@dimen/dp_112">
+    <ImageView
+        android:id="@+id/part_paint_pop_item_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_100"/>
+    <TextView
+        android:id="@+id/part_paint_pop_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="asdf"
+        android:layout_toRightOf="@id/part_paint_pop_item_img"
+        style="@style/FontWhite12"
+        android:layout_marginLeft="@dimen/dp_10"/>
+</RelativeLayout>

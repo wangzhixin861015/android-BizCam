@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/backgroud_new"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_parms_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:layout_alignParentTop="true"
+        android:background="@color/backgroud"
+        android:elevation="2dp">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/parms_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_104"
+            android:background="@drawable/title_bg" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_parms_title">
+
+        <LinearLayout
+            android:id="@+id/ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:layout_marginLeft="@dimen/dp_52"
+                android:layout_marginTop="@dimen/dp_72"
+                android:text="@string/image_parms"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black">
+
+                <RelativeLayout
+                    android:id="@+id/rl_bg"
+                    android:layout_width="278dp"
+                    android:layout_height="278dp"
+                    android:layout_centerInParent="true">
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="278dp"
+                    android:layout_height="278dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter" />
+
+                <com.bcnetech.hyphoto.ui.view.ShowFake3DView
+                    android:id="@+id/imageparms_showfake3d"
+                    android:layout_width="278dp"
+                    android:layout_height="278dp"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"/>
+
+                <ImageView
+                    android:id="@+id/iv_imageTwo"
+                    android:layout_width="278dp"
+                    android:layout_height="278dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter" />
+
+                <ImageView
+                    android:id="@+id/iv_video"
+                    android:layout_width="@dimen/dp_96"
+                    android:layout_height="@dimen/dp_96"
+                    android:src="@drawable/video"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_origin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true">
+
+                    <TextView
+                        android:id="@+id/tv_imgType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        android:layout_marginBottom="@dimen/dp_40"
+                        android:gravity="center"
+                        android:text="@string/original_drawing"
+                        android:background="@drawable/origin_gray_bg"
+                        />
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/rl_photo_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/dp_4"
+                android:background="@color/white">
+
+                <com.bcnetech.hyphoto.ui.view.AutoLocateHorizontalView
+                    android:id="@+id/auto_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_alignParentBottom="true" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_bg"
+                    android:layout_width="@dimen/dp_104"
+                    android:layout_height="@dimen/dp_104"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/auto_adapter_select_bg"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_preset"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_132"
+                android:layout_margin="@dimen/dp_12"
+                android:background="@color/white"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:id="@+id/tv_preset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:text="@string/preset_manage_tip"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_cobox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/floder_title"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_below="@+id/tv_preset"
+                    android:textSize="12sp" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_presetParam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/save"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_40"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/sing_in_color"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_presetDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/delete"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_40"
+                    android:textColor="@color/red_us_border"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_presetDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/download"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginRight="@dimen/dp_40"
+                    android:textColor="@color/sing_in_color"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/tv_preset2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_preset"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_40"
+                    android:text="123"
+                    android:textColor="@color/text_item_child"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_12"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/pic_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/picinfo"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_down"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp_52"
+                        android:padding="@dimen/dp_10"
+                        android:src="@drawable/chevron_down" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="2017年"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_day2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="星期四"
+                    android:textColor="@color/text_item_child"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/size"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_size2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text=""
+                    android:textColor="@color/text_item_child"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:text="@string/size"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_phone2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text=""
+                    android:textColor="@color/text_item_child"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_cobox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:text="COBOX"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

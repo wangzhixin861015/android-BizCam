@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/newbg">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:background="@drawable/title_bg"
+        android:elevation="2dp">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroud_new">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rec_title"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_height="wrap_content"/>
+
+            <!--  <android.support.design.widget.TabLayout
+                  android:id="@+id/layout_reading_title"
+                  android:layout_width="match_parent"
+                  app:tabMaxWidth="@dimen/dp_220"
+                  app:tabMinWidth="@dimen/dp_220"
+                  app:tabMode="scrollable"
+                  app:tabPadding="@dimen/dp_20"
+                  android:layout_height="100dp" />-->
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_14"
+            android:descendantFocusability="afterDescendants">
+
+            <com.bcnetech.hyphoto.ui.view.SwipeRefreshPagerLayout
+                android:id="@+id/layout_reading_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_reading_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.bcnetech.hyphoto.ui.view.SwipeRefreshPagerLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

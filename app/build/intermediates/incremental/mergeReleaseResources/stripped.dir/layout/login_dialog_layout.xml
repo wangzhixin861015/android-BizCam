@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_332"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:elevation="10dp"
+        android:background="@drawable/login_white_bg">
+
+
+        <com.bcnetech.hyphoto.ui.view.GifView
+            android:id="@+id/gif_view"
+            android:layout_width="@dimen/dp_480"
+            android:layout_height="@dimen/dp_300"
+            android:layout_centerInParent="true"/>
+
+        <!--<ProgressBar-->
+            <!--android:id="@+id/pb_login"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--style="@style/LoginBarStyle"-->
+            <!--android:layout_centerInParent="true"/>-->
+
+        <ImageView
+            android:id="@+id/iv_hint"
+            android:layout_width="@dimen/dp_206"
+            android:layout_height="@dimen/dp_134"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:layout_below="@+id/iv_hint"
+            android:text="发送验证码"
+            android:layout_centerHorizontal="true"
+            android:textSize="22sp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textColor="#0057FF"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

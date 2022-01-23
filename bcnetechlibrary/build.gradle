@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.neenbedankt.android-apt'
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
+
+        versionCode = VERSION_CODE as int
+        versionName = VERSION_NAME
+
+        renderscriptTargetApi MIN_SDK_VERSION as int
+        renderscriptSupportModeEnabled true
+
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a','arm64-v8a'
+            universalApk false
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        pickFirst 'META-INF/maven/org.bytedeco.javacpp-presets/opencv/pom.properties'
+        pickFirst 'META-INF/maven/org.bytedeco.javacpp-presets/opencv/pom.xml'
+        pickFirst 'META-INF/maven/org.bytedeco.javacpp-presets/ffmpeg/pom.properties'
+        pickFirst 'META-INF/maven/org.bytedeco.javacpp-presets/ffmpeg/pom.xml'
+    }
+}
+
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    api rootProject.ext.supportDependencies.supportAppcompat
+    api rootProject.ext.supportDependencies.supportRecycleView
+    api rootProject.ext.supportDependencies.supportDesign
+    api rootProject.ext.supportDependencies.supportCard
+    api 'com.umeng.analytics:analytics:latest.integration'
+    api files('libs/universal-image-loader-1.9.5.jar')
+    api 'com.alibaba:fastjson:1.2.49'
+    //compile 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.6.0'
+    api 'com.google.zxing:core:3.3.0'
+    api 'com.google.android.gms:play-services-vision:10.2.0'
+    implementation files('libs/commons-codec-1.10.jar')
+    api 'org.greenrobot:eventbus:3.0.0'
+    api 'com.github.mjdev:libaums:0.6.0'
+    api files('libs/umeng-sharetool-6.9.4.jar')
+    api files('libs/umeng-share-core-6.9.4.jar')
+    api files('libs/umeng-share-sina-simplify-6.9.4.jar')
+    api files('libs/umeng-share-wechat-simplify-6.9.4.jar')
+    api files('libs/umeng-share-QQ-simplify-6.9.4.jar')
+    api files('libs/umeng-common-1.5.4.jar')
+}

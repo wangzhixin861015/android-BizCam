@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v19/values-v19.xml",
+            "map": [
+                {
+                    "source": "/Users/mac/work/android-BizCam_1.git/android-BizCam.git/app/src/main/res/values-v19/styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "92",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "339"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "302"
+                    }
+                }
+            ]
+        }
+    ]
+}

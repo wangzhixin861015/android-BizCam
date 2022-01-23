@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/black_alpha20"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/iv_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/iv_top"
+
+        android:background="@color/black_alpha20"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/iv_bottom"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/iv_top"
+        android:background="@color/black_alpha20"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_alpha20"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/qrcode_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/capture_crop_view"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/qr_code_new_bg">
+
+            <ImageView
+                android:id="@+id/capture_scan_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/scan_new_line" />
+
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/capture_crop_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/bizcam_ut_hint2" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroud"
+        android:layout_alignParentTop="true">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <com.bcnetech.hyphoto.ui.view.BizCamUToView
+        android:id="@+id/bizcam_uto_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</RelativeLayout>

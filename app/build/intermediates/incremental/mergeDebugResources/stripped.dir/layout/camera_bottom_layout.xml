@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:id="@+id/camera_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/normal_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_alignParentBottom="true">
+
+            <com.bcnetech.hyphoto.ui.view.clickanimview.BamImageView
+                android:id="@+id/camera_auto"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_74"
+                android:src="@drawable/camera_auto" />
+
+            <com.bcnetech.hyphoto.ui.view.clickanimview.BamImageView
+                android:id="@+id/camera_ls"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_74"
+                android:src="@drawable/camera_ls"
+                android:visibility="invisible"/>
+
+            <com.bcnetech.hyphoto.ui.view.clickanimview.BamImageView
+                android:id="@+id/camera_pro"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_74"
+                android:src="@drawable/camera_pro"
+                android:visibility="invisible"/>
+
+            <com.bcnetech.hyphoto.ui.view.clickanimview.BamImageView
+                android:id="@+id/camera_m"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_74"
+                android:src="@drawable/camera_m"
+                android:visibility="invisible"/>
+
+
+            <com.bcnetech.hyphoto.ui.view.clickanimview.BamImageView
+                android:id="@+id/camera_main_btn"
+                android:layout_width="@dimen/dp_128"
+                android:layout_height="@dimen/dp_128"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/shoot" />
+
+            <com.bcnetech.hyphoto.ui.view.VideoButtonView
+                android:id="@+id/video_button_btn"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="@dimen/dp_100"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                />
+            <ImageView
+                android:id="@+id/record_pause_btn"
+                android:layout_width="@dimen/dp_128"
+                android:layout_height="@dimen/dp_128"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:src="@drawable/recordpause" />
+            <ImageView
+                android:id="@+id/camera_second_btn"
+                android:layout_width="@dimen/dp_66"
+                android:layout_height="@dimen/dp_66"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_110"
+                android:src="@drawable/video_button" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

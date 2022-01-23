@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/preset_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_172"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_14"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/preset_item_img"
+            android:layout_width="@dimen/dp_140"
+            android:layout_height="@dimen/dp_140"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_16"/>
+        <TextView
+            android:id="@+id/preset_content_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_44"
+            android:layout_marginRight="@dimen/dp_28"
+            android:layout_alignParentRight="true"
+            style="@style/FontBlack16"/>
+        <TextView
+            android:id="@+id/preset_auther_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/preset_content_name"
+            android:layout_alignParentRight="true"
+            style="@style/FontGreg14"
+            android:layout_marginRight="@dimen/dp_28"
+            android:layout_marginTop="@dimen/dp_6"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">辉影</string>
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+</resources>

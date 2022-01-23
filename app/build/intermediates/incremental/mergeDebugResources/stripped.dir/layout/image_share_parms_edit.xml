@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroud_new">
+
+    <RelativeLayout
+        android:id="@+id/rl_parms_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/backgroud"
+        android:elevation="2dp">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/parms_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_bg" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fitsSystemWindows="true"
+        android:layout_below="@+id/rl_parms_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp_22">
+
+            <ImageView
+                android:id="@+id/share_img"
+                android:adjustViewBounds="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"/>
+
+            <com.bcnetech.bcnetechlibrary.view.LimitEditText
+                android:id="@+id/et_name"
+                android:maxLength="6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/share_img"
+                android:layout_marginTop="@dimen/dp_80"
+                android:hint="@string/name_parms"
+                android:textCursorDrawable="@null"
+                android:paddingLeft="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:paddingRight="@dimen/dp_40"
+                android:singleLine="true"
+                android:background="@null"
+                android:textColor="@color/black"
+                android:textColorHint="@color/text_item_child"
+                android:drawablePadding="@dimen/dp_12"
+                android:drawableBottom="@drawable/lien"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_name"
+                android:layout_marginTop="@dimen/dp_80"
+                android:visibility="visible">
+
+                <com.bcnetech.bcnetechlibrary.view.LimitEditText
+                    android:id="@+id/et_addtag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dp_12"
+                    android:maxLength="100"
+                    android:drawableRight="@drawable/plus"
+                    android:hint="@string/add_tag"
+                    android:paddingLeft="@dimen/dp_40"
+                    android:paddingRight="@dimen/dp_40"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:textCursorDrawable="@null"
+                    android:background="@null"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/text_item_child"
+                    android:singleLine="true"
+                    android:drawableBottom="@drawable/lien"
+                    android:textSize="16sp" />
+
+              <com.bcnetech.hyphoto.ui.view.XCFlowLayout
+                    android:id="@+id/flowlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_addtag"
+                    android:layout_marginLeft="@dimen/dp_60"
+                    android:layout_marginTop="@dimen/dp_40" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/et_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_184"
+                android:layout_below="@+id/rl_add"
+                android:layout_marginTop="@dimen/dp_40"
+                android:gravity="top|left"
+                android:hint="@string/add_parms_info"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:background="#303338"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:textCursorDrawable="@null"
+                android:paddingLeft="@dimen/dp_20"
+                android:paddingTop="@dimen/dp_22"
+                android:maxLength="200"
+                android:textSize="@dimen/dp_24"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/save_type"
+                android:layout_marginTop="@dimen/dp_72"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:textColor="@color/white_aphle40"
+                android:visibility="gone"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_80"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@color/text_item_child" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/dp_400"
+                android:layout_marginTop="@dimen/dp_42"
+                android:layout_marginLeft="@dimen/dp_60"
+                android:layout_marginRight="@dimen/dp_40">
+
+                <TextView
+                    android:id="@+id/tv_saveShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/public_market"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_70"
+                    android:text="@string/only_save"
+                    android:paddingLeft="@dimen/dp_30"
+                    android:paddingRight="@dimen/dp_30"
+                    android:paddingTop="@dimen/dp_4"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:background="@drawable/gray_background_share_left"
+                    android:visibility="gone"/>
+
+                <com.bcnetech.hyphoto.ui.view.SwitchButton
+                    android:id="@+id/switchButton"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    app:sb_show_indicator="false"
+                    android:layout_marginLeft="@dimen/dp_50"
+                    app:sb_checked_color="@color/sing_in_color"
+                    app:sb_uncheck_color="#F2F4F7"
+                    app:sb_checked="false"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/publish_hint"
+                android:layout_marginTop="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginBottom="@dimen/dp_300"
+                android:textColor="@color/white_aphle40"
+                android:visibility="gone"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="220dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

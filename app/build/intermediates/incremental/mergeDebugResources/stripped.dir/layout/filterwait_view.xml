@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" android:tag="layout/filterwait_view_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/iv_process"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="126dp"
+                android:layout_below="@+id/iv_process"
+                android:layout_centerHorizontal="true"
+                android:text="@string/builting_360"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+         

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/cloud_item_check"
+        android:layout_width="match_parent"
+        android:layout_height="214dp"
+
+        android:src="@color/translucent"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_410"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:layout_marginRight="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@drawable/cloud_item_bg"
+        android:elevation="2dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/item_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_weight="5"
+            android:background="@color/translucent12"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_2"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/item_image2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/item_image3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop" />
+
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="@dimen/dp_80"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_210"
+
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_2">
+
+                <ImageView
+                    android:id="@+id/item_image1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_32"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="123"
+                android:textColor="@color/text_item_child"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/iv_cloudcount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/tv_cloudcount"
+                android:src="@drawable/cloudcount" />
+
+            <TextView
+                android:id="@+id/tv_cloudcount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_32"
+                android:gravity="center"
+                android:src="@drawable/cloudcount"
+                android:textColor="@color/text_item_child"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

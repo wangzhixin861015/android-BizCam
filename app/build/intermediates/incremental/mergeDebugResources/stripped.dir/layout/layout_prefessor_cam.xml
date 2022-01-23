@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/translucent_white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.bcnetech.hyphoto.ui.view.ProfessionRegulateView
+        android:id="@+id/pre_regulate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_96"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_74"
+
+        android:layout_below="@+id/pre_regulate"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_sec"
+            style="@style/FontWhite12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/tv_iso"
+            style="@style/FontWhite12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/tv_wb"
+            style="@style/FontWhite12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1" />
+
+        <com.bcnetech.hyphoto.ui.view.MRelativeLayout
+            android:id="@+id/rl_focus"
+            style="@style/FontWhite12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_focus"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/focusbtn" />
+
+            <TextView
+                android:id="@+id/tv_focus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:singleLine="true"
+                style="@style/FontWhite12"
+                android:layout_toEndOf="@+id/iv_focus"
+                android:text="-24" />
+        </com.bcnetech.hyphoto.ui.view.MRelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

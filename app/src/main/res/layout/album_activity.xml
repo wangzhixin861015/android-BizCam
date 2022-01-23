@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_layout_base"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/left_img"
+        android:layout_width="@dimen/dp_104"
+        android:layout_height="@dimen/dp_104"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:padding="@dimen/dp_34"
+        android:visibility="visible"/>
+    <TextView
+        android:id="@+id/left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="@dimen/dp_40"
+        android:gravity="center_vertical"
+        style="@style/FontBlue14"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        style="@style/FontWhite18"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/right_img"
+        android:layout_width="@dimen/dp_104"
+        android:layout_height="@dimen/dp_104"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_12"
+        android:padding="@dimen/dp_34"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/dp_40"
+        android:gravity="center_vertical"
+        style="@style/FontBlue14"
+        android:visibility="gone"/>
+</RelativeLayout>

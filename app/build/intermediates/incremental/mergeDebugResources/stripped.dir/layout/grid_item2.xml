@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:background="@drawable/bgbitmap2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_3"
+        android:layout_marginRight="@dimen/dp_3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/grid_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_360"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="@string/photo_360"
+                android:gravity="center"
+                android:layout_margin="4dp"
+                android:textColor="@color/white"
+                android:background="@color/sing_in_color"
+                android:layout_alignParentBottom="true"
+                android:textSize="10sp"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+
+
+
+        <ImageView
+            android:id="@+id/grid_item_check"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bgbitmap"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/grid_video"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/dp_22"
+        android:layout_marginRight="@dimen/dp_22"
+        android:src="@drawable/video"
+        android:visibility="invisible" />
+</RelativeLayout>

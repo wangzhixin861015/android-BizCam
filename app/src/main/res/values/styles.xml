@@ -1,0 +1,247 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>-->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style> <!-- Application theme. --> <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+   <!-- <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>-->
+</style>
+
+    <!-- progressBar -->
+    <style name="DgProgressBarStyle" parent="android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/dg_dialog_progress_layerlist</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:maxWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:maxHeight">48dp</item>
+    </style>
+
+    <style name="LoginBarStyle" parent="android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/login_progress_layerlist</item>
+        <item name="android:minWidth">15dp</item>
+        <item name="android:maxWidth">15dp</item>
+        <item name="android:minHeight">15dp</item>
+        <item name="android:maxHeight">15dp</item>
+    </style>
+
+    <style name="FontBlue14">
+        <item name="android:textColor">#7ecef4</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FontBlack12">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="FontBlack14">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FontBlack16">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FontBlack18">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="FontBlack28">
+        <item name="android:textColor">#ff4a4a4a</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="FontWhite10">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="FontWhite12">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="FontWhiteAlpha40_12">
+        <item name="android:textColor">#77ffffff</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="FontWhite14">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FontWhiteAlpha40_14">
+        <item name="android:textColor">#77ffffff</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FontWhite16">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FontWhiteAlpha40_16">
+        <item name="android:textColor">#77ffffff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FontWhite18">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="FontGreg12">
+        <item name="android:textColor">#ff9b9b9b</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="FontGreg16">
+        <item name="android:textColor">#ff9b9b9b</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="FontGreg18">
+        <item name="android:textColor">#ff9b9b9b</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="squarecamera__CameraFullScreenTheme" parent="squarecamera__CameraFullScreenTheme.Base">
+
+    </style>
+
+    <style name="squarecamera__CameraFullScreenTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="squarecamera__CameraFullScreenTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="squarecamera__CameraFullScreenTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="squarecamera__CameraFullScreenTheme.NoUI" parent="squarecamera__CameraFullScreenTheme.Base">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--seekbar-->
+    <style name="img_parms_seekbar">
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="max">200</item>
+        <item name="android:maxHeight">0.25dp</item>
+        <item name="android:minHeight">0.25dp</item>
+        <item name="progress">100</item>
+        <item name="progress_unreached_color">@color/white</item>
+        <item name="progress_reached_color">@color/white</item>
+        <item name="progress_text_size">22sp</item>
+        <item name="progress_text_color">@color/white</item>
+        <item name="progress_reached_bar_height">1.5dp</item>
+        <item name="progress_unreached_bar_height">0.75dp</item>
+        <item name="android:progressDrawable">@drawable/seekbar_define_style</item>
+        <item name="android:thumb">@drawable/seekbarthumb</item>
+        <item name="android:thumbOffset">2.0dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="dialogfullscreen" parent="@android:style/Theme.Dialog"><!-- 是否浮现在activity之上这里如果涉及到键盘上推adjustResize必须为true否则上推失效 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 设置半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@color/translucent</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/white_aphle10</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
+
+    <style name="sec_seekbar">
+        <item name="max">100</item>
+        <item name="android:maxHeight">4dp</item>
+        <item name="android:minHeight">4dp</item>
+        <item name="progress">100</item>
+        <item name="progress_text_size">22sp</item>
+        <item name="progress_text_color">@color/headcolor</item>
+        <item name="android:progressDrawable">@drawable/progress_drawable</item>
+        <item name="android:thumb">@drawable/oval2</item>
+    </style>
+
+    <style name="StyleProgressBarMini" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">5dip</item>
+        <item name="android:minHeight">5dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/shape_progressbar_mini</item>
+    </style>
+
+    <style name="StyleProgressBarLogin" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">5dip</item>
+        <item name="android:minHeight">5dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/shape_progressbar_mini</item>
+    </style>
+
+    <style name="add_dialog" parent="@android:style/Theme.Holo.Dialog.NoActionBar">
+
+        <!--<item name="android:colorBackgroundCacheHint">@null</item>-->
+        <!--<item name="android:windowFrame">@null</item>&lt;!&ndash;边框&ndash;&gt;-->
+        <!--<item name="android:windowIsFloating">true</item>&lt;!&ndash;是否浮现在activity之上&ndash;&gt;-->
+        <!--<item name="android:windowIsTranslucent">false</item>&lt;!&ndash;半透明&ndash;&gt;-->
+        <!--<item name="android:windowNoTitle">true</item>&lt;!&ndash;无标题&ndash;&gt;-->
+        <!--<item name="android:background">@drawable/alertdialog_bg</item>&lt;!&ndash;dialog背景样式&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/transparent</item>&lt;!&ndash; 背景透明 &ndash;&gt;-->
+        <!--<item name="android:backgroundDimEnabled">true</item>&lt;!&ndash;模糊&ndash;&gt;-->
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <style name="Widget.GifView" parent="@android:style/Widget"/>
+
+    <style name="Transparent_Theme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/translucent</item>
+      <!--  <item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="welcome_Theme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/translucent</item>
+          <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

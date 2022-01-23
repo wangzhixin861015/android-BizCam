@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:id="@+id/title_layout_base"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/translucent" android:tag="layout/cloud_new_top_select_view_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="@dimen/dp_104"
+            android:layout_height="@dimen/dp_104"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:padding="@dimen/dp_34"
+            android:src="@drawable/new_close" />
+
+
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:padding="@dimen/dp_34"
+            android:text="@string/multi_select"
+            android:textColor="@color/gray" />
+
+
+        <ImageView
+            android:id="@+id/iv_other"
+            android:layout_width="@dimen/dp_104"
+            android:layout_height="@dimen/dp_104"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_12"
+            android:padding="@dimen/dp_28"
+            android:src="@drawable/sys_other" />
+
+    </RelativeLayout>
+         

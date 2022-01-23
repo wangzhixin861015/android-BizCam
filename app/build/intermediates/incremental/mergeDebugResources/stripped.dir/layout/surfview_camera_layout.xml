@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black" android:tag="layout/surfview_camera_layout_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <RelativeLayout
+            android:id="@+id/camera_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_control"
+            android:layout_below="@+id/top_layout">
+
+            <com.bcnetech.bizcamerlibrary.camera.CameraTextureView
+                android:id="@+id/camera_texture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <com.bcnetech.hyphoto.ui.view.FocusView
+                android:id="@+id/focusview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/fake_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/black"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/qrcode_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/FontWhite14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/capture_crop_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/dp_32"
+                    android:text="@string/qr_hint" />
+
+                <RelativeLayout
+                    android:id="@+id/capture_crop_view"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qr_code_bg">
+
+                    <ImageView
+                        android:id="@+id/capture_scan_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/scan_line" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <com.bcnetech.hyphoto.ui.view.DottedLineView
+                android:id="@+id/dotted_line"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginRight="@dimen/dp_40"
+                android:visibility="gone">
+
+                <com.bcnetech.bcnetechlibrary.view.LineImageView2
+                    android:id="@+id/lineImageView"
+                    android:layout_width="@dimen/dp_320"
+                    android:layout_height="@dimen/dp_220"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+
+                <com.bcnetech.bcnetechlibrary.view.SublineImageView
+                    android:id="@+id/iv_subline"
+                    android:layout_width="@dimen/dp_160"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" />
+            </com.bcnetech.hyphoto.ui.view.DottedLineView>
+
+
+            <!--      <RelativeLayout
+                      android:id="@+id/rl_proview"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentBottom="true"
+                      android:layout_alignParentStart="true"
+                      android:visibility="gone">
+
+                      <ProfessionCameraView
+                          android:id="@+id/procam_view"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:visibility="visible" />
+                  </RelativeLayout>-->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_120">
+
+
+            <RelativeLayout
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/camera_close_btn"
+                    android:layout_width="@dimen/dp_108"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:paddingLeft="@dimen/dp_40"
+                    android:paddingRight="@dimen/dp_40"
+                    android:src="@drawable/close1" />
+
+                <com.bcnetech.hyphoto.ui.view.CoBoxChooseTopView
+                    android:id="@+id/coBox_choose_top_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/camera_setting_btn"
+                    android:layout_toRightOf="@+id/camera_close_btn"/>
+
+
+                <ImageView
+                    android:id="@+id/camera_setting_btn"
+                    android:layout_width="@dimen/dp_108"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="@dimen/dp_30"
+                    android:paddingRight="@dimen/dp_30"
+                    android:src="@drawable/camera_setting" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_seekBar"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_control"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/top_layout"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_40"
+            android:background="@drawable/bigline"
+            android:visibility="gone">
+
+            <com.bcnetech.bcnetechlibrary.view.VerticalSeekBar
+                android:id="@+id/right_seekBar"
+                style="@style/Widget.SeekBar.Normal"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:max="100"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+
+        <com.bcnetech.hyphoto.ui.view.verticalscrollview.VerticalScaleNewView
+            android:id="@+id/scaleView"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/camera_adjust_layout"
+            android:layout_below="@+id/top_layout"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/bottom_control"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_alignParentBottom="true">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/lightratioList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <com.bcnetech.hyphoto.ui.view.CameraBottomView
+                android:id="@+id/camera_bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.bcnetech.hyphoto.ui.view.PresetBottomView
+                android:id="@+id/preset_bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/camera_adjust_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom_control"
+            android:background="@color/translucent">
+
+            <com.bcnetech.hyphoto.ui.view.CameraParamAdjustView
+                android:id="@+id/camera_param_adjust_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/translucent" />
+        </RelativeLayout>
+
+        <com.bcnetech.hyphoto.ui.view.CameraSettingNewView
+            android:id="@+id/camera_setting_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <com.bcnetech.hyphoto.ui.view.BlueToothListCamera2View
+            android:id="@+id/blueToothListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+         

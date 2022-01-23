@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_layout_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newbg">
+
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_104"
+        android:background="@drawable/title_bg"
+        android:elevation="2dp">
+
+        <com.bcnetech.hyphoto.ui.view.TitleView
+            android:id="@+id/edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroud_new"
+        android:layout_below="@+id/top_layout">
+    <com.bcnetech.hyphoto.ui.view.DrawTextImageView
+        android:id="@+id/iv_headimg"
+        android:layout_width="@dimen/dp_160"
+        android:layout_height="@dimen/dp_160"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_42" />
+
+    <TextView
+        android:id="@+id/tv_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_headimg"
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_54"
+        android:text="@string/count_name"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/dp_24" />
+    <com.bcnetech.bcnetechlibrary.view.LimitEditText
+        android:id="@+id/nick_name"
+        style="@style/FontGreg12"
+        android:layout_below="@+id/tv_head"
+        android:layout_width="match_parent"
+        android:maxLength="16"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_24"
+        android:background="@color/backgroud_new"
+        android:cursorVisible="false"
+        android:paddingLeft="@dimen/dp_24"
+        android:singleLine="true"/>
+    <ImageView
+        android:layout_below="@+id/nick_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_2"
+        android:background="@color/text_color"/>
+        </RelativeLayout>
+</RelativeLayout>
